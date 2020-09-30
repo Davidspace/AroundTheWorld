@@ -14,6 +14,10 @@ Observamos que el repositorio remoto origen coincide con el repositorio del proy
 
 ![Repositorio origen](https://github.com/Davidspace/AroundTheWorld/blob/master/documentos/imagenes/remote.png)
 
+Y comprobamos que la configuración es la correcta
+
+![Configuración local](https://github.com/Davidspace/AroundTheWorld/blob/master/documentos/imagenes/configLocal.png)
+
 ### Par de claves pública-privada
 El siguiente paso será llevar a cabo la generación de un par de claves pública-privada, las cuales me permitirán trabajar con GitHub sin necesidad de introducir mi email y mi contraseña cada vez que envie un cambio realizado en mi repositorio clonado al repositorio remoto
 
