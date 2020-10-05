@@ -17,7 +17,7 @@
 
 ## Documentación
 - La configuración de GitHub puede ser comprobada [aqui](documentos/configGit.md)
-- Las historias de usuario activas en este momento pueden consultarse [aqui](ld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories)
+- Las historias de usuario activas en este momento pueden consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories)
 - La justificación sobre el uso de las herramientas listadas con anterioridad puede consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md)
 
 ## Autor
