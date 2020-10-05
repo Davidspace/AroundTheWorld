@@ -1,4 +1,4 @@
-## Herramientas
+## ¿POR QUÉ ESTAS HERRAMIENTAS?
 - **Lenguaje de programación:** El lenguaje que voy a utilizar será [Node.js](https://nodejs.org/es/). He escogido este lenguaje debido a su extensa popularidad en el ámbito laboral, por lo que trabajar con él es una opción muy interesante de cara al futuro, además de las numerosas herramientas con las que el lenguaje cuenta y la comunidad tan extensa que lo desarrolla y que será de gran ayuda a la hora de resolver cualquier duda. 
 
 - **Framework para aplicaciones web:** El framework que he elegido utilizar para trabajar con Node.js ha sido [Express](https://expressjs.com/es/). Mi elección ha sido esta debido a que Express se trata de una infrestructura web rápida, minimalista y flexible, lo cual encaja a la perfección con mis necesidades al estar inmerso en la creación de un microservicio sencillo y ligero. Además, cuenta con miles de métodos de programa de utilidad HTTP y middleware que harán rápida y sencilla la creación de una API sólida. 
