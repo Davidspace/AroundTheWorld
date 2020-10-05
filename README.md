@@ -5,7 +5,7 @@
 **AroundTheWorld** es un microservicio que pretende dar respuesta a todas las preguntas que asaltan a cualquier persona que se dispone a emprender un viaje a cualquier localización. Para ello, **AroundTheWorld** se encargará de proprocionar a sus clientes toda la información relevante relacionada con el destino escogido, como pueden ser los alojamientos disponibles junto a sus valoraciones y características, los puntos de mayor interés de dicha localización, los métodos de transporte disponibles para desplazarse, etc.
 
 ## Herramientas
-- **Lenguaje de programación:** [Node.js](https://nodejs.org/es/).
+- **Lenguaje de programación:** [JavaScript](https://www.javascript.com/).
 
 - **Framework para aplicaciones web:** [Express](https://expressjs.com/es/). 
 
