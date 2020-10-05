@@ -1,6 +1,18 @@
 # AroundTheWorld
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+## Motivación
+En el preciso momento en el que decidimos hacer un viaje nos asaltan tantas dudas que a menudo nos hacen desistir de llevarlo a cabo o hacen el proceso de preparar dicho viaje muy agobiante. 
+
+- ¿Dónde voy? 
+- ¿Cómo llego? 
+- ¿Dónde me alojo? 
+- ¿Qué hago una vez alli? 
+- ¿Qué necesito para hacer las actividades que he planeado? 
+- ¿Cómo vuelvo?
+
+El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuestra, en la que los viajes son cada vez más frecuentes por muchos motivos, conseguir facilitar al usuario todas las tareas que debe llevar a cabo es algo que dispone de mucho valor para el cliente. Por lo tanto, considero que este microservicio que me propongo implementar abordará un problema cuya solución será útil para la gran mayoria de la sociedad. Un alcance de esta magnitud me asegura que mi microservicio tendrá cabida en el mercado si es desarrollado siguiendo las normas de calidad de desarrollo de software.
+
 ## Descripción
 **AroundTheWorld** es un microservicio que pretende dar respuesta a todas las preguntas que asaltan a cualquier persona que se dispone a emprender un viaje a cualquier localización. Para ello, **AroundTheWorld** se encargará de proprocionar a sus clientes toda la información relevante relacionada con el destino escogido, como pueden ser los alojamientos disponibles junto a sus valoraciones y características, los puntos de mayor interés de dicha localización, los métodos de transporte disponibles para desplazarse, etc.
 
