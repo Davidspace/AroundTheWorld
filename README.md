@@ -14,7 +14,8 @@
 
 - **Servicio de log:** El servicio de log que emplearé para llevar un rastro del flujo de mi microservicio, el cual será de gran utilidad para encontrar el por qué de cada error que se dé o los pasos que se han dado para llevar a cabo una determinada funcionalidad, será [Winston](https://github.com/winstonjs/winston). El principal motivo de mi elección ha sido el hecho de que se trata actualmente de la solución más popular para el sistema de log de las aplicaciones escritas en Node.js debido a su versatilidad, lo que conlleva la existencia de un gran ecosistema en el que podré comenzar mi aprendizaje sobre su uso de una manera sencilla y detallada.   
 ## Documentación
-La configuración de GitHub puede ser comprobada [aqui](documentos/configGit.md)
+- La configuración de GitHub puede ser comprobada [aqui](documentos/configGit.md)
+- Las historias de usuario activas en este momento pueden consultarse [aqui](ld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories)
 
 ## Autor
 [David García Martínez](https://github.com/Davidspace)
