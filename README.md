@@ -31,6 +31,7 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 - La configuración de GitHub puede ser comprobada [aqui](documentos/configGit.md)
 - Las historias de usuario activas en este momento pueden consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories)
 - La justificación sobre el uso de las herramientas listadas con anterioridad puede consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md)
+- Los pasos seguidos en cada hito en el desarrollo del proyecto pueden ser examinados [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md)
 
 ## Autor
 [David García Martínez](https://github.com/Davidspace)
