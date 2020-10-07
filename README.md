@@ -19,6 +19,8 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 ## Herramientas
 - **Lenguaje de programación:** [JavaScript](https://www.javascript.com/).
 
+- **Entorno de ejecución:** [Node.js](https://nodejs.org/es/)
+
 - **Framework para aplicaciones web:** [Sails](https://sailsjs.com/). 
 
 - **Framework de testeo:** [Jest](https://jestjs.io/).
