@@ -34,7 +34,7 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 
 - La justificación sobre el uso de las herramientas listadas con anterioridad puede consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md).
 
-- EL historial de issues que se han abierto y cerrado durante el desarrollo del proyecto pueden ser consultados [aqui](https://github.com/Davidspace/AroundTheWorld/issues).
+- El historial de issues que se han abierto y cerrado durante el desarrollo del proyecto pueden ser consultados [aqui](https://github.com/Davidspace/AroundTheWorld/issues).
 
 - Las historias de usuario activas en este momento pueden consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
 
