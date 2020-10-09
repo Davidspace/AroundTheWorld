@@ -30,10 +30,21 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 - **Servicio de log:** [Winston](https://github.com/winstonjs/winston).
 
 ## Documentación
-- La configuración de GitHub puede ser comprobada [aqui](documentos/configGit.md)
-- Las historias de usuario activas en este momento pueden consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories)
-- La justificación sobre el uso de las herramientas listadas con anterioridad puede consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md)
-- Los pasos seguidos en el desarrollo del proyecto pueden ser examinados [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md)
+- La configuración de GitHub puede ser comprobada [aqui](documentos/configGit.md).
+
+- La justificación sobre el uso de las herramientas listadas con anterioridad puede consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md).
+
+- EL historial de issues que se han abierto y cerrado durante el desarrollo del proyecto pueden ser consultados [aqui](https://github.com/Davidspace/AroundTheWorld/issues).
+
+- Las historias de usuario activas en este momento pueden consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
+
+- Los pasos seguidos en el desarrollo del proyecto pueden ser examinados [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md).
+
+## Código fuente
+Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/lib)
+
+## Fichero iv.yaml
+Clicka en el siguiente enlace para acceder al fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml), cuya finalidad es especificar ficheros y otros parámetros de configuración para test. 
 
 ## Autor
 [David García Martínez](https://github.com/Davidspace)
