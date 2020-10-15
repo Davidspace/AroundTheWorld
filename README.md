@@ -4,11 +4,11 @@
 ## Uso de la aplicación
 La propia aplicación cuenta con una herramientas de construcción, **Gulp**, la cual automatiza el proceso de instalación de la misma en su equipo. Para llevar a cabo este proceso, debe ejecutar la siguiente orden:
 
-'gulp install'
+`gulp install`
 
 De la misma forma, es la ya mencionada herramienta de construcción la que automatiza la ejecución de los tests unitarios desarrollados con el fin de comprobar que el funcionamiento de la aplicación es el correcto. Para llevar a cabo dicha ejecución, debe ejecutar la siguiente orden:
 
-'gulp test'
+`gulp test`
 
 ## Motivación
 En el preciso momento en el que decidimos hacer un viaje nos asaltan tantas dudas que a menudo nos hacen desistir de llevarlo a cabo o hacen el proceso de preparar dicho viaje muy agobiante. 
