@@ -1,1 +1,4 @@
 entidad: lib/destino.js
+lenguaje: Node.js
+test: test/test.js
+taskfile: Gulpfile.js
