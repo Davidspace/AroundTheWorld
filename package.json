@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Davidspace/AroundTheWorld#readme",
   "devDependencies": {
+    "gulp": "^4.0.2",
     "jest": "^26.5.3"
   }
 }
