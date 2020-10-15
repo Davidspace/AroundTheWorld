@@ -13,10 +13,17 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 - Creación de [milestones](https://github.com/Davidspace/AroundTheWorld/milestones), [historias de usuario](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories) e [issues](https://github.com/Davidspace/AroundTheWorld/issues). 
 - Determinar las [herramientas y servicios](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) que voy a utilizar en mi proyecto.
 - Creación de un [directorio para los códigos fuente](https://github.com/Davidspace/AroundTheWorld/tree/master/lib).
-- Creación del fichero [package.json](https://github.com/Davidspace/AroundTheWorld/blob/master/package.json) para la instalación y arranque del microservicio.
 - Creación del boceto de la [estructura general del proyecto](https://github.com/Davidspace/AroundTheWorld/tree/master/lib).
 - Creación del fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml) e introducción de la información requerida.
 - Completar la [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/README.md) con la información disponible actualmente sobre el proyecto.
+
+## Hito 2: Tests
+- Creación del directorio en el que se almacenarán los [tests](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
+- Creación del fichero [package.json](https://github.com/Davidspace/AroundTheWorld/blob/master/package.json) para la instalación y arranque del microservicio.
+- Adición a mi proyecto del [marco de testeo](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) elegido para ser usado: [Jest](https://jestjs.io/).
+- Creación del [fichero fuente principal](https://github.com/Davidspace/AroundTheWorld/blob/master/src/index.js) de la aplicación.
+- Elección y adición a mi proyecto de una [herramienta de construcción](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) adecuada: [Gulp](https://gulpjs.com/).
+- Incluidas las nuevas dependencias del proyecto al fichero [package.json](https://github.com/Davidspace/AroundTheWorld/blob/master/package.json).
 
 
 
