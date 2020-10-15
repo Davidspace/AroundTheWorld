@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Davidspace/AroundTheWorld/issues"
   },
-  "homepage": "https://github.com/Davidspace/AroundTheWorld#readme"
+  "homepage": "https://github.com/Davidspace/AroundTheWorld#readme",
+  "devDependencies": {
+    "jest": "^26.5.3"
+  }
 }
