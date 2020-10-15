@@ -24,6 +24,7 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 - Creación del [fichero fuente principal](https://github.com/Davidspace/AroundTheWorld/blob/master/src/index.js) de la aplicación.
 - Elección y adición a mi proyecto de una [herramienta de construcción](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) adecuada: [Gulp](https://gulpjs.com/).
 - Incluidas las nuevas dependencias del proyecto al fichero [package.json](https://github.com/Davidspace/AroundTheWorld/blob/master/package.json).
+- Creación del fichero [gulpfile.js](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js), cuyo objetivo es automatizar las tareas de instalación y testeo
 
 
 
