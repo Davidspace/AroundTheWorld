@@ -1,0 +1,23 @@
+{
+  "name": "aroundtheworld",
+  "version": "1.0.0",
+  "description": "Microservicio creado para asistir a cualquier cliente a organizar su viaje",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davidspace/AroundTheWorld.git"
+  },
+  "author": "David Garcia Martinez",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Davidspace/AroundTheWorld/issues"
+  },
+  "homepage": "https://github.com/Davidspace/AroundTheWorld#readme"
+}
