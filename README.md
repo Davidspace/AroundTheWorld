@@ -1,6 +1,15 @@
 # AroundTheWorld
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+## Uso de la aplicación
+La propia aplicación cuenta con una herramientas de construcción, **Gulp**, la cual automatiza el proceso de instalación de la misma en su equipo. Para llevar a cabo este proceso, debe ejecutar la siguiente orden:
+
+'gulp install'
+
+De la misma forma, es la ya mencionada herramienta de construcción la que automatiza la ejecución de los tests unitarios desarrollados con el fin de comprobar que el funcionamiento de la aplicación es el correcto. Para llevar a cabo dicha ejecución, debe ejecutar la siguiente orden:
+
+'gulp test'
+
 ## Motivación
 En el preciso momento en el que decidimos hacer un viaje nos asaltan tantas dudas que a menudo nos hacen desistir de llevarlo a cabo o hacen el proceso de preparar dicho viaje muy agobiante. 
 
@@ -29,6 +38,8 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 
 - **Servicio de log:** [Winston](https://github.com/winstonjs/winston).
 
+- **Herramienta de construcción:** [Gulp](https://gulpjs.com/).
+
 ## Documentación
 - La configuración de GitHub puede ser comprobada [aqui](documentos/configGit.md).
 
@@ -41,7 +52,7 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 - Los pasos seguidos en el desarrollo del proyecto pueden ser examinados [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md).
 
 ## Código fuente
-Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/lib)
+Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src)
 
 ## Fichero iv.yaml
 Clicka en el siguiente enlace para acceder al fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml), cuya finalidad es especificar ficheros y otros parámetros de configuración para test. 
