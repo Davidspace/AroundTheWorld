@@ -24,31 +24,31 @@ class Transporte{
    * Métodos get de la clase Transporte
    */
 
-  get nombre(){
+  get _nombre(){
     return this.nombre;
   }
 
-  get descripcion(){
+  get _descripcion(){
     return this.descripcion;
   }
 
-  get tipo(){
+  get _tipo(){
     return this.tipo;
   }
 
-  get localizacion(){
+  get _localizacion(){
     return this.localizacion;
   }
 
-  get valoracion(){
+  get _valoracion(){
     return this.valoracion;
   }
 
-  get hora_inicio(){
+  get _hora_inicio(){
     return this.hora_inicio;
   }
 
-  get hora_fin(){
+  get _hora_fin(){
     return this.hora_fin;
   }
 
@@ -56,31 +56,31 @@ class Transporte{
    * Métodos set de la clase Transporte
    */
 
-   set nombre(nuevo_nombre){
+   set _nombre(nuevo_nombre){
      this.nombre = nuevo_nombre;
    }
 
-   set descripcion(nueva_descripcion){
+   set _descripcion(nueva_descripcion){
      this.descripcion = nueva_descripcion;
    }
 
-   set tipo(nuevo_tipo){
+   set _tipo(nuevo_tipo){
      this.tipo = nuevo_tipo;
    }
 
-   set localizacion(nueva_localizacion){
+   set _localizacion(nueva_localizacion){
      this.localizacion = nueva_localizacion;
    }
 
-   set valoracion(nueva_valoracion){
+   set _valoracion(nueva_valoracion){
      this.valoracion = nueva_valoracion;
    }
 
-   set hora_inicio(nueva_hora_inicio){
+   set _hora_inicio(nueva_hora_inicio){
      this.hora_inicio = nueva_hora_inicio;
    }
 
-   set hora_fin(nueva_hora_fin){
+   set _hora_fin(nueva_hora_fin){
      this.hora_fin = nueva_hora_fin;
    }
 }

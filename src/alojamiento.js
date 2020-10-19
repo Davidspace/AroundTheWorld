@@ -9,7 +9,7 @@ class Alojamiento{
    * @param {String} coordenadas - Coordenadas geográficas del alojamiento
    * @param {Number} valoracion - Media de las puntuaciones que los usuarios les han otorgado a este alojamiento
    */
-  constructor(nombre, tipo, descripcion, tipo, localizacion, coordenadas, valoracion){
+  constructor(nombre, tipo, descripcion, localizacion, coordenadas, valoracion){
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.tipo = tipo;
@@ -22,27 +22,27 @@ class Alojamiento{
    * Métodos get de la clase Alojamiento
    */
 
-  get nombre(){
+  get _nombre(){
     return this.nombre;
   }
 
-  get descripcion(){
+  get _descripcion(){
     return this.descripcion;
   }
 
-  get tipo(){
+  get _tipo(){
     return this.tipo;
   }
 
-  get localizacion(){
+  get _localizacion(){
     return this.localizacion;
   }
 
-  get coordenadas(){
+  get _coordenadas(){
     return this.coordenadas;
   }
 
-  get valoracion(){
+  get _valoracion(){
     return this.valoracion;
   }
 
@@ -50,27 +50,27 @@ class Alojamiento{
    * Métodos set de la clase Alojamiento
    */
 
-   set nombre(nuevo_nombre){
+   set _nombre(nuevo_nombre){
      this.nombre = nuevo_nombre;
    }
 
-   set descripcion(nueva_descripcion){
+   set _descripcion(nueva_descripcion){
      this.descripcion = nueva_descripcion;
    }
 
-   set tipo(nuevo_tipo){
+   set _tipo(nuevo_tipo){
      this.tipo = nuevo_tipo;
    }
 
-   set localizacion(nueva_localizacion){
+   set _localizacion(nueva_localizacion){
      this.localizacion = nueva_localizacion;
    }
 
-   set coordenadas(nuevas_coordenadas){
+   set _coordenadas(nuevas_coordenadas){
      this.coordenadas = nuevas_coordenadas;
    }
 
-   set valoracion(nueva_valoracion){
+   set _valoracion(nueva_valoracion){
      this.valoracion = nueva_valoracion;
    }
 }

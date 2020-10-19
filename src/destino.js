@@ -1,5 +1,5 @@
 const Alojamiento = require("./alojamiento.js");
-const Punto_interes = require("./puntos_interes.js");
+const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 
 class Destino{
@@ -35,43 +35,43 @@ class Destino{
    * Métodos get de la clase Destino
    */
 
-  get nombre(){
+  get _nombre(){
     return this.nombre;
   }
 
-  get descripcion(){
+  get _descripcion(){
     return this.descripcion;
   }
 
-  get pais(){
+  get _pais(){
     return this.pais;
   }
 
-  get poblacion(){
+  get _poblacion(){
     return this.poblacion;
   }
 
-  get gentilicio(){
+  get _gentilicio(){
     return this.gentilicio;
   }
 
-  get sitio_web(){
+  get _sitio_web(){
     return this.sitio_web;
   }
 
-  get valoracion(){
+  get _valoracion(){
     return this.valoracion;
   }
 
-  get alojamientos(){
+  get _alojamientos(){
     return this.alojamientos;
   }
 
-  get puntos_interes(){
+  get _puntos_interes(){
     return this.puntos_interes;
   }
 
-  get transportes(){
+  get _transportes(){
     return this.transportes;
   }
 
@@ -79,60 +79,50 @@ class Destino{
    * Métodos set de la clase Destino
    */
 
-   set nombre(nuevo_nombre){
-     this.nombre = nuevo_nombre;
-   }
+  set _nombre(nuevo_nombre){
+    this.nombre = nuevo_nombre;
+  }
 
-   set descripcion(nueva_descripcion){
-     this.descripcion = nueva_descripcion;
-   }
+  set _descripcion(nueva_descripcion){
+    this.descripcion = nueva_descripcion;
+  }
 
-   set pais(nuevo_pais){
-     this.pais = nuevo_pais;
-   }
+  set _pais(nuevo_pais){
+    this.pais = nuevo_pais;
+  }
 
-   set poblacion(nueva_poblacion){
-     this.poblacion = nueva_poblacion;
-   }
+  set _poblacion(nueva_poblacion){
+    this.poblacion = nueva_poblacion;
+  }
 
-   set gentilicio(nuevo_gentilicio){
-     this.gentilicio = nuevo_gentilicio;
-   }
+  set _gentilicio(nuevo_gentilicio){
+    this.gentilicio = nuevo_gentilicio;
+  }
 
-   set sitio_web(nuevo_sitio_web){
-     this.sitio_web = nuevo_sitio_web;
-   }
+  set _sitio_web(nuevo_sitio_web){
+    this.sitio_web = nuevo_sitio_web;
+  }
 
-   set valoracion(nueva_valoracion){
-     this.valoracion = nueva_valoracion;
-   }
+  set _valoracion(nueva_valoracion){
+    this.valoracion = nueva_valoracion;
+  }
 
-   set alojamientos(nuevos_alojamientos){
-     this.alojamientos = nuevos_alojamientos;
-   }
+  set _alojamientos(nuevos_alojamientos){
+    this.alojamientos = nuevos_alojamientos;
+  }
 
-   set puntos_interes(nuevos_puntos_interes){
-     this.puntos_interes = nuevos_puntos_interes;
-   }
+  set _puntos_interes(nuevos_puntos_interes){
+    this.puntos_interes = nuevos_puntos_interes;
+  }
 
-   set transportes(nuevos_transportes){
-     this.transportes = nuevos_transportes;
-   }
+  set _transportes(nuevos_transportes){
+    this.transportes = nuevos_transportes;
+  }
 
-   /**
-    * [HU002] Método que muestra por pantalla toda la información relacionada con el destino
-    */
-   function mostrarDestino(){
-     console.log("Nombre: " + nombre() + "\n" +
-                 "Descripción: " + descripcion() + "\n" +
-                 "Pais: " + pais() + "\n" +
-                 "Población: " + poblacion() + "\n" +
-                 "Sitio web: " + sitio_web() + "\n" +
-                 "Valoración: " + valoracion() + "\n" +
-                 "Alojamientos: " + alojamiento() + "\n" +
-                 "Puntos de interés: " + puntos_interes() + "\n" +
-                 "Transportes: " + transportes() + "\n");
-   }
+  /**
+  * [HU002] Método que muestra por pantalla toda la información relacionada con el destino
+  */
+
 }
 
 module.exports = Destino;

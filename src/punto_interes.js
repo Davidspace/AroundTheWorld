@@ -20,23 +20,23 @@ class Punto_interes{
    * Métodos get de la clase Punto_interes
    */
 
-  get nombre(){
+  get _nombre(){
     return this.nombre;
   }
 
-  get descripcion(){
+  get _descripcion(){
     return this.descripcion;
   }
 
-  get localizacion(){
+  get _localizacion(){
     return this.localizacion;
   }
 
-  get coordenadas(){
+  get _coordenadas(){
     return this.coordenadas;
   }
 
-  get valoracion(){
+  get _valoracion(){
     return this.valoracion;
   }
 
@@ -44,23 +44,23 @@ class Punto_interes{
    * Métodos set de la clase Punto_interes
    */
 
-   set nombre(nuevo_nombre){
+   set _nombre(nuevo_nombre){
      this.nombre = nuevo_nombre;
    }
 
-   set descripcion(nueva_descripcion){
+   set _descripcion(nueva_descripcion){
      this.descripcion = nueva_descripcion;
    }
 
-   set localizacion(nueva_localizacion){
+   set _localizacion(nueva_localizacion){
      this.localizacion = nueva_localizacion;
    }
 
-   set coordenadas(nuevas_coordenadas){
+   set _coordenadas(nuevas_coordenadas){
      this.coordenadas = nuevas_coordenadas;
    }
 
-   set valoracion(nueva_valoracion){
+   set _valoracion(nueva_valoracion){
      this.valoracion = nueva_valoracion;
    }
 }
