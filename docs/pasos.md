@@ -25,6 +25,7 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 - Elección y adición a mi proyecto de una [herramienta de construcción](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) adecuada: [Gulp](https://gulpjs.com/).
 - Incluidas las nuevas dependencias del proyecto al fichero [package.json](https://github.com/Davidspace/AroundTheWorld/blob/master/package.json).
 - Creación del fichero [gulpfile.js](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js), cuyo objetivo es automatizar las tareas de instalación y testeo
+- Desarrollo de las clases de mi proyecto, incluido la implementación de las funciones correspondientes a las [historias de usuario](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories)
 
 
 
