@@ -1,3 +1,7 @@
+const Alojamiento = require("./alojamiento.js");
+const Punto_interes = require("./puntos_interes.js");
+const Transporte = require("./transporte.js");
+
 class Destino{
 
   /**
