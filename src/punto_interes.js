@@ -64,3 +64,5 @@ class Punto_interes{
      this.valoracion = nueva_valoracion;
    }
 }
+
+module.exports = Punto_interes;

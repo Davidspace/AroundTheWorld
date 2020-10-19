@@ -74,3 +74,5 @@ class Alojamiento{
      this.valoracion = nueva_valoracion;
    }
 }
+
+module.exports = Alojamiento;

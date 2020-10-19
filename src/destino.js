@@ -116,7 +116,7 @@ class Destino{
    }
 
    /**
-    * [HU002] Método que muestra por pantalla toda la información relacionada con el destino 
+    * [HU002] Método que muestra por pantalla toda la información relacionada con el destino
     */
    function mostrarDestino(){
      console.log("Nombre: " + nombre() + "\n" +
@@ -130,3 +130,5 @@ class Destino{
                  "Transportes: " + transportes() + "\n");
    }
 }
+
+module.exports = Destino;

@@ -84,3 +84,5 @@ class Transporte{
      this.hora_fin = nueva_hora_fin;
    }
 }
+
+module.exports = Transporte;
