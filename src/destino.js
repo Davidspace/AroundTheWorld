@@ -114,4 +114,19 @@ class Destino{
    set transportes(nuevos_transportes){
      this.transportes = nuevos_transportes;
    }
+
+   /**
+    * [HU002] Método que muestra por pantalla toda la información relacionada con el destino 
+    */
+   function mostrarDestino(){
+     console.log("Nombre: " + nombre() + "\n" +
+                 "Descripción: " + descripcion() + "\n" +
+                 "Pais: " + pais() + "\n" +
+                 "Población: " + poblacion() + "\n" +
+                 "Sitio web: " + sitio_web() + "\n" +
+                 "Valoración: " + valoracion() + "\n" +
+                 "Alojamientos: " + alojamiento() + "\n" +
+                 "Puntos de interés: " + puntos_interes() + "\n" +
+                 "Transportes: " + transportes() + "\n");
+   }
 }
