@@ -134,7 +134,7 @@ class Destino{
                           "Valoración: " + valoracion() + "\n" +
                           "Alojamientos: " + alojamiento() + "\n" +
                           "Puntos de interés: " + puntos_interes() + "\n" +
-                          "Transportes: " + transportes() + "\n");
+                          "Transportes: " + transportes() + "\n";
                       
     return informacion_destino;
   }
