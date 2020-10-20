@@ -91,7 +91,7 @@ describe("Testeando las funciones incluidas en destino.js con la interfaz ASSERT
       expect(informacion_destino[6]).to.equal(destinos[0]._valoracion);
       expect(informacion_destino[7]).to.equal(destinos[0]._alojamientos);
       expect(informacion_destino[8]).to.equal(destinos[0]._puntos_interes);
-      expect(informacion_destino[9]).to.equal(destinos[0].transportes);
+      expect(informacion_destino[9]).to.equal(destinos[0]._transportes);
 
       var informacion_length = informacion_destino.length;
             
