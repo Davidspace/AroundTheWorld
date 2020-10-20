@@ -124,15 +124,19 @@ class Destino{
   */
 
   mostrarDestino(){
-    console.log("Nombre: " + nombre() + "\n" +
-                "Descripción: " + descripcion() + "\n" +
-                "Pais: " + pais() + "\n" +
-                "Población: " + poblacion() + "\n" +
-                "Sitio web: " + sitio_web() + "\n" +
-                "Valoración: " + valoracion() + "\n" +
-                "Alojamientos: " + alojamiento() + "\n" +
-                "Puntos de interés: " + puntos_interes() + "\n" +
-                "Transportes: " + transportes() + "\n");
+    var informacion_destino;
+
+    informacion_destino = "Nombre: " + nombre() + "\n" +
+                          "Descripción: " + descripcion() + "\n" +
+                          "Pais: " + pais() + "\n" +
+                          "Población: " + poblacion() + "\n" +
+                          "Sitio web: " + sitio_web() + "\n" +
+                          "Valoración: " + valoracion() + "\n" +
+                          "Alojamientos: " + alojamiento() + "\n" +
+                          "Puntos de interés: " + puntos_interes() + "\n" +
+                          "Transportes: " + transportes() + "\n");
+                      
+    return informacion_destino;
   }
 }
 
