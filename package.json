@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -22,10 +22,6 @@
   "homepage": "https://github.com/Davidspace/AroundTheWorld#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "jest": "^26.5.3"
-  },
-  "dependencies": {
-    "gulp-jest": "^4.0.3",
-    "jest-cli": "^26.6.0"
+    "mocha": "^8.2.0"
   }
 }

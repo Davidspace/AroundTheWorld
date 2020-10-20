@@ -32,7 +32,7 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 
 - **Framework para aplicaciones web:** [Sails](https://sailsjs.com/). 
 
-- **Framework de testeo:** [Jest](https://jestjs.io/).
+- **Framework de testeo:** [Mocha](https://mochajs.org/).
 
 - **Base de datos:** [PostgreSQL](https://www.postgresql.org/).
 
