@@ -7,8 +7,7 @@
     "doc": "docs",
     "test": "test"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Davidspace/AroundTheWorld.git"
@@ -20,6 +19,7 @@
   },
   "homepage": "https://github.com/Davidspace/AroundTheWorld#readme",
   "devDependencies": {
+    "chai": "^4.2.0",
     "gulp": "^4.0.2",
     "mocha": "^8.2.0"
   }
