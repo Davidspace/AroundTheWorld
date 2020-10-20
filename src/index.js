@@ -47,7 +47,7 @@ destinos.push(new Destino("Guadix", "Guadix es el segundo mejor pueblo que exist
                           transportes_guadix));
 
 /**
- * [HU001] Método que muestra por pantalla el nombre de todos los destinos disponibles
+ * [HU001] Función que muestra por pantalla el nombre de todos los destinos disponibles
  */
 function mostrar_destinos(){
   for (destino in destinos){
