@@ -1,5 +1,6 @@
-function defaultTask(cb){
-  cb();
-}
+var gulp = require('gulp');
 
-exports.default = defaultTask
+
+gulp.task('default', function(){
+  console.log('Hello world!');
+});

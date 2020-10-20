@@ -23,5 +23,9 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "jest": "^26.5.3"
+  },
+  "dependencies": {
+    "gulp-jest": "^4.0.3",
+    "jest-cli": "^26.6.0"
   }
 }
