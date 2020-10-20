@@ -13,3 +13,10 @@ gulp.task('test', async function(){
   gulp.src(['test/*.js'])
   .pipe(mocha());
 });
+
+/** Tarea que se ejecutará por defecto */
+gulp.task('default', async function(){
+  console.log("Use gulp <tarea> para ejecutar una tarea. Las tareas disponibles son: \n\n"
+              + "Instalar las dependencias ------> gulp install \n"
+              + "Ejecutar los tests unitarios ---> gulp test \n")
+});
