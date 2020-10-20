@@ -56,7 +56,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
 
     it("Comprobando que se muestra el listado de destinos correctamente", function(done){
       /** Mostramos los destinos */
-      var destinos_mostrados = Index.mostrar_destinos(destinos);
+      var destinos_mostrados = Index.mostrar_destinos();
 
       /** Comprobamos que se muestran como destinos Baza y Guadix */
       expect(destinos_mostrados[0]).to.equal('Baza');

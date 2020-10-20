@@ -10,14 +10,14 @@ var destinos = [];
 /**
  * [HU001] Función que muestra por pantalla el nombre de todos los destinos disponibles
  */
-function mostrar_destinos(destinos){
+function mostrar_destinos(){
   var nombre_destinos;
 
-  for (destino in destinos){
+  for (destino of destinos){
     nombre_destinos.push(destino.nombre());
   }
 
   return nombre_destinos;
 }
 
-module.exports = mostrar_destinos;
+module.exports = {mostrar_destinos};
