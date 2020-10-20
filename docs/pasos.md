@@ -3,30 +3,55 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 
 ## Hito 0: Git y GitHub para entrega de hitos del proyecto.
 - [Puesta a punto](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/configGit.md) de mi perfil de GitHub.
+
 - Fork del repositorio de la asignatura.
+
 - Creación de un par de claves pública-privada.
+
 - Creación del repositorio de mi proyecto (README.md, LICENSE, .gitignore, docs).
+
 - Descripción general del proyecto en el fichero [README.md](https://github.com/Davidspace/AroundTheWorld/blob/master/README.md).
+
 - Configuración local de git.
 
 ## Hito 1: Estructura general del proyecto.
 - Creación de [milestones](https://github.com/Davidspace/AroundTheWorld/milestones), [historias de usuario](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories) e [issues](https://github.com/Davidspace/AroundTheWorld/issues). 
+
 - Determinar las [herramientas y servicios](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) que voy a utilizar en mi proyecto.
+
 - Creación de un [directorio para los códigos fuente](https://github.com/Davidspace/AroundTheWorld/tree/master/lib).
+
 - Creación del boceto de la [estructura general del proyecto](https://github.com/Davidspace/AroundTheWorld/tree/master/lib).
+
 - Creación del fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml) e introducción de la información requerida.
+
 - Completar la [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/README.md) con la información disponible actualmente sobre el proyecto.
 
 ## Hito 2: Tests
 - Creación del directorio en el que se almacenarán los [tests](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
+
 - Creación del fichero [package.json](https://github.com/Davidspace/AroundTheWorld/blob/master/package.json) para la instalación y arranque del microservicio.
+
 - Adición a mi proyecto del [marco de testeo](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) elegido para ser usado: [Mocha](https://mochajs.org/).
+
 - Creación del [fichero fuente principal](https://github.com/Davidspace/AroundTheWorld/blob/master/src/index.js) de la aplicación.
+
 - Elección y adición a mi proyecto de una [herramienta de construcción](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) adecuada: [Gulp](https://gulpjs.com/).
+
 - Incluidas las nuevas dependencias del proyecto al fichero [package.json](https://github.com/Davidspace/AroundTheWorld/blob/master/package.json).
-- Creación del fichero [gulpfile.js](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js), cuyo objetivo es automatizar las tareas de instalación y testeo
-- Desarrollo de las clases de mi proyecto, incluido la implementación de las funciones correspondientes a las [historias de usuario](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories)
+
+- Creación del fichero [gulpfile.js](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js), cuyo objetivo es automatizar las tareas de instalación y testeo.
+
+- Desarrollo de las clases de mi proyecto, incluido la implementación de las funciones correspondientes a las [historias de usuario](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
+
 - Adición a mi proyecto de la [libreria de aserciones] elegida para ser usada junto a [Mocha](https://mochajs.org/): [Chai](https://www.chaijs.com/).
+
+- Implementación de la automatización de las tareas de instalación de dependencias y ejecución de tests unitarios.
+
+- Implementación de los tests unitarios.
+
+- Completar la [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/README.md) con la información disponible actualmente sobre el proyecto.
+
 
 
 
