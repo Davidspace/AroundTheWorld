@@ -52,9 +52,9 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
          + "libreria de aserciones CHAI", function(){
   
   /** Testeamos la función correspondiente a HU001 */
-  describe("Testeando el método mostrar_destinos [HU001]", function(done){
+  describe("Testeando el método mostrar_destinos [HU001]", function(){
 
-    it("Comprobando que se muestra el listado de destinos correctamente", function(){
+    it("Comprobando que se muestra el listado de destinos correctamente", function(done){
       /** Mostramos los destinos */
       var destinos_mostrados = Index.mostrar_destinos(destinos);
 
@@ -66,6 +66,35 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
             
       /** Comprobamos que hay dos destinos */
       expect(destinos_length).to.equal(2);
+      done();
+    });
+  });      
+});
+
+
+describe("Testeando las funciones incluidas en destino.js con la interfaz ASSERT de la "
+         + "libreria de aserciones CHAI", function(){
+  
+  /** Testeamos la función correspondiente a HU002 */
+  describe("Testeando el método mostrar_destino [HU002]", function(){
+
+    it("Comprobando que se muestra la información del destino correctamente", function(done){
+      /** Mostramos la información del destino */
+      var informacion_destino = destinos[0].mostrar_destino();
+
+      /** Comprobamos que se muestra la información de Baza*/
+      expect(informacion_destino[0]).to.equal('Baza');
+      expect(informacion_destino[0]).to.equal('Baza es el mejor pueblo que existe');
+      expect(informacion_destino[0]).to.equal('España');
+      expect(informacion_destino[0]).to.equal(25000);
+      expect(informacion_destino[0]).to.equal('Bastetano');
+      expect(informacion_destino[0]).to.equal('www.baza.com');
+      expect(informacion_destino[0]).to.equal(9.2);
+
+      var informacion_length = informacion_destino.length;
+            
+      /** Comprobamos que hay 10 datos */
+      expect(informacion_length).to.equal(10);
       done();
     });
   });      
