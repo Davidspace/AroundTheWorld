@@ -58,14 +58,14 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
       /** Mostramos los destinos */
       var destinos_mostrados = Index.mostrar_destinos(destinos);
 
-      /** Comprobamos que se muestran como destinos Baza y Guadix */
-      expect(destinos_mostrados[0]).to.equal('Baza');
-      expect(destinos_mostrados[1]).to.equal('Guadix');
+      /** Construimos el string que esperamos obtener */
 
-      var destinos_length = destinos_mostrados.length;
-            
-      /** Comprobamos que hay dos destinos */
-      expect(destinos_length).to.equal(2);
+      destinos_esperados = "Los destinos disponibles son: \n\n"
+                           + "Baza\n"
+                           + "Guadix\n";
+
+      /** Comprobamos que se muestran como destinos Baza y Guadix */
+      expect(destinos_mostrados).to.equal(destinos_esperados);
       done();
     });
   });      
