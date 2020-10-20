@@ -51,6 +51,16 @@ destinos.push(new Destino("Guadix", "Guadix es el segundo mejor pueblo que exist
  * [HU001] Función que muestra por pantalla el nombre de todos los destinos disponibles
  */
 function mostrar_destinos(){
+  /**
+   * var nombre_destinos = "Los destinos disponibles son: \n\n";
+   * 
+   * for (destino in destinos){
+   *   nombre_destinos += destino._nombre + "\n";
+   * }
+   * 
+   * console.log(nombre_destinos);
+   */
+
   var nombre_destinos = [];
 
   for (destino of destinos){

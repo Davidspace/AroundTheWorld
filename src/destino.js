@@ -124,8 +124,6 @@ class Destino{
   */
 
   mostrar_destino(){
-    var informacion_destino = [];
-
     /**
      * var informacion_destino;
      * 
@@ -142,6 +140,8 @@ class Destino{
      * 
      * console.log(informacion_destino);
      */
+
+    var informacion_destino = [];
 
     informacion_destino.push((this._nombre));
     informacion_destino.push((this._descripcion));
