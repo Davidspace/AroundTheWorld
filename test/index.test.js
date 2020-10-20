@@ -1,8 +1,5 @@
 var expect = require("chai").expect;
-const Alojamiento = require("../src/alojamiento.js");
-const Punto_interes = require("../src/punto_interes.js");
-const Transporte = require("../src/transporte.js");
-const Destino = require("../src/destino.js");
+
 const Index = require("../src/index.js");
 
 describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT de la "
