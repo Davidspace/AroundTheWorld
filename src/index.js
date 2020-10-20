@@ -54,7 +54,7 @@ function mostrar_destinos(){
   var nombre_destinos;
 
   for (destino of destinos){
-    nombre_destinos.push(destino.nombre());
+    nombre_destinos.push(destino._nombre);
   }
 
   return nombre_destinos;
