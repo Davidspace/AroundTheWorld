@@ -52,11 +52,11 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
          + "libreria de aserciones CHAI", function(){
   
   /** Testeamos la función correspondiente a HU001 */
-  describe("Testeando el método mostrar_destinos [HU001]", function(){
+  describe("Testeando el método mostrar_destinos [HU001]", function(done){
 
     it("Comprobando que se muestra el listado de destinos correctamente", function(){
       /** Mostramos los destinos */
-      var destinos_mostrados = Index.mostrar_destinos();
+      var destinos_mostrados = Index.mostrar_destinos(destinos);
 
       /** Comprobamos que se muestran como destinos Baza y Guadix */
       expect(destinos_mostrados[0]).to.equal('Baza');
@@ -66,6 +66,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
             
       /** Comprobamos que hay dos destinos */
       expect(destinos_length).to.equal(2);
+      done();
     });
   });      
 });

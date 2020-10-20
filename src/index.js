@@ -10,7 +10,7 @@ var destinos = [];
 /**
  * [HU001] Función que muestra por pantalla el nombre de todos los destinos disponibles
  */
-function mostrar_destinos(){
+function mostrar_destinos(destinos){
   var nombre_destinos;
 
   for (destino in destinos){
