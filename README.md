@@ -34,6 +34,8 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 
 - **Framework de testeo:** [Mocha](https://mochajs.org/).
 
+- **Libreria de aserciones:** [Chai](https://www.chaijs.com/)
+
 - **Base de datos:** [PostgreSQL](https://www.postgresql.org/).
 
 - **Servicio de log:** [Winston](https://github.com/winstonjs/winston).
