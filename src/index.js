@@ -19,3 +19,5 @@ function mostrar_destinos(destinos){
 
   return nombre_destinos;
 }
+
+module.exports = Index;
