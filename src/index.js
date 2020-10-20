@@ -11,10 +11,10 @@ var destinos = [];
  * [HU001] Función que muestra por pantalla el nombre de todos los destinos disponibles
  */
 function mostrar_destinos(){
-  var nombre_destinos = "Destinos disponibles: \n\n";
+  var nombre_destinos;
 
   for (destino in destinos){
-    nombre_destinos += destino.nombre() + "\n";
+    nombre_destinos.push(destino.nombre());
   }
 
   return nombre_destinos;
