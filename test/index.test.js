@@ -82,13 +82,16 @@ describe("Testeando las funciones incluidas en destino.js con la interfaz ASSERT
       var informacion_destino = destinos[0].mostrar_destino();
 
       /** Comprobamos que se muestra la información de Baza*/
-      expect(informacion_destino[0]).to.equal('Baza');
-      expect(informacion_destino[0]).to.equal('Baza es el mejor pueblo que existe');
-      expect(informacion_destino[0]).to.equal('España');
-      expect(informacion_destino[0]).to.equal(25000);
-      expect(informacion_destino[0]).to.equal('Bastetano');
-      expect(informacion_destino[0]).to.equal('www.baza.com');
-      expect(informacion_destino[0]).to.equal(9.2);
+      expect(informacion_destino[0]).to.equal(destinos[0]._nombre);
+      expect(informacion_destino[1]).to.equal(destinos[0]._descripcion);
+      expect(informacion_destino[2]).to.equal(destinos[0]._pais);
+      expect(informacion_destino[3]).to.equal(destinos[0]._poblacion);
+      expect(informacion_destino[4]).to.equal(destinos[0]._gentilicio);
+      expect(informacion_destino[5]).to.equal(destinos[0]._sitio_web);
+      expect(informacion_destino[6]).to.equal(destinos[0]._valoracion);
+      expect(informacion_destino[7]).to.equal(destinos[0]._alojamientos);
+      expect(informacion_destino[8]).to.equal(destinos[0]._puntos_interes);
+      expect(informacion_destino[9]).to.equal(destinos[0].transportes);
 
       var informacion_length = informacion_destino.length;
             

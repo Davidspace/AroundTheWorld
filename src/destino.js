@@ -124,29 +124,35 @@ class Destino{
   */
 
   mostrar_destino(){
-    var informacion_destino;
+    var informacion_destino = [];
 
     /**
-    informacion_destino = "Nombre: " + Destino._nombre + "\n" +
-                          "Descripción: " + Destino._descripcion + "\n" +
-                          "Pais: " + Destino._pais + "\n" +
-                          "Población: " + Destino._poblacion + "\n" +
-                          "Sitio web: " + Destino._sitio_web + "\n" +
-                          "Valoración: " + Destino._valoracion + "\n" +
-                          "Alojamientos: " + Destino._alojamiento + "\n" +
-                          "Puntos de interés: " + Destino._puntos_interes + "\n" +
-                          "Transportes: " + Destino._transportes + "\n";
-    */
+     * var informacion_destino;
+     * 
+     * informacion_destino = "Nombre: " + this._nombre + "\n" +
+     *                       "Descripción: " + this._descripcion + "\n" +
+     *                       "Pais: " + this._pais + "\n" +
+     *                       "Población: " + this._poblacion + "\n" +
+     *                       "Gentilicio: " + this._gentilicio + "\n" +
+     *                       "Sitio web: " + this._sitio_web + "\n" +
+     *                       "Valoración: " + this._valoracion + "\n" +
+     *                       "Alojamientos: " + this._alojamiento + "\n" +
+     *                       "Puntos de interés: " + this._puntos_interes + "\n" +
+     *                       "Transportes: " + this._transportes + "\n";
+     * 
+     * console.log(informacion_destino);
+     */
 
-    informacion_destino.push((Destino._nombre));
-    informacion_destino.push((Destino._descripcion));
-    informacion_destino.push((Destino._pais));
-    informacion_destino.push((Destino._poblacion));
-    informacion_destino.push((Destino._sitio_web));
-    informacion_destino.push((Destino._valoracion));
-    informacion_destino.push((Destino._alojamiento));
-    informacion_destino.push((Destino._puntos_interes));
-    informacion_destino.push((Destino._transportes));
+    informacion_destino.push((this._nombre));
+    informacion_destino.push((this._descripcion));
+    informacion_destino.push((this._pais));
+    informacion_destino.push((this._poblacion));
+    informacion_destino.push((this._gentilicio));
+    informacion_destino.push((this._sitio_web));
+    informacion_destino.push((this._valoracion));
+    informacion_destino.push((this._alojamientos));
+    informacion_destino.push((this._puntos_interes));
+    informacion_destino.push((this._transportes));
                       
     return informacion_destino;
   }
