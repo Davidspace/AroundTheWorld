@@ -3,7 +3,7 @@ const Alojamiento = require("../src/alojamiento.js");
 const Punto_interes = require("../src/punto_interes.js");
 const Transporte = require("../src/transporte.js");
 const Destino = require("../src/destino.js");
-const Index = require('../src/index.js');
+const Index = require("../src/index.js");
 
 /** Debido a que aún no cuento con una BD, usaré arrays globales para que actuen como tal */
 var alojamientos_baza = [];
@@ -52,7 +52,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
          + "libreria de aserciones CHAI", function(){
   
   /** Testeamos la función correspondiente a HU001 */
-  describe("Testeando el método mostrar_destinos", function mostrar_destinos(){
+  describe("Testeando el método mostrar_destinos [HU001]", function(){
 
     it("Comprobando que se muestra el listado de destinos correctamente", function(){
       /** Mostramos los destinos */
