@@ -52,14 +52,14 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 
 - Las **historias de usuario** activas en este momento pueden consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
 
-- Los **issues abiertos** en este momento del desarrollo del proyecto pueden ser consultados [aqui]((https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue).
+- Los **issues abiertos** en este momento del desarrollo del proyecto pueden ser consultados [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue).
 
 - Los **issues cerrados** que han dado pie al estado actual del proyecto pueden ser consultados [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aissue+is%3Aclosed).
 
 - Los **pasos seguidos en el desarrollo del proyecto** pueden ser examinados [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md).
 
 ## Código fuente
-- Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src)
+- Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
 
 - La **clase principal** del proyecto es la clase **Destino**. Esta clase se puede consultar [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/destino.js).
 
@@ -69,14 +69,14 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 Clicka en el siguiente enlace para acceder al fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml), cuya finalidad es especificar ficheros y otros parámetros de configuración para test.
 
 ## Fichero para automatización de tareas
-El fichero designado para configurar la **automatización de tareas** por parte de **Gulp** es el denominado **gulpfile.js**. Puedes acceder a su contenido clickando [aqui]()
+El fichero designado para configurar la **automatización de tareas** por parte de **Gulp** es el denominado **gulpfile.js**. Puedes acceder a su contenido clickando [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js).
 
 ## Ficheros de test
 - El directorio donde se localizan los ficheros de test se denomina [test](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
 
-- El fichero que contiene los tests relacionados con el fichero fuente principal se denomina [index.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/index.test.js)
+- El fichero que contiene los tests relacionados con el fichero fuente principal se denomina [index.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/index.test.js).
 
-- El fichero que contiene los tests relacionados con la clase principal se denomina [destino.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/destino.test.js) 
+- El fichero que contiene los tests relacionados con la clase principal se denomina [destino.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/destino.test.js).
 
 ## Autor
 [David García Martínez](https://github.com/Davidspace)
