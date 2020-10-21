@@ -124,24 +124,32 @@ function anadir_peticion_alojamiento(nuevo_alojamiento, destino){
  *                            punto de interés sobre el que se enviará la petición
  */
 function anadir_peticion_punto_interes(nuevo_punto_interes, destino){
-  for (punto_interes of destino._puntos_interes){
-    if (punto_interes._nombre == nuevo_punto_interes._nombre){
-      /** console.log("El punto de interés con nombre " + nuevo_punto_interes._nombre + 
-       *              "ya figura en la base de datos \n"); */
+  var duplicado = false;
 
-      throw new Error ('Punto de interés ya existente');
+  for (var i = 0; i < destino._puntos_interes.length && !duplicado; i++){
+    if ((destino._puntos_interes)[i]._nombre == nuevo_punto_interes._nombre){
+      duplicado = true;
     }
   }
 
-  var peticion = [];
+  if (!duplicado){
+    var peticion = [];
 
-  peticion.push(nuevo_punto_interes);
-  peticion.push(destino);
+    peticion.push(nuevo_punto_interes);
+    peticion.push(destino);
 
-  peticiones_puntos_interes.push(peticion);
+    peticiones_puntos_interes.push(peticion);
 
-  /** console.log("La petición para la adición del punto de interés con nombre 
-   *              " + nuevo_punto_interes._nombre + " ha sido añadida correctamente \n"); */
+    /** console.log("La petición para la adición del punto de interés con nombre 
+     *              " + nuevo_punto_interes._nombre + " ha sido añadida correctamente \n"); */
+  }
+
+  else{
+    /** console.log("El punto de interés con nombre " + nuevo_punto_interes._nombre + 
+     *              "ya figura en la base de datos \n"); */
+  }
+
+  return duplicado;
 }
 
 /**
