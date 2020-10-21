@@ -41,5 +41,24 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
       expect(duplicado).to.equal(false);
       done();
     });
-  });      
+  });
+  
+  /** Testeamos la función correspondiente a HU004 */
+  describe("Testeando el método anadir_peticion_punto_interes [HU004]", function(){
+
+    it("Comprobando que se envia la petición correctamente", function(done){
+      /** Creamos el punto de interés que queremos añadir al destino */
+      var punto_interes_test = new Punto_interes("Plaza de testeo", "La más testeada", "Testilandia",
+      "37.3023222 ,-3.1132736", "9.9");
+                                            
+      /** Enviamos la petición */
+      var duplicado = Index.anadir_peticion_punto_interes(punto_interes_test, Index.destinos[0]);
+
+      /** Si la variable duplicado el false, significa que no existia otro punto de interés con ese nombre
+       *  y la petición ha sido enviada correctamente
+       */
+      expect(duplicado).to.equal(false);
+      done();
+    });
+  });
 });
