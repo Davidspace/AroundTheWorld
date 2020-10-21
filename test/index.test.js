@@ -1,5 +1,6 @@
 var expect = require("chai").expect;
 
+const Alojamiento = require("../src/alojamiento.js");
 const Index = require("../src/index.js");
 
 describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT de la "
@@ -32,12 +33,12 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
                                              "Testelandia", "37.4883337, -2.7229805", "10.0");
                                             
       /** Enviamos la petición */
-      var duplicado = anadir_peticion_alojamiento(alojamiento_test, Index.destinos[0]);
+      var duplicado = Index.anadir_peticion_alojamiento(alojamiento_test, Index.destinos[0]);
 
       /** Si la variable duplicado el false, significa que no existia otro alojamiento con ese nombre
        *  y la petición ha sido enviada correctamente
        */
-      expect(enviada).to.equal(false);
+      expect(duplicado).to.equal(false);
       done();
     });
   });      

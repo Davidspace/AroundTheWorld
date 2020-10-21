@@ -190,4 +190,8 @@ function anadir_peticion_transporte(nuevo_transporte, destino){
   return duplicado;
 }
 
-module.exports = {mostrar_destinos};
+module.exports = {destinos,
+                  mostrar_destinos,
+                  anadir_peticion_alojamiento,
+                  anadir_peticion_punto_interes,
+                  anadir_peticion_transporte};
