@@ -21,5 +21,24 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
       expect(destinos_length).to.equal(2);
       done();
     });
+  });
+  
+  /** Testeamos la función correspondiente a HU003 */
+  describe("Testeando el método anadir_peticion_alojamiento [HU003]", function(){
+
+    it("Comprobando que se envia la petición correctamente", function(done){
+      /** Creamos el alojamiento que queremos añadir al destino */
+      var alojamiento_test = new Alojamiento("Hotel de testeo", "Testeando", "Hotel",
+                                             "Testelandia", "37.4883337, -2.7229805", "10.0");
+                                            
+      /** Enviamos la petición */
+      var duplicado = anadir_peticion_alojamiento(alojamiento_test, Index.destinos[0]);
+
+      /** Si la variable duplicado el false, significa que no existia otro alojamiento con ese nombre
+       *  y la petición ha sido enviada correctamente
+       */
+      expect(enviada).to.equal(false);
+      done();
+    });
   });      
 });
