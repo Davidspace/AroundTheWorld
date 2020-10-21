@@ -133,4 +133,36 @@ function anadir_peticion_punto_interes(nuevo_punto_interes, destino){
    *              " + nuevo_punto_interes._nombre + " ha sido añadida correctamente \n"); */
 }
 
+
+/**
+ * [HU005] Método que permite enviar un nuevo transporte como petición 
+ * para que sea añadido al listado del destino seleccionado
+ * 
+ * @param {Transporte} nuevo_transporte - Transporte sobre el cual se realizará la petición 
+ *                                        para que sea añadido al listado del destino seleccionado
+ * 
+ * @param {Destino} destino - Destino cuyo listado de transportes es donde se desea añadir el 
+ *                            transporte sobre el que se enviará la petición
+ */
+function anadir_peticion_transporte(nuevo_transporte, destino){
+  for (transporte of destino._transportes){
+    if (transporte._nombre == nuevo_transporte._nombre){
+      /** console.log("El transporte con nombre " + nuevo_transporte._nombre + 
+       *              "ya figura en la base de datos \n"); */
+
+      throw new Error ('transporte ya existente');
+    }
+  }
+
+  var peticion = [];
+
+  peticion.push(nuevo_transporte);
+  peticion.push(destino);
+
+  peticiones_transporte.push(peticion);
+
+  /** console.log("La petición para la adición del transporte con nombre " + nuevo_transporte._nombre + 
+  *              "ha sido añadida correctamente \n"); */
+}
+
 module.exports = {mostrar_destinos};
