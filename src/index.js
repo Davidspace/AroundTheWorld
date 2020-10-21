@@ -102,4 +102,35 @@ function anadir_peticion_alojamiento(nuevo_alojamiento, destino){
   *              "ha sido añadida correctamente \n"); */
 }
 
+/**
+ * [HU004] Método que permite enviar un nuevo punto de interés como petición 
+ * para que sea añadido al listado del destino seleccionado
+ * 
+ * @param {Punto_interes} nuevo_punto_interes - Punto de interés sobre el cual se realizará la petición 
+ *                                              para que sea añadido al listado del destino seleccionado
+ * 
+ * @param {Destino} destino - Destino cuyo listado de puntos de interés es donde se desea añadir el 
+ *                            punto de interés sobre el que se enviará la petición
+ */
+function anadir_peticion_punto_interes(nuevo_punto_interes, destino){
+  for (punto_interes of destino._puntos_interes){
+    if (punto_interes._nombre == nuevo_punto_interes._nombre){
+      /** console.log("El punto de interés con nombre " + nuevo_punto_interes._nombre + 
+       *              "ya figura en la base de datos \n"); */
+
+      throw new Error ('Punto de interés ya existente');
+    }
+  }
+
+  var peticion = [];
+
+  peticion.push(nuevo_punto_interes);
+  peticion.push(destino);
+
+  peticiones_puntos_interes.push(peticion);
+
+  /** console.log("La petición para la adición del punto de interés con nombre 
+   *              " + nuevo_punto_interes._nombre + " ha sido añadida correctamente \n"); */
+}
+
 module.exports = {mostrar_destinos};
