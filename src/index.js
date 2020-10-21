@@ -2,7 +2,6 @@ const Alojamiento = require("./alojamiento.js");
 const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 const Destino = require("./destino.js");
-const Punto_interes = require("./punto_interes.js");
 
 /** Debido a que aún no cuento con una BD, usaré arrays globales para que actuen como tal */
 var alojamientos_baza = [];
