@@ -163,24 +163,32 @@ function anadir_peticion_punto_interes(nuevo_punto_interes, destino){
  *                            transporte sobre el que se enviará la petición
  */
 function anadir_peticion_transporte(nuevo_transporte, destino){
-  for (transporte of destino._transportes){
-    if (transporte._nombre == nuevo_transporte._nombre){
-      /** console.log("El transporte con nombre " + nuevo_transporte._nombre + 
-       *              "ya figura en la base de datos \n"); */
+  var duplicado = false;
 
-      throw new Error ('transporte ya existente');
+  for (var i = 0; i < destino._transportes.length && !duplicado; i++){
+    if ((destino._transportes)[i]._nombre == nuevo_transporte._nombre){
+      duplicado = true;
     }
   }
 
-  var peticion = [];
+  if (!duplicado){
+    var peticion = [];
 
-  peticion.push(nuevo_transporte);
-  peticion.push(destino);
+    peticion.push(nuevo_transporte);
+    peticion.push(destino);
 
-  peticiones_transporte.push(peticion);
+    peticiones_transporte.push(peticion);
 
-  /** console.log("La petición para la adición del transporte con nombre " + nuevo_transporte._nombre + 
-  *              "ha sido añadida correctamente \n"); */
+    /** console.log("La petición para la adición del transporte con nombre " + nuevo_transporte._nombre + 
+    *              "ha sido añadida correctamente \n"); */
+  }
+
+  else{
+    /** console.log("El transporte con nombre " + nuevo_transporte._nombre + 
+       *              "ya figura en la base de datos \n"); */
+  }
+
+  return duplicado;
 }
 
 module.exports = {mostrar_destinos};
