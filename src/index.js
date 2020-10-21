@@ -180,12 +180,12 @@ function anadir_peticion_transporte(nuevo_transporte, destino){
     peticiones_transporte.push(peticion);
 
     /** console.log("La petición para la adición del transporte con nombre " + nuevo_transporte._nombre + 
-    *              "ha sido añadida correctamente \n"); */
+     *              "ha sido añadida correctamente \n"); */
   }
 
   else{
     /** console.log("El transporte con nombre " + nuevo_transporte._nombre + 
-       *              "ya figura en la base de datos \n"); */
+     *              "ya figura en la base de datos \n"); */
   }
 
   return duplicado;
