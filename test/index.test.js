@@ -61,4 +61,22 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
       done();
     });
   });
+
+  /** Testeamos la función correspondiente a HU005 */
+  describe("Testeando el método anadir_peticion_transporte [HU005]", function(){
+
+    it("Comprobando que se envia la petición correctamente", function(done){
+      /** Creamos el transporte que queremos añadir al destino */
+      var transporte_test = new Transporte("Testibus", "Buses mega testeados", "Autotest", "TestCity",
+      "9.8", "07:00", "23:00");
+                                            
+      /** Enviamos la petición */
+      var duplicado = Index.anadir_peticion_transporte(transporte_test, Index.destinos[0]);
+
+      /** Si la variable duplicado el false, significa que no existia otro transporte con ese nombre
+       *  y la petición ha sido enviada correctamente
+       */
+      expect(duplicado).to.equal(false);
+      done();
+    });
 });
