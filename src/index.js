@@ -47,6 +47,9 @@ destinos.push(new Destino("Guadix", "Guadix es el segundo mejor pueblo que exist
                           alojamientos_guadix, puntos_interes_guadix,
                           transportes_guadix));
 
+peticiones_alojamientos = [];
+peticiones_puntos_interes = [];
+peticiones_transporte = [];
 
 /**
  * [HU001] Función que muestra por pantalla el nombre de todos los destinos disponibles
@@ -132,7 +135,6 @@ function anadir_peticion_punto_interes(nuevo_punto_interes, destino){
   /** console.log("La petición para la adición del punto de interés con nombre 
    *              " + nuevo_punto_interes._nombre + " ha sido añadida correctamente \n"); */
 }
-
 
 /**
  * [HU005] Método que permite enviar un nuevo transporte como petición 
