@@ -9,7 +9,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
          + "libreria de aserciones CHAI", function(){
   
   /** Testeamos la función correspondiente a HU001 */
-  describe("Testeando el método mostrar_destinos [HU001]", function(){
+  describe("Testeando la función mostrar_destinos [HU001]", function(){
 
     it("Comprobando que se muestra el listado de destinos correctamente", function(done){
       /** Mostramos los destinos */
@@ -27,7 +27,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
   });
   
   /** Testeamos la función correspondiente a HU003 */
-  describe("Testeando el método anadir_peticion_alojamiento [HU003]", function(){
+  describe("Testeando la función anadir_peticion_alojamiento [HU003]", function(){
 
     it("Comprobando que se envia la petición correctamente", function(done){
       /** Creamos el alojamiento que queremos añadir al destino */
@@ -46,7 +46,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
   });
   
   /** Testeamos la función correspondiente a HU004 */
-  describe("Testeando el método anadir_peticion_punto_interes [HU004]", function(){
+  describe("Testeando la función anadir_peticion_punto_interes [HU004]", function(){
 
     it("Comprobando que se envia la petición correctamente", function(done){
       /** Creamos el punto de interés que queremos añadir al destino */
@@ -65,7 +65,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
   });
 
   /** Testeamos la función correspondiente a HU005 */
-  describe("Testeando el método anadir_peticion_transporte [HU005]", function(){
+  describe("Testeando la función anadir_peticion_transporte [HU005]", function(){
 
     it("Comprobando que se envia la petición correctamente", function(done){
       /** Creamos el transporte que queremos añadir al destino */
