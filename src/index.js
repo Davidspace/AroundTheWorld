@@ -85,24 +85,32 @@ function mostrar_destinos(){
  *                            alojamiento sobre el que se enviará la petición
  */
 function anadir_peticion_alojamiento(nuevo_alojamiento, destino){
-  for (alojamiento of destino._alojamientos){
-    if (alojamiento._nombre == nuevo_alojamiento._nombre){
-      /** console.log("El alojamiento con nombre " + nuevo_alojamiento._nombre + 
-       *              "ya figura en la base de datos \n"); */
+  var duplicado = false;
 
-      throw new Error ('Alojamiento ya existente');
+  for (var i = 0; i < destino._alojamientos.length && !duplicado; i++){
+    if ((destino._alojamientos)[i]._nombre == nuevo_alojamiento._nombre){
+      duplicado = true;
     }
   }
 
-  var peticion = [];
+  if (!duplicado){
+    var peticion = [];
 
-  peticion.push(nuevo_alojamiento);
-  peticion.push(destino);
+    peticion.push(nuevo_alojamiento);
+    peticion.push(destino);
 
-  peticiones_alojamientos.push(peticion);
+    peticiones_alojamientos.push(peticion);
 
-  /** console.log("La petición para la adición del alojamiento con nombre " + nuevo_alojamiento._nombre + 
-  *              "ha sido añadida correctamente \n"); */
+    /** console.log("La petición para la adición del alojamiento con nombre " + nuevo_alojamiento._nombre + 
+    *              "ha sido añadida correctamente \n"); */
+  }
+
+  else{
+    /** console.log("El alojamiento con nombre " + nuevo_alojamiento._nombre + 
+     *              "ya figura en la base de datos \n"); */
+  }
+
+  return duplicado;
 }
 
 /**
