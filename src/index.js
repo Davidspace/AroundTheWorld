@@ -2,6 +2,7 @@ const Alojamiento = require("./alojamiento.js");
 const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 const Destino = require("./destino.js");
+const Punto_interes = require("./punto_interes.js");
 
 /** Debido a que aún no cuento con una BD, usaré arrays globales para que actuen como tal */
 var alojamientos_baza = [];
@@ -68,6 +69,37 @@ function mostrar_destinos(){
   }
 
   return nombre_destinos;
+}
+
+/**
+ * [HU003] Método que permite enviar un nuevo alojamiento como petición 
+ * para que sea añadido al listado del destino seleccionado
+ * 
+ * @param {Alojamiento} nuevo_alojamiento - Alojamiento sobre el cual se realizará la petición 
+ *                                          para que sea añadido al listado del destino seleccionado
+ * 
+ * @param {Destino} destino - Destino cuyo listado de alojamientos es donde se desea añadir el 
+ *                            alojamiento sobre el que se enviará la petición
+ */
+function anadir_peticion_alojamiento(nuevo_alojamiento, destino){
+  for (alojamiento of destino._alojamientos){
+    if (alojamiento._nombre == nuevo_alojamiento._nombre){
+      /** console.log("El alojamiento con nombre " + nuevo_alojamiento._nombre + 
+       *              "ya figura en la base de datos \n"); */
+
+      throw new Error ('Alojamiento ya existente');
+    }
+  }
+
+  var peticion = [];
+
+  peticion.push(nuevo_alojamiento);
+  peticion.push(destino);
+
+  peticiones_alojamientos.push(peticion);
+
+  /** console.log("La petición para la adición del alojamiento con nombre " + nuevo_alojamiento._nombre + 
+  *              "ha sido añadida correctamente \n"); */
 }
 
 module.exports = {mostrar_destinos};
