@@ -102,7 +102,7 @@ function anadir_peticion_alojamiento(nuevo_alojamiento, destino){
     peticiones_alojamientos.push(peticion);
 
     /** console.log("La petición para la adición del alojamiento con nombre " + nuevo_alojamiento._nombre + 
-    *              "ha sido añadida correctamente \n"); */
+     *              "ha sido añadida correctamente \n"); */
   }
 
   else{
