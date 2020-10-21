@@ -3,7 +3,7 @@ const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 const Destino = require("./destino.js");
 
-/** Debido a que aún no cuento con una BD, usaré arrays globales para que actuen como tal */
+/** Debido a que aún no cuento con una BD, usaré arrays globales para que actúen como tal */
 var alojamientos_baza = [];
 
 alojamientos_baza.push(new Alojamiento("Hostal David", "Increible alojamiento", "Hostal",
@@ -57,7 +57,7 @@ function mostrar_destinos(){
   /**
    * var nombre_destinos = "Los destinos disponibles son: \n\n";
    * 
-   * for (destino in destinos){
+   * for (destino of destinos){
    *   nombre_destinos += destino._nombre + "\n";
    * }
    * 
