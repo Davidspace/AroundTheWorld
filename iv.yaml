@@ -1,4 +1,8 @@
-entidad: lib/destino.js
-lenguaje: Node.js
-test: test/index.test.js
-taskfile: Gulpfile.js
+entidad: 
+  - src/destino.js
+lenguaje: 
+  - Node.js
+test: 
+  - test/index.test.js
+taskfile: 
+  - gulpfile.js
