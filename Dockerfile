@@ -16,7 +16,7 @@ ENV PATH=/node_modules/.bin=$PATH
 # Establezco una variable de entorno con la ruta al directorio que contiene los tests
 ENV DIR="/test"
 
-# Cambio el directorio donde estoy trabajando al que almacena los tests
+# Cambio el directorio de trabajo al que almacena los tests
 WORKDIR $DIR
 
 # Usaré node como usuario, ya que no necesito permisos de superusuario para ejecutar los tests
