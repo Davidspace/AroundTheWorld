@@ -19,7 +19,7 @@ ENV DIR="/test"
 # Cambio el directorio donde estoy trabajando al que almacena los tests
 WORKDIR $DIR
 
-# Usaré node como usuario
+# Usaré node como usuario, ya que no necesito permisos de superusuario para ejecutar los tests
 USER node
 
 # Comandos del proceso de inicio que serán usados si no se indica uno al iniciar el contenedor. Estos comandos ejecutarán los tests
