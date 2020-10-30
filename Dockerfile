@@ -1,5 +1,5 @@
 # Indico la imagen que utilizaré como base en mi contenedor
-FROM node:14.15.0-buster
+FROM node:14.15.0-alpine3.12
 
 # Documento el creador de la imagen
 LABEL version = "1.0" maintainer = "David García Martínez <dgarmar@gmail.com>"
