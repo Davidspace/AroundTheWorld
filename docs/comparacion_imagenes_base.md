@@ -28,6 +28,8 @@ He decidido basar mi decisión sobre qué imagen base usar en dos de sus aspecto
 
 - La **imagen oficial completa**, **latest**, ocupa 941MB y su tiempo de ejecución ha sido de **2 minutos y 46.327 segundos**.
 
+![Tiempo de ejecución de la imagen base completa](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/complete.png)
+
 - La imagen con el tag **slim**, **14.15.0-buster-slim**, ocupa 181MB y su tiempo de ejecución ha sido de **2 minutos y 44.940 segundos**.
 
 ![Tiempo de ejecución de la imagen base slim](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/slim.png)
