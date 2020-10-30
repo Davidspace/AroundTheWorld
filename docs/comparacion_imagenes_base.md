@@ -26,17 +26,17 @@ Elegiremos una imagen de cada uno de los principales tags y llevaremos a cabo la
 He decidido basar mi decisión sobre qué imagen base usar en dos de sus aspectos más relevantes: la velocidad y el tamaño. El tamaño de cada imagen lo podemos consultar en la propia página web de Docker Hub, que será de donde descargue las imágenes. La velocidad, por otro lado, la consultaré mediante la observación del tiempo de ejecución de un sencillo script que hará que cada imagen lleve a cabo los tests 1000 veces. Dicho script es el siguiente:
 
 
-- La **imagen oficial completa**, **latest**, ocupa 941MB y su tiempo de ejecución ha sido de ...s.
+- La **imagen oficial completa**, **latest**, ocupa 941MB y su tiempo de ejecución ha sido de **2 minutos y 46.327 segundos**.
 
-- La imagen con el tag **slim**, **14.15.0-buster-slim**, ocupa 181MB y su tiempo de ejecución ha sido de ...s.
+- La imagen con el tag **slim**, **14.15.0-buster-slim**, ocupa 181MB y su tiempo de ejecución ha sido de **2 minutos y 44.940 segundos**.
 
 ![Tiempo de ejecución de la imagen base slim](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/slim.png)
 
-- La imagen con el tag **alpine**, **14.15.0-alpine3.12**, ocupa 117MB y su tiempo de ejecución ha sido de ...s.
+- La imagen con el tag **alpine**, **14.15.0-alpine3.12**, ocupa 117MB y su tiempo de ejecución ha sido de **2 minutos y 46.610 segundos**.
 
 ![Tiempo de ejecución de la imagen base alpine](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/alpine.png)
 
-Estudiando los resultados, ....
+Estudiando los resultados, podemos observar que el rendimiento de las tres imágenes seleccionadas es prácticamente el mismo, ya que la diferencia que observamos es de un máximo de dos segundos aún habiendo ejecutado los tests 100 veces, por lo que la velocidad pasa a ser un factor no determinante. Por lo tanto, basaré mi decisión exclusivamente en el espacio que ocupen en disco, buscando siempre que sea el menor posible. Dado esto, la imagen base que usaré en mi contenedor para tests será **14.15.0-alpine3.12**. He utilizado este tag en otras asignaturas y, como he mencionado anteriormente, es el tipo de imagen más popular actualmente debido a su reducido tamaño, por lo que no es de extrañar que tras este análisis haya sido la imagen escogida.
 
 
 
