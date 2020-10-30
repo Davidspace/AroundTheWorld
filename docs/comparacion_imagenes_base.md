@@ -26,12 +26,15 @@ Elegiremos una imagen de cada uno de los principales tags y llevaremos a cabo la
 He decidido basar mi decisión sobre qué imagen base usar en dos de sus aspectos más relevantes: la velocidad y el tamaño. El tamaño de cada imagen lo podemos consultar en la propia página web de Docker Hub, que será de donde descargue las imágenes. La velocidad, por otro lado, la consultaré mediante la observación del tiempo de ejecución de un sencillo script que hará que cada imagen lleve a cabo los tests 1000 veces. Dicho script es el siguiente:
 
 
-
 - La **imagen oficial completa**, **latest**, ocupa 941MB y su tiempo de ejecución ha sido de ...s.
 
 - La imagen con el tag **slim**, **14.15.0-buster-slim**, ocupa 181MB y su tiempo de ejecución ha sido de ...s.
 
+![Tiempo de ejecución de la imagen base slim](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/slim.png)
+
 - La imagen con el tag **alpine**, **14.15.0-alpine3.12**, ocupa 117MB y su tiempo de ejecución ha sido de ...s.
+
+![Tiempo de ejecución de la imagen base alpine](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/alpine.png)
 
 Estudiando los resultados, ....
 
