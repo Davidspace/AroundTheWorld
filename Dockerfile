@@ -10,8 +10,11 @@ COPY package*.json ./
 # Instalo las dependencias, el task runner, limpio la cache y elimino el fichero de dependencias
 RUN npm install && npm install -g gulp-cli && npm cache clean --force && rm package*.json
 
-# Establezco el valor de la variable de entorno PATH para que encuentre el directorio node_modules y otra variable de entorno con la ruta al directorio que contiene los tests
-ENV PATH=/node_modules/.bin=$PATH && DIR="/test"
+# Establezco el valor de la variable de entorno PATH para que encuentre el directorio node_modules
+ENV PATH=/node_modules/.bin=$PATH
+
+# Establezco una variable de entorno con la ruta al directorio que contiene los tests
+ENV DIR="/test"
 
 # Cambio el directorio de trabajo al que almacena los tests
 WORKDIR $DIR
