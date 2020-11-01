@@ -27,9 +27,7 @@ A continuación debe descargarse la imagen desde alguno de las dos siguientes pl
 
 Una vez cumple estos dos requisitos, debe dirigirse al directorio del repositorio y ejecutar el siguiente comando:
 
-<code>
-docker run -t -v \`pwd\`:/test davidspace/aroundtheworld
-</code>
+<code>docker run -t -v \`pwd\`:/test davidspace/aroundtheworld</code>
 
 ## Código fuente
 - Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
