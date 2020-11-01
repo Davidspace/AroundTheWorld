@@ -5,7 +5,7 @@ FROM fedora:32
 LABEL version = "1.0" maintainer = "David García Martínez <dgarmar@gmail.com>"
 
 # Creación de grupo y usuario node
-RUN addgroup -S node && adduser -S node -G node
+RUN useradd node && groupadd node && adduser node node
 
 # Copio los ficheros que almacenan las dependencias del proyecto
 COPY package*.json ./
