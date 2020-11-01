@@ -13,9 +13,9 @@ class Destino{
    * @param {String} gentilicio - Gentilicio de los habitantes de dicho destino
    * @param {String} sitio_web - URL de la página web del destino
    * @param {Number} valoracion - Media de las puntuaciones que los usuarios les han otorgado a este destino
-   * @param {Object[]} alojamientos - Array de alojamientos disponibles en el destino
-   * @param {Object[]} puntos_interes - Array de puntos de interés con los que cuenta el destino
-   * @param {Object[]} transportes - Array de transportes disponibles en el destino
+   * @param {Alojamiento[]} alojamientos - Array de alojamientos disponibles en el destino
+   * @param {Punto_interes[]} puntos_interes - Array de puntos de interés con los que cuenta el destino
+   * @param {Transporte[]} transportes - Array de transportes disponibles en el destino
    */
   constructor(nombre, descripcion, pais, poblacion, gentilicio, sitio_web,
     valoracion, alojamientos, puntos_interes, transportes){
