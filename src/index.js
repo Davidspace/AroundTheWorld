@@ -198,6 +198,7 @@ function anadir_peticion_transporte(nuevo_transporte, destino){
 module.exports = {destinos,
                   viajes,
                   alojamientos_baza,
+                  puntos_interes_baza,
                   mostrar_destinos,
                   anadir_peticion_alojamiento,
                   anadir_peticion_punto_interes,

@@ -101,9 +101,9 @@ class Viaje{
   anadir_reserva_punto_interes(punto_interes, fecha){
     var reserva = [punto_interes, fecha];
   
-    this.puntos_interes.push(reserva);
+    var num_reservas = this.puntos_interes.push(reserva);
 
-    return reserva;
+    return num_reservas;
   }
 
   /**
