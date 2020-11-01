@@ -9,7 +9,11 @@
 
 - Para ver todo el proceso seguido para subir el contenedor a Docker Hub y activar la actualización automática, clicke en [este enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_DockerHub.md).
 
+- Para acceder a mi repositorio en Docker Hub, pulse [aqui](https://hub.docker.com/repository/docker/davidspace/aroundtheworld).
+
 - Para ver todos los pasos dados para publicar mi contenedor en GitHub Container Registry [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_GHCR.md).
+
+- Para acceder a mi paquete en GitHub Container Regostry, pulse [aqui](https://github.com/users/Davidspace/packages/container/package/aroundtheworld).
 
 - La documentación sobre el seguimiento de buenas prácticas en la optimización del tamaño y velocidad del contenedor resultante se encuentra [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
 
