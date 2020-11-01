@@ -34,4 +34,18 @@ describe("Testeando las funciones incluidas en viaje.js con la interfaz ASSERT d
       done()
     });
   });
+
+  /** Testeamos la función correspondiente a HU008 */
+  describe("Testeando el método anadir_reserva_transporte [HU008]", function(){
+
+    it("Comprobando que la reserva del transporte se almacena correctamente", function(done){
+      /** Añadimos la reserva del transporte a nuestro viaje */
+      var num_reservas = Index.viajes[0].anadir_reserva_transporte(Index.transportes_baza[0], 
+                                                                      new Date(2020, 12, 12, 9, 30, 0);
+      
+      /** Comprobamos que la nueva longitud del array de puntos de interés reservados es 1 */
+      expect(num_reservas).to.equal(1);
+      done()
+    });
+  });
 });
