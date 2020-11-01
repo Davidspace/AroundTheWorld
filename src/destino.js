@@ -121,6 +121,8 @@ class Destino{
 
   /**
   * [HU002] Método que muestra por pantalla toda la información relacionada con el destino
+  * 
+  * @returns {Array} Array con toda la información del destino
   */
 
   mostrar_destino(){
