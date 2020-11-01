@@ -26,10 +26,10 @@ Aún dados los motivos anteriores por los que es más óptimo escoger una imagen
 
 Para la creación de la imagen sobre la imagen base de **CentOS** añadiré al Dockerfile los comandos necesarios para, como he dicho con anterioridad, instalar **npm** y **node**. Estos comandos son:
 
-`sudo yum groupinstall "Development Tools"`\
-`sudo dnf install update`\
-`sudo dnf module list nodejs`
-`sudo dnf module install nodejs`
+`yum groupinstall "Development Tools"`\
+`dnf install update`\
+`dnf module list nodejs`
+`dnf module install nodejs`
 
 De igual forma, en el Dockerfile en el que incluiré la imagen base de **fedora** añadiré los siguientes comandos:
 
