@@ -50,12 +50,59 @@ En la creación del Dockerfile he intentado seguir las mejores prácticas indica
 
 - Utilización de los recursos estrictamente necesarios, de modo que el contenedor generador sea tan "efímero" como sea posible, de modo que pueda ser destruido y posteriormente rebuildeado y reemplazado con la mínima configuración posible.
 
+- Uso de un fichero .dockerignore
+
 - Ordenar los comandos que generan las capas de menos frecuentemente modificados a los que más, de modo que la cache de construcción es reutilizable.
 
 - Uso de múltiples lineas con RUN para reducir el número de capas generadas.
 
 - Evitar el uso de root en la construcción del contenedor para fases que no lo necesitan, con lo que se evita vulnerabilidad en la aplicación.
 
+## Optimización de la imagen
+
+La optimización de las imágenes que genere mediante mis Dockerfiles es algo que siempre debo de hacer, ya que esta se puede llevar a cabo simplemente modificado algunos comandos y añadiendo otros y los resultados pueden ser notorios. Gran parte de la optimización llevada a cabo ha sido citada anteriormente en las buenas prácticas seguidas, pero aquí indicaré los comandos concretos:
+
+### Instalación de los recursos estrictamente necesarios
+
+Mediante el comando `npm install` junto a la opción `--no-optional`, indico que únicamente instale las dependencias obligatorias para el funcionamiento de los tests, excluyendo a las opcionales. 
+
+### Eliminar ficheros innecesarios
+
+Otra manera de optimizar la imagen es hacer que no ocupe más tamaño del necesario. Por lo tanto, intentaré borrar todos los ficheros que no cumplan un rol específico para la realización de los tests, como es el caso del fichero de dependencias una vez instaladas estas o el caché de npm tras su uso.
+
+`RUN rm ./package*.json && npm cache clean --force`
+
+### Generación de las mínimas capas posibles
+
+El uso de ĺa instrucción RUN junto a varios comandos, en lugar de un solo comando por instrucción RUN, me permite reducir el número de capas generadas en la creación de la imagen, ya que cada uso de la instrucción genera una de ellas. En mi caso evito crear tres capas adicionales:
+
+`RUN npm install --no-optional && npm install -g gulp-cli && npm cache clean --force && rm package*.json`
+
+en lugar de
+
+<code> 
+RUN npm install --no-optional
+RUN npm install -g gulp-cli
+RUN npm cache clean --force
+RUN rm package*.json
+</code>
+
+### Uso del fichero .dockerignore
+
+El fichero .dockerignore tiene un funcionamiento muy similar a .gitignore. En él indico los ficheros que queremos que Docker ignore a la hora de generar una imagen a través de Dockerfile. Siguiendo las [mejores prácticas de Node](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/), incluiré en él las siguientes lineas, de modo que evito que mis módulos locales y logs de debug sean copiadas dentro de mi imagen y posiblemente sobreescribiendo módulos instalados dentro de la imagen:
+
+<code>
+`node_modules
+npm-debug.log`
+</code>
+
+## Uso de Docker-squash
+
+[Docker-squash](https://github.com/jwilder/docker-squash) es una herramienta que "aplasta" múltiples capas docker en una, de manera que la imagen generada contenga menos imágenes y más pequeñas. Mantiene instrucciones Dockerfile como por ejemplo PORT y ENV, de modo que las imágenes aplastadas trabajarán de la misma forma que cuando fueron originalmente construidas. Además, los ficheros borrados en las capas son purgados de la imagen cuando son apastadas.
+
+Esta herramienta puede ser utilizada directamente durante la construcción de la imagen generada por el Dockerfile. Para ello, utilizaremos la opción `--squash` en el comando `docker build`
+
+`docker build --squash -t imagen_aplastada:latest`
 
 
 
