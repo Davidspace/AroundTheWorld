@@ -8,7 +8,7 @@ LABEL version = "1.0" maintainer = "David García Martínez <dgarmar@gmail.com>"
 COPY package*.json ./
 
 # Instalo las dependencias, el task runner, limpio la cache y elimino el fichero de dependencias
-RUN npm install --no-optional && npm install -g gulp-cli && npm cache clean --force && rm package*.json
+RUN npm install --no-optional && npm install -g gulp-cli && npm cache clean --force && rm ./package*.json
 
 # Establezco el valor de la variable de entorno PATH para que encuentre el directorio node_modules
 ENV PATH=/node_modules/.bin=$PATH
