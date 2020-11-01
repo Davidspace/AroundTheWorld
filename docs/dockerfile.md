@@ -92,7 +92,7 @@ El fichero .dockerignore tiene un funcionamiento muy similar a .gitignore. En é
 `node_modules`\
 `npm-debug.log`
 
-## Uso de Docker-squash
+### Uso de Docker-squash
 
 [Docker-squash](https://github.com/jwilder/docker-squash) es una herramienta que "aplasta" múltiples capas docker en una, de manera que la imagen generada contenga menos imágenes y más pequeñas. Mantiene instrucciones Dockerfile como por ejemplo PORT y ENV, de modo que las imágenes aplastadas trabajarán de la misma forma que cuando fueron originalmente construidas. Además, los ficheros borrados en las capas son purgados de la imagen cuando son apastadas.
 
