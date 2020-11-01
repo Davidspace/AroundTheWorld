@@ -80,21 +80,17 @@ El uso de ĺa instrucción RUN junto a varios comandos, en lugar de un solo coma
 
 en lugar de
 
-<code> 
-RUN npm install --no-optional
-RUN npm install -g gulp-cli
-RUN npm cache clean --force
-RUN rm package*.json
-</code>
+`RUN npm install --no-optional`
+`RUN npm install -g gulp-cli`
+`RUN npm cache clean --force`
+`RUN rm package*.json`
 
 ### Uso del fichero .dockerignore
 
 El fichero .dockerignore tiene un funcionamiento muy similar a .gitignore. En él indico los ficheros que queremos que Docker ignore a la hora de generar una imagen a través de Dockerfile. Siguiendo las [mejores prácticas de Node](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/), incluiré en él las siguientes lineas, de modo que evito que mis módulos locales y logs de debug sean copiadas dentro de mi imagen y posiblemente sobreescribiendo módulos instalados dentro de la imagen:
 
-<code>
-`node_modules
-npm-debug.log`
-</code>
+`node_modules`
+`npm-debug.log`
 
 ## Uso de Docker-squash
 
