@@ -13,6 +13,20 @@
 
 - La documentación sobre el seguimiento de buenas prácticas en la optimización del tamaño y velocidad del contenedor resultante se encuentra [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
 
+## Ejecución de los tests en un contenedor Docker
+
+Para ejecutar los tests en un contenedor debe clonar este repositorio en su equipo local en primer lugar mediante el comando `git@github.com:Davidspace/AroundTheWorld.git`.
+
+A continuación debe descargarse la imagen desde alguno de las dos siguientes plataformas:
+
+- **Docker Hub**: `docker pull davidspace/aroundtheworld`
+
+- **GitHub Container Registry**: `docker pull ghcr.io/davidspace/aroundtheworld`
+
+Una vez cumple estos dos requisitos, debe dirigirse al directorio del repositorio y ejecutar el siguiente comando:
+
+<code>docker run -t -v \`pwd\`:/test davidspace/aroundtheworld<code>
+
 ## Código fuente
 - Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
 
