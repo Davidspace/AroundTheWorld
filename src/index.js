@@ -57,6 +57,8 @@ viajes.push(new Viaje("Viaje de prueba"));
 
 /**
  * [HU001] Función que muestra por pantalla el nombre de todos los destinos disponibles
+ * 
+ * @returns {Array} Array que contiene todos los nombres de los destinos disponibles
  */
 function mostrar_destinos(){
   /**
@@ -87,6 +89,9 @@ function mostrar_destinos(){
  * 
  * @param {Destino} destino - Destino cuyo listado de alojamientos es donde se desea añadir el 
  *                            alojamiento sobre el que se enviará la petición
+ * 
+ * @returns {boolean} Boolean que indica si el alojamiento sobre el que se ha enviado la petición
+ *                    ya existe o no en la base de datos
  */
 function anadir_peticion_alojamiento(nuevo_alojamiento, destino){
   var duplicado = false;
@@ -126,6 +131,9 @@ function anadir_peticion_alojamiento(nuevo_alojamiento, destino){
  * 
  * @param {Destino} destino - Destino cuyo listado de puntos de interés es donde se desea añadir el 
  *                            punto de interés sobre el que se enviará la petición
+ * 
+ * @returns {boolean} Boolean que indica si el punto de interés sobre el que se ha enviado la petición
+ *                    ya existe o no en la base de datos
  */
 function anadir_peticion_punto_interes(nuevo_punto_interes, destino){
   var duplicado = false;
@@ -165,6 +173,9 @@ function anadir_peticion_punto_interes(nuevo_punto_interes, destino){
  * 
  * @param {Destino} destino - Destino cuyo listado de transportes es donde se desea añadir el 
  *                            transporte sobre el que se enviará la petición
+ * 
+ * @returns {boolean} Boolean que indica si el transporte sobre el que se ha enviado la petición
+ *                    ya existe o no en la base de datos
  */
 function anadir_peticion_transporte(nuevo_transporte, destino){
   var duplicado = false;
