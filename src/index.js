@@ -2,6 +2,7 @@ const Alojamiento = require("./alojamiento.js");
 const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 const Destino = require("./destino.js");
+const Viaje = require("./viaje.js");
 
 /** Debido a que aún no cuento con una BD, usaré arrays globales para que actúen como tal */
 var alojamientos_baza = [];
@@ -46,9 +47,13 @@ destinos.push(new Destino("Guadix", "Guadix es el segundo mejor pueblo que exist
                           alojamientos_guadix, puntos_interes_guadix,
                           transportes_guadix));
 
-peticiones_alojamientos = [];
-peticiones_puntos_interes = [];
-peticiones_transporte = [];
+var peticiones_alojamientos = [];
+var peticiones_puntos_interes = [];
+var peticiones_transporte = [];
+
+var viajes = [];
+
+viajes.push(new Viaje("Viaje de prueba"));
 
 /**
  * [HU001] Función que muestra por pantalla el nombre de todos los destinos disponibles
@@ -191,6 +196,8 @@ function anadir_peticion_transporte(nuevo_transporte, destino){
 }
 
 module.exports = {destinos,
+                  viajes,
+                  alojamientos_baza,
                   mostrar_destinos,
                   anadir_peticion_alojamiento,
                   anadir_peticion_punto_interes,

@@ -2,7 +2,6 @@ const Alojamiento = require("./alojamiento.js");
 const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 const Destino = require("./destino.js");
-const Punto_interes = require("./punto_interes.js");
 
 class Viaje{
 
@@ -13,7 +12,11 @@ class Viaje{
    *                                  junto a los dias de entrada y salida
    *  
    * @param {Object[]} puntos_interes - Array de puntos de interés reservados para el viaje
+   *                                    junto a la fecha de dicha reserva
+   * 
    * @param {Object[]} transportes - Array de transportes reservados para el viaje
+   *                                 junto a la fecha de dicha reserva
+   * 
    * @param {Number} precio - Precio final del viaje
    */
   constructor(nombre, alojamientos = [], puntos_interes = [], transportes = [], precio = 0){
