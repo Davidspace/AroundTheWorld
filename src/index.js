@@ -7,12 +7,12 @@ const Destino = require("./destino.js");
 var alojamientos_baza = [];
 
 alojamientos_baza.push(new Alojamiento("Hostal David", "Increible alojamiento", "Hostal",
-                                       "Baza", "37.4888637, -2.7709805", "8.7"));
+                                       "Baza", "37.4888637, -2.7709805", "8.7", 40));
 
 var alojamientos_guadix = [];
 
 alojamientos_guadix.push(new Alojamiento("Hotel Hoja", "Somos los mejores", "Hotel",
-                                         "Guadix", "37.3006914 ,-3.1351956", "9.1"));
+                                         "Guadix", "37.3006914 ,-3.1351956", "9.1", 30));
 
 var puntos_interes_baza = [];
 

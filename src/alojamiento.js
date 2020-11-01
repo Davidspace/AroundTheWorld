@@ -8,14 +8,16 @@ class Alojamiento{
    * @param {String} localizacion - Nombre del destino en el que se encuentra el alojamiento
    * @param {String} coordenadas - Coordenadas geográficas del alojamiento
    * @param {Number} valoracion - Media de las puntuaciones que los usuarios les han otorgado a este alojamiento
+   * @param {Number} precio - Precio del alojamiento por noche
    */
-  constructor(nombre, tipo, descripcion, localizacion, coordenadas, valoracion){
+  constructor(nombre, tipo, descripcion, localizacion, coordenadas, valoracion, precio){
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.tipo = tipo;
     this.localizacion = localizacion;
     this.coordenadas = coordenadas;
     this.valoracion = valoracion;
+    this.precio = precio;
   }
 
   /**
@@ -46,6 +48,10 @@ class Alojamiento{
     return this.valoracion;
   }
 
+  get _precio(){
+    return this.precio;
+  }
+
   /**
    * Métodos set de la clase Alojamiento
    */
@@ -73,6 +79,10 @@ class Alojamiento{
    set _valoracion(nueva_valoracion){
      this.valoracion = nueva_valoracion;
    }
+
+   set _precio(nuevo_precio){
+    this.valoracion = nuevo_precio;
+  }
 }
 
 module.exports = Alojamiento;

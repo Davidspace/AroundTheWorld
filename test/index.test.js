@@ -32,7 +32,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
     it("Comprobando que se envia la petición correctamente", function(done){
       /** Creamos el alojamiento que queremos añadir al destino */
       var alojamiento_test = new Alojamiento("Hotel de testeo", "Testeando", "Hotel",
-                                             "Testelandia", "37.4883337, -2.7229805", "10.0");
+                                             "Testelandia", "37.4883337, -2.7229805", "10.0", 100);
                                             
       /** Enviamos la petición */
       var duplicado = Index.anadir_peticion_alojamiento(alojamiento_test, Index.destinos[0]);
