@@ -44,7 +44,7 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 
 - Desarrollo de las clases de mi proyecto, incluido la implementación de las funciones correspondientes a las [historias de usuario](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
 
-- Adición a mi proyecto de la [libreria de aserciones] elegida para ser usada junto a [Mocha](https://mochajs.org/): [Chai](https://www.chaijs.com/).
+- Adición a mi proyecto de la libreria de aserciones elegida para ser usada junto a [Mocha](https://mochajs.org/): [Chai](https://www.chaijs.com/).
 
 - Implementación de la automatización de las tareas de instalación de dependencias y ejecución de tests unitarios.
 
