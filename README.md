@@ -1,6 +1,25 @@
 # AroundTheWorld
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+## Docker
+
+- [Aqui](https://github.com/Davidspace/AroundTheWorld/tree/master/docs) puedes consultar la comparativa realizada entre imágenes base y el por qué de la elección de la usada.
+
+- Pincha en el siguiente enlace para acceder al [Dockerfile](https://github.com/Davidspace/AroundTheWorld/blob/master/Dockerfile). Para ver su documentación, [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
+
+- Para ver todo el proceso seguido para subir el contenedor a Docker Hub y activar la actualización automática, clicke en [este enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_DockerHub.md).
+
+- Para ver todos los pasos dados para publicar mi contenedor en GitHub Container Registry [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_GHCR.md).
+
+- La documentación sobre el seguimiento de buenas prácticas en la optimización del tamaño y velocidad del contenedor resultante se encuentra [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
+
+## Código fuente
+- Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
+
+- La **clase principal** del proyecto es la clase **Destino**. Esta clase se puede consultar [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/destino.js).
+
+- El **fichero fuente principal** del proyecto es el llamado **index.js**. El contenido de este puede ser consultado [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/src/index.js).
+
 ## Instalación
 La propia aplicación cuenta con una herramientas de construcción, **Gulp**, la cual automatiza el proceso de instalación de la misma en su equipo. Para llevar a cabo este proceso, debe ejecutar la siguiente orden:
 
@@ -43,6 +62,8 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 
 - **Herramienta de construcción:** [Gulp](https://gulpjs.com/).
 
+- **Gestor de contenedores:** [Docker](https://www.docker.com/).
+
 ## Documentación
 - La **configuración de GitHub** puede ser comprobada [aqui](documentos/configGit.md).
 
@@ -57,13 +78,6 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 - Los **issues cerrados** que han dado pie al estado actual del proyecto pueden ser consultados [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aissue+is%3Aclosed).
 
 - Los **pasos seguidos en el desarrollo del proyecto** pueden ser examinados [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md).
-
-## Código fuente
-- Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
-
-- La **clase principal** del proyecto es la clase **Destino**. Esta clase se puede consultar [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/destino.js).
-
-- El **fichero fuente principal** del proyecto es el llamado **index.js**. El contenido de este puede ser consultado [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/src/index.js).
 
 ## Fichero iv.yaml
 Clicka en el siguiente enlace para acceder al fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml), cuya finalidad es especificar ficheros y otros parámetros de configuración para test.
