@@ -1,6 +1,12 @@
 # AroundTheWorld
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+## Desarrollo del hito 3
+
+- En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md) puede observar los pasos dados para la realización del hito 3.
+
+- En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) puede observar el listado de herramientas con las que el proyecto cuenta hasta el momento.
+
 ## Docker
 
 - [Aqui](https://github.com/Davidspace/AroundTheWorld/tree/master/docs) puedes consultar la comparativa realizada entre imágenes base y el por qué de la elección de la usada.
@@ -39,6 +45,13 @@ Una vez cumple estos dos requisitos, debe dirigirse al directorio del repositori
 - La **clase principal** del proyecto es la clase **Destino**. Esta clase se puede consultar [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/destino.js).
 
 - El **fichero fuente principal** del proyecto es el llamado **index.js**. El contenido de este puede ser consultado [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/src/index.js).
+
+## Ficheros de test
+- El directorio donde se localizan los ficheros de test se denomina [test](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
+
+- El fichero que contiene los tests relacionados con el fichero fuente principal se denomina [index.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/index.test.js).
+
+- El fichero que contiene los tests relacionados con la clase principal se denomina [destino.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/destino.test.js).
 
 ## Instalación
 La propia aplicación cuenta con una herramientas de construcción, **Gulp**, la cual automatiza el proceso de instalación de la misma en su equipo. Para llevar a cabo este proceso, debe ejecutar la siguiente orden:
@@ -104,13 +117,6 @@ Clicka en el siguiente enlace para acceder al fichero [iv.yaml](https://github.c
 
 ## Fichero para automatización de tareas
 El fichero designado para configurar la **automatización de tareas** por parte de **Gulp** es el denominado **gulpfile.js**. Puedes acceder a su contenido clickando [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js).
-
-## Ficheros de test
-- El directorio donde se localizan los ficheros de test se denomina [test](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
-
-- El fichero que contiene los tests relacionados con el fichero fuente principal se denomina [index.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/index.test.js).
-
-- El fichero que contiene los tests relacionados con la clase principal se denomina [destino.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/destino.test.js).
 
 ## Autor
 [David García Martínez](https://github.com/Davidspace)
