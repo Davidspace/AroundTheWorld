@@ -73,12 +73,12 @@ class Viaje{
   }
 
   /**
-  * [HU006] Método que añade al viaje la reserva de un alojamiento
-  * 
-  * @param {Alojamiento} alojamiento - Alojamiento en el que se ha realizado la reserva
-  * @param {Date} fecha_entrada - Fecha en la que la reserva comienza
-  * @param {Date} fecha_salida - Fecha en la que la reserva acaba
-  */
+   * [HU006] Método que añade al viaje la reserva en un alojamiento
+   * 
+   * @param {Alojamiento} alojamiento - Alojamiento en el que se ha realizado la reserva
+   * @param {Date} fecha_entrada - Fecha en la que la reserva comienza
+   * @param {Date} fecha_salida - Fecha en la que la reserva acaba
+   */
 
   anadir_reserva_alojamiento(alojamiento, fecha_entrada, fecha_salida){
     var reserva = [alojamiento, fecha_entrada, fecha_salida];
@@ -89,16 +89,31 @@ class Viaje{
   }
 
   /**
-  * [HU007] Método que añade al viaje la reserva de un punto de interés
-  * 
-  * @param {Punto_interes} punto_interes - Punto de interés en el que se ha realizado la reserva
-  * @param {Date} fecha_entrada - Fecha en la que la reserva ha sido realizada
-  */
+   * [HU007] Método que añade al viaje la reserva en un punto de interés
+   * 
+   * @param {Punto_interes} punto_interes - Punto de interés en el que se ha realizado la reserva
+   * @param {Date} fecha_entrada - Fecha en la que la reserva ha sido realizada
+   */
 
   anadir_reserva_punto_interes(punto_interes, fecha){
     var reserva = [punto_interes, fecha];
   
     this.puntos_interes.push(reserva);
+
+    return reserva;
+  }
+
+  /**
+   * [HU008] Método que añade al viaje la reserva en un transporte
+   * 
+   * @param {Transporte} transporte - Transporte en el que se ha realizado la reserva
+   * @param {Date} fecha - Fecha en la que la reserva ha sido realizada
+   */
+
+  anadir_reserva_transporte(transporte, fecha){
+    var reserva = [transporte, fecha];
+
+    this.transportes.push(reserva);
 
     return reserva;
   }
