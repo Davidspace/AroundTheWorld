@@ -1,5 +1,5 @@
 # Indico la imagen que utilizaré como base en mi contenedor
-FROM centos8:centos8
+FROM centos:centos8
 
 # Documento el creador de la imagen
 LABEL version = "1.0" maintainer = "David García Martínez <dgarmar@gmail.com>"

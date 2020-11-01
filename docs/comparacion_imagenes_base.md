@@ -40,7 +40,7 @@ De igual forma, en el Dockerfile en el que incluiré la imagen base de **fedora*
 
 ## Realización de pruebas a las imágenes base
 
-He decidido basar mi decisión sobre qué imagen base usar en dos de sus aspectos más relevantes: la velocidad y el tamaño. El tamaño de cada imagen lo podemos consultar en la propia página web de Docker Hub, que será de donde descargue las imágenes. La velocidad, por otro lado, la consultaré mediante la observación del tiempo de ejecución de un sencillo script que hará que cada imagen lleve a cabo los tests 100 veces. Dicho script es el siguiente:
+He decidido basar mi decisión sobre qué imagen base usar en dos de sus aspectos más relevantes: la velocidad y el tamaño. El tamaño de cada imagen lo podemos consultar en la propia página web de Docker Hub, que será de donde descargue las imágenes. La velocidad, por otro lado, la consultaré mediante la observación del tiempo de ejecución de un sencillo script que descarga cada imagen del repositorio de Docker Hub y hará que lleve a cabo los tests 100 veces. Dicho script es el siguiente:
 
 ![Script de prueba](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/prueba_imagenes.png)
 
