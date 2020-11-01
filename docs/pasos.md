@@ -52,6 +52,27 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 
 - Completar la [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/README.md) con la información disponible actualmente sobre el proyecto.
 
+## Hito 3: Creación de un contenedor para pruebas
+
+- Llevar a cabo una [comparación entre diferentes imágenes base](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/comparacion_imagenes_base.md) basada en sus velocidades y tamaños.
+
+- [Elección de la imagen base](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/comparacion_imagenes_base.md) más óptima para mi proyecto.
+
+- Creación de un fichero [Dockerfile](https://github.com/Davidspace/AroundTheWorld/blob/master/Dockerfile) adaptado a las clases que se están testeando.
+
+- Creación de la [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md) del fichero Dockerfile.
+
+- Creación de un [repositorio en Docker Hub](https://hub.docker.com/repository/docker/davidspace/aroundtheworld) y subida de la imagen a él.
+
+- Activación de la actualización automática y su posterior [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_DockerHub.md).
+
+- Actualizar el listado de [herramientas](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) utilizadas.
+
+- [Registro del contenedor](https://github.com/users/Davidspace/packages/container/package/aroundtheworld) en GitHub Container Registry y [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_GHCR.md) del proceso.
+
+- Creación de nuevas historias de usuario y avances en el [código](https://github.com/Davidspace/AroundTheWorld/tree/master/src) y [tests](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
+
+- Actualización del [README](https://github.com/Davidspace/AroundTheWorld/blob/master/README.md) con los nuevos avances.
 
 
 
