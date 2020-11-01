@@ -70,7 +70,7 @@ describe("Testeando las funciones incluidas en index.js con la interfaz ASSERT d
     it("Comprobando que se envia la petición correctamente", function(done){
       /** Creamos el transporte que queremos añadir al destino */
       var transporte_test = new Transporte("Testibus", "Buses mega testeados", "Autotest", "TestCity",
-      "9.8", "07:00", "23:00");
+      "9.8", "07:00", "23:00", 12);
                                             
       /** Enviamos la petición */
       var duplicado = Index.anadir_peticion_transporte(transporte_test, Index.destinos[0]);
