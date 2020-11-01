@@ -16,7 +16,7 @@ class Viaje{
    * @param {Object[]} transportes - Array de transportes reservados para el viaje
    * @param {Number} precio - Precio final del viaje
    */
-  constructor(nombre, alojamientos = [], puntos_interes = [], transportes = [], precio){
+  constructor(nombre, alojamientos = [], puntos_interes = [], transportes = [], precio = 0){
     this.nombre = nombre;
     this.alojamientos = alojamientos;
     this.puntos_interes = puntos_interes;
@@ -83,9 +83,9 @@ class Viaje{
   anadir_reserva_alojamiento(alojamiento, fecha_entrada, fecha_salida){
     var reserva = [alojamiento, fecha_entrada, fecha_salida];
     
-    this.alojamientos.push(reserva);
+    var num_reservas = this.alojamientos.push(reserva);
 
-    return reserva;
+    return num_reservas;
   }
 
   /**
