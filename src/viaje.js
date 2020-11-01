@@ -1,20 +1,19 @@
 const Alojamiento = require("./alojamiento.js");
 const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
-const Destino = require("./destino.js");
 
 class Viaje{
 
   /**
    * Constructor básico de la clase Viaje
    * @param {String} destino - Nombre del destino
-   * @param {Object[]} alojamientos - Array de arrays de alojamientos reservados para el viaje
+   * @param {Alojamiento[]} alojamientos - Array de arrays de alojamientos reservados para el viaje
    *                                  junto a los dias de entrada y salida
    *  
-   * @param {Object[]} puntos_interes - Array de puntos de interés reservados para el viaje
+   * @param {Punto_interes[]} puntos_interes - Array de puntos de interés reservados para el viaje
    *                                    junto a la fecha de dicha reserva
    * 
-   * @param {Object[]} transportes - Array de transportes reservados para el viaje
+   * @param {Transporte[]} transportes - Array de transportes reservados para el viaje
    *                                 junto a la fecha de dicha reserva
    * 
    * @param {Number} precio - Precio final del viaje
@@ -81,6 +80,8 @@ class Viaje{
    * @param {Alojamiento} alojamiento - Alojamiento en el que se ha realizado la reserva
    * @param {Date} fecha_entrada - Fecha en la que la reserva comienza
    * @param {Date} fecha_salida - Fecha en la que la reserva acaba
+   * 
+   * @returns {Number} Longitud del array de reservas de alojamientos
    */
 
   anadir_reserva_alojamiento(alojamiento, fecha_entrada, fecha_salida){
@@ -96,6 +97,8 @@ class Viaje{
    * 
    * @param {Punto_interes} punto_interes - Punto de interés en el que se ha realizado la reserva
    * @param {Date} fecha_entrada - Fecha en la que la reserva ha sido realizada
+   * 
+   * @returns {Number} Longitud del array de reservas de puntos de interés
    */
 
   anadir_reserva_punto_interes(punto_interes, fecha){
@@ -111,14 +114,16 @@ class Viaje{
    * 
    * @param {Transporte} transporte - Transporte en el que se ha realizado la reserva
    * @param {Date} fecha - Fecha en la que la reserva ha sido realizada
+   * 
+   * @returns {Number} Longitud del array de reservas de transportes
    */
 
   anadir_reserva_transporte(transporte, fecha){
     var reserva = [transporte, fecha];
 
-    this.transportes.push(reserva);
+    var num_reservas = this.transportes.push(reserva);
 
-    return reserva;
+    return num_reservas;
   }
 }
 
