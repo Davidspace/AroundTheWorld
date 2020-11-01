@@ -9,9 +9,9 @@
 
 ## Docker
 
-- [Aqui](https://github.com/Davidspace/AroundTheWorld/tree/master/docs) puedes consultar la comparativa realizada entre imágenes base y el por qué de la elección de la usada.
+- [Aqui](https://github.com/Davidspace/AroundTheWorld/tree/master/docs) puede consultar la comparativa realizada entre imágenes base y el por qué de la elección de la usada.
 
-- Pincha en el siguiente enlace para acceder al [Dockerfile](https://github.com/Davidspace/AroundTheWorld/blob/master/Dockerfile). Para ver su documentación, [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
+- Pinche en el siguiente enlace para acceder al [Dockerfile](https://github.com/Davidspace/AroundTheWorld/blob/master/Dockerfile). Para ver su documentación, [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
 
 - Para ver todo el proceso seguido para subir el contenedor a Docker Hub y activar la actualización automática, clicke en [este enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_DockerHub.md).
 
@@ -40,7 +40,7 @@ Una vez cumple estos dos requisitos, debe dirigirse al directorio del repositori
 <code>docker run -t -v \`pwd\`:/test davidspace/aroundtheworld</code>
 
 ## Código fuente
-- Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
+- Puede acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
 
 - La **clase principal** del proyecto es la clase **Destino**. Esta clase se puede consultar [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/destino.js).
 
@@ -113,10 +113,10 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 - Los **pasos seguidos en el desarrollo del proyecto** pueden ser examinados [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md).
 
 ## Fichero iv.yaml
-Clicka en el siguiente enlace para acceder al fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml), cuya finalidad es especificar ficheros y otros parámetros de configuración para test.
+Clicke en el siguiente enlace para acceder al fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml), cuya finalidad es especificar ficheros y otros parámetros de configuración para test.
 
 ## Fichero para automatización de tareas
-El fichero designado para configurar la **automatización de tareas** por parte de **Gulp** es el denominado **gulpfile.js**. Puedes acceder a su contenido clickando [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js).
+El fichero designado para configurar la **automatización de tareas** por parte de **Gulp** es el denominado **gulpfile.js**. Puede acceder a su contenido clickando [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js).
 
 ## Autor
 [David García Martínez](https://github.com/Davidspace)
