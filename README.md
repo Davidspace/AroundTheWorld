@@ -9,7 +9,7 @@
 
 ## Docker
 
-- [Aqui](https://github.com/Davidspace/AroundTheWorld/tree/master/docs) puede consultar la comparativa realizada entre imágenes base y el por qué de la elección de la usada.
+- [Aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/comparacion_imagenes_base.md) puede consultar la comparativa realizada entre imágenes base y el por qué de la elección de la usada.
 
 - Pinche en el siguiente enlace para acceder al [Dockerfile](https://github.com/Davidspace/AroundTheWorld/blob/master/Dockerfile). Para ver su documentación, [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
 
@@ -19,7 +19,7 @@
 
 - Para ver todos los pasos dados para publicar mi contenedor en GitHub Container Registry [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_GHCR.md).
 
-- Para acceder a mi paquete en GitHub Container Regostry, pulse [aqui](https://github.com/users/Davidspace/packages/container/package/aroundtheworld).
+- Para acceder a mi paquete en GitHub Container Registry, pulse [aqui](https://github.com/users/Davidspace/packages/container/package/aroundtheworld).
 
 - La documentación sobre el seguimiento de buenas prácticas en la optimización del tamaño y velocidad del contenedor resultante se encuentra [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
 
@@ -52,6 +52,8 @@ Una vez cumple estos dos requisitos, debe dirigirse al directorio del repositori
 - El fichero que contiene los tests relacionados con el fichero fuente principal se denomina [index.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/index.test.js).
 
 - El fichero que contiene los tests relacionados con la clase principal se denomina [destino.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/destino.test.js).
+
+- El fichero que contiene los tests relacionados con la clase que modela los viajes se denomina [viaje.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/viaje.test.js).
 
 ## Instalación
 La propia aplicación cuenta con una herramientas de construcción, **Gulp**, la cual automatiza el proceso de instalación de la misma en su equipo. Para llevar a cabo este proceso, debe ejecutar la siguiente orden:
