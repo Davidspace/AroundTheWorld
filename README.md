@@ -15,7 +15,9 @@
 
 ## Ejecución de los tests en un contenedor Docker
 
-Para ejecutar los tests en un contenedor debe clonar este repositorio en su equipo local en primer lugar mediante el comando `git@github.com:Davidspace/AroundTheWorld.git`.
+Para ejecutar los tests en un contenedor debe clonar este repositorio en su equipo local en primer lugar mediante el siguiente comando:
+
+`git@github.com:Davidspace/AroundTheWorld.git`
 
 A continuación debe descargarse la imagen desde alguno de las dos siguientes plataformas:
 
@@ -25,7 +27,9 @@ A continuación debe descargarse la imagen desde alguno de las dos siguientes pl
 
 Una vez cumple estos dos requisitos, debe dirigirse al directorio del repositorio y ejecutar el siguiente comando:
 
-<code>docker run -t -v \`pwd\`:/test davidspace/aroundtheworld<code>
+<code>
+docker run -t -v \`pwd\`:/test davidspace/aroundtheworld
+</code>
 
 ## Código fuente
 - Puedes acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
