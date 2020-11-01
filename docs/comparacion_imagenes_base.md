@@ -4,7 +4,7 @@
 
 La elección de la imagen base más óptima para nuestro contenedor es fundamental, ya que dependiendo de nuestras necesidades una imagen puede ser bastante mejor que las demás opciones, por ejemplo en términos de rendimiento o tamaño, o incluso necesaria debido a que incluya algunas funcionalidades que las demás no. 
 
-En primer lugar, partimos del hecho de que el usar imágenes oficiales será casi siempre mejor opción que las no oficiales, ya que cuentan con una documentación extensa y clara, siguen las mejores prácticas y están diseñadas para los casos de uso más comunes. Por otro lado, usar las imágenes oficiales de un lenguaje es mucho más conveniente que usar la de un sistema operativo y posteriormente instalar el lenguaje y cualquier otra cosa que necesite, ya que nuestro proyecto se basa en un lenguaje específico, en este caso Node.js. Es por estos motivos que escogeremos las imágenes candidatas entre las oficiales de Node.js.
+En primer lugar, partimos del hecho de que el usar imágenes oficiales será casi siempre mejor opción que las no oficiales, ya que cuentan con una documentación extensa y clara, siguen las mejores prácticas y están diseñadas para los casos de uso más comunes. Por otro lado, usar las imágenes oficiales de un lenguaje es mucho más conveniente que usar la de un sistema operativo y posteriormente instalar el lenguaje y cualquier otra cosa que necesite, ya que mi proyecto se basa en un lenguaje específico, en este caso Node.js.
 
 Entre las imágenes oficiales de Node.js encontramos varios tipos, que vienen indicados mediante **tags**:
 
@@ -16,10 +16,27 @@ Entre las imágenes oficiales de Node.js encontramos varios tipos, que vienen in
 
 - **stretch/buster/jessie**: Se tratan de imágenes basadas en distintas versiones de Debian (Buster -> 10.4, Stretch -> 9.x, Jessie -> 8.x)
 
-- **windowsservercore**: Imágenes diseñadas para aplicaciones que solo pueden ser ejecutadas en Windows o Windows Server. Carecen de interés dadas mis necesidades actuales.
+Elegiremos una imagen de cada uno de los principales tags.
 
-Elegiremos una imagen de cada uno de los principales tags y llevaremos a cabo las comparaciones entre ellas.
+Aún dados los motivos anteriores por los que es más óptimo escoger una imagen oficial del lenguaje que vamos a utilizar, voy a seleccionar dos imágenes oficiales de dos sistemas operativos diferentes a las cuales les instalaremos **npm** y **node** con el objetivo de testear sus rendimientos y observar sus tamaños. Estas dos imágenes serán:
 
+- Imagen base de la distribución de Linux **CentOS**.
+
+- Imagen base de la distribución de Linux **Fedora**.
+
+Para la creación de la imagen sobre la imagen base de **CentOS** añadiré al Dockerfile los comandos necesarios para, como he dicho con anterioridad, instalar **npm** y **node**. Estos comandos son:
+
+`sudo yum groupinstall "Development Tools"`\
+`sudo dnf install update`\
+`sudo dnf module list nodejs`
+`sudo dnf module install nodejs`
+
+De igual forma, en el Dockerfile en el que incluiré la imagen base de **fedora** añadiré los siguientes comandos:
+
+`dnf -y install nodejs npm`\
+`npm -g install npm`\
+`npm -g install n`\
+`n stable`
 
 ## Realización de pruebas a las imágenes base
 
@@ -40,7 +57,15 @@ La imagen con el tag **alpine**, **14.15.0-alpine3.12**, ocupa 117MB y su tiempo
 
 ![Tiempo de ejecución de la imagen base alpine](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/alpine.png)
 
-Estudiando los resultados, podemos observar que el rendimiento de las tres imágenes seleccionadas es prácticamente el mismo, ya que la diferencia que observamos es de un máximo de dos segundos aún habiendo ejecutado los tests 100 veces, por lo que la velocidad pasa a ser un factor no determinante. Por lo tanto, basaré mi decisión exclusivamente en el espacio que ocupen en disco, buscando siempre que sea el menor posible. Dado esto, la imagen base que usaré en mi contenedor para tests será **14.15.0-alpine3.12**. He utilizado este tag en otras asignaturas y, como he mencionado anteriormente, es el tipo de imagen más popular actualmente debido a su reducido tamaño, por lo que no es de extrañar que tras este análisis haya sido la imagen escogida.
+La imagen del sistema operativo **CentOS**, **centos8:centos8**, ocupa ...MB y su tiempo de ejecución ha sido de **... minutos y ... segundos**.
+
+![Tiempo de ejecución de la imagen base CentOS](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/centos.png)
+
+La imagen del sistema operativo **Fedora**, **fedora:32**, ocupa ...MB y su tiempo de ejecución ha sido de **... minutos y ... segundos**.
+
+![Tiempo de ejecución de la imagen base fedora](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/fedora.png)
+
+Estudiando los resultados, podemos observar que el rendimiento de las cinco imágenes seleccionadas es prácticamente el mismo, ya que la diferencia que observamos es de un máximo de dos segundos aún habiendo ejecutado los tests 100 veces, por lo que la velocidad pasa a ser un factor no determinante. Por lo tanto, basaré mi decisión exclusivamente en el espacio que ocupen en disco, buscando siempre que sea el menor posible. Dado esto, la imagen base que usaré en mi contenedor para tests será **14.15.0-alpine3.12**. He utilizado este tag en otras asignaturas y, como he mencionado anteriormente, es el tipo de imagen más popular actualmente debido a su reducido tamaño, por lo que no es de extrañar que tras este análisis haya sido la imagen escogida.
 
 
 

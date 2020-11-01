@@ -1,11 +1,16 @@
 # Indico la imagen que utilizaré como base en mi contenedor
-FROM node:14.15.0-alpine3.12
+FROM fedora:32
 
 # Documento el creador de la imagen
 LABEL version = "1.0" maintainer = "David García Martínez <dgarmar@gmail.com>"
 
 # Copio los ficheros que almacenan las dependencias del proyecto
 COPY package*.json ./
+
+dnf -y install nodejs npm
+npm -g install npm
+npm -g install n
+n stable
 
 # Instalo las dependencias, el task runner, limpio la cache y elimino el fichero de dependencias
 RUN npm install --no-optional && npm install -g gulp-cli && npm cache clean --force && rm ./package*.json
