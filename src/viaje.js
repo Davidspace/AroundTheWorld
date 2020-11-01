@@ -2,6 +2,7 @@ const Alojamiento = require("./alojamiento.js");
 const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 const Destino = require("./destino.js");
+const Punto_interes = require("./punto_interes.js");
 
 class Viaje{
 
@@ -85,7 +86,22 @@ class Viaje{
     this.alojamientos.push(reserva);
 
     return reserva;
-  } 
+  }
+
+  /**
+  * [HU007] Método que añade al viaje la reserva de un punto de interés
+  * 
+  * @param {Punto_interes} punto_interes - Punto de interés en el que se ha realizado la reserva
+  * @param {Date} fecha_entrada - Fecha en la que la reserva ha sido realizada
+  */
+
+  anadir_reserva_punto_interes(punto_interes, fecha){
+    var reserva = [punto_interes, fecha];
+  
+    this.puntos_interes.push(reserva);
+
+    return reserva;
+  }
 }
 
 module.exports = Viaje;
