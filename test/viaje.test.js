@@ -26,8 +26,7 @@ describe("Testeando las funciones incluidas en viaje.js con la interfaz ASSERT d
     it("Comprobando que la reserva del punto de interés se almacena correctamente", function(done){
       /** Añadimos la reserva del punto de interés a nuestro viaje */
       var num_reservas = Index.viajes[0].anadir_reserva_punto_interes(Index.puntos_interes_baza[0], 
-                                                                      new Date(2020, 12, 12), 
-                                                                      new Date(2020, 12, 14));
+                                                                      new Date(2020, 12, 12, 11, 0, 0));
       
       /** Comprobamos que la nueva longitud del array de puntos de interés reservados es 1 */
       expect(num_reservas).to.equal(1);
@@ -41,7 +40,7 @@ describe("Testeando las funciones incluidas en viaje.js con la interfaz ASSERT d
     it("Comprobando que la reserva del transporte se almacena correctamente", function(done){
       /** Añadimos la reserva del transporte a nuestro viaje */
       var num_reservas = Index.viajes[0].anadir_reserva_transporte(Index.transportes_baza[0], 
-                                                                      new Date(2020, 12, 12, 9, 30, 0);
+                                                                      new Date(2020, 12, 12, 9, 30, 0));
       
       /** Comprobamos que la nueva longitud del array de puntos de interés reservados es 1 */
       expect(num_reservas).to.equal(1);
