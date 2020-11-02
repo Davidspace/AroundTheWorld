@@ -91,3 +91,28 @@ El fichero .dockerignore tiene un funcionamiento muy similar a .gitignore. En é
 
 `node_modules`\
 `npm-debug.log`
+
+### Uso de docker-squash
+
+Docker-squash es una herramienta que "aplasta" múltiples capas de una imagen docker en una con el objetivo de crear una nueva imagen con menos capas y más pequeñas. La imagen "aplastada" funcionará de la misma manera que la original, ya que se mantienen comandos como PORT y ENV. Además, los ficheros eliminados en las últimas capas son purgados de la imagen cuando esta es "aplastada".
+
+Existen varias formas de utilizar esta herramienta, aunque yo voy a utilizar la opción `--squash` de `docker build`. Para utilizar esta opción es necesario activar el modo experimental de Docker, lo cual no es inmediato. Para ello, crearé un fichero en **/etc/docker/daemon.json** mediante el comando `sudo nano /etc/docker/daemon.json`, y en él escribiré el siguiente contenido:
+
+![Docker experimental](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/docker_experimental.png)
+
+Una vez activado, primero ejecutaré `docker build AroundTheWorld/ -t davidspace/aroundtheworld:latest` para crear una imagen sin "aplastar", y acto seguido, `docker build --squash AroundTheWorld/ -t davidspace/aroundtheworld:squashed`, creando una imagen "aplastada".
+
+Gracias a la orden `docker history` podemos consultar el historial de una imagen, el cual nos dará información sobre las diferencias entre las dos imágenes.
+
+`docker history davidspace/aroundtheworld:latest`
+
+![Historial de la imagen no aplastada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/docker_historial_latest.png)
+
+`docker history davidspace/aroundtheworld:squashed`
+
+![Historial de la imagen aplastada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/docker_historial_squashed.png)
+
+Podemos observar como en la segunda imagen, la correspondiente con el historial de la imagen "aplastada", todas las capas han sido mergeadas en una sola. Sin embargo, no he conseguido reducir el tamaño de la imagen mediante esta herramienta.
+
+
+
