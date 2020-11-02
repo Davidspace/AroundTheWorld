@@ -10,7 +10,7 @@ RUN useradd node
 # Copio los ficheros que almacenan las dependencias del proyecto
 COPY package*.json ./
 
-RUN apt update && apt install nodejs npm
+RUN apt update && apt -y install nodejs npm
 
 # Instalo las dependencias, instalo el task runner, limpio la cache y elimino el fichero de dependencias
 RUN npm install --no-optional && npm install -g gulp-cli && npm cache clean --force && rm ./package*.json
