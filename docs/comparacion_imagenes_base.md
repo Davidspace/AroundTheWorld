@@ -43,31 +43,33 @@ He decidido basar mi decisión sobre qué imagen base usar en dos de sus aspecto
 ![Script de prueba](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/prueba_imagenes.png)
 
 
-La **imagen oficial completa**, **latest**, ocupa 941MB y su tiempo de ejecución ha sido de **2 minutos y 46.327 segundos**.
+La imagen generada sobre la **imagen oficial completa**, **latest**, ocupa **940MB** y su tiempo de ejecución ha sido de **5 minutos y 10.706 segundos**. Si no es necesario descargar la imagen y únicamente se ejecutan los tests el tiempo de ejecución es de **2 minutos y 47.221 segundos**.
 
-![Tiempo de ejecución de la imagen base completa](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/complete.png)
+![Tiempo de ejecución de la imagen base completa](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/node-latest.png) ![Tiempo de ejecución de la imagen base completa ya descargada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/node-latest-downloaded.png)
+ 
 
-La imagen con el tag **slim**, **14.15.0-buster-slim**, ocupa 181MB y su tiempo de ejecución ha sido de **2 minutos y 44.940 segundos**.
+La imagen generada sobre la imagen con el tag **slim**, **14.15.0-buster-slim**, ocupa **209MB** y su tiempo de ejecución ha sido de **3 minutos y 26.279 segundos**. Si no es necesario descargar la imagen el tiempo de ejecución es de **2 minutos y 48.271 segundos**.
 
-![Tiempo de ejecución de la imagen base slim](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/slim.png)
-
-La imagen con el tag **alpine**, **14.15.0-alpine3.12**, ocupa 117MB y su tiempo de ejecución ha sido de **2 minutos y 46.610 segundos**.
-
-![Tiempo de ejecución de la imagen base alpine](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/alpine.png)
-
-La imagen del sistema operativo **Debian**, **debian:10.6**, ocupa ...MB y su tiempo de ejecución ha sido de **... minutos y ... segundos**.
-
-![Tiempo de ejecución de la imagen base CentOS](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/centos.png)
-
-La imagen del sistema operativo **Fedora**, **fedora:32**, ocupa ...MB y su tiempo de ejecución ha sido de **... minutos y ... segundos**.
-
-![Tiempo de ejecución de la imagen base fedora](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/fedora.png)
-
-Estudiando los resultados, podemos observar que el rendimiento de las cinco imágenes seleccionadas es prácticamente el mismo, ya que la diferencia que observamos es de un máximo de dos segundos aún habiendo ejecutado los tests 100 veces, por lo que la velocidad pasa a ser un factor no determinante. Por lo tanto, basaré mi decisión exclusivamente en el espacio que ocupen en disco, buscando siempre que sea el menor posible. Dado esto, la imagen base que usaré en mi contenedor para tests será **14.15.0-alpine3.12**. He utilizado este tag en otras asignaturas y, como he mencionado anteriormente, es el tipo de imagen más popular actualmente debido a su reducido tamaño, por lo que no es de extrañar que tras este análisis haya sido la imagen escogida.
+![Tiempo de ejecución de la imagen base slim](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/slim.png) ![Tiempo de ejecución de la imagen base slim ya descargada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/slim-downloaded.png)
 
 
+La imagen generada sobre la imagen con el tag **alpine**, **14.15.0-alpine3.12**, ocupa **145MB** y su tiempo de ejecución ha sido de **3 minutos y 16.441 segundos**. Si no es necesario descargar la imagen el tiempo de ejecución es de **2 minutos y 50.868 segundos**.
+
+![Tiempo de ejecución de la imagen base alpine](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/alpine.png) ![Tiempo de ejecución de la imagen base alpine ya descargada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/alpine-downloaded.png)
 
 
+La imagen generada sobre la imagen del sistema operativo **Debian**, **debian:10.6**, ocupa **535MB** y su tiempo de ejecución ha sido de **6 minutos y 19.522 segundos**. Si no es necesario descargar la imagen el tiempo de ejecución es de **4 minutos y 51.428 segundos**.
+
+![Tiempo de ejecución de la imagen base Debian](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/debian.png) ![Tiempo de ejecución de la imagen base Debian ya descargada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/debian-downloaded.png)
 
 
+La imagen generada sobre la imagen del sistema operativo **Fedora**, **fedora:32**, ocupa **775MB** y su tiempo de ejecución ha sido de **5 minutos y 19.846 segundos**. Si no es necesario descargar la imagen el tiempo de ejecución es de **2 minutos y 47.554 segundos**.
 
+![Tiempo de ejecución de la imagen base fedora](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/fedora.png) ![Tiempo de ejecución de la imagen base fedora ya descargada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/fedora-downloaded.png)
+
+
+Estudiando los resultados, podemos observar que el tiempo de ejecución varía bastante en el caso de que la imagen base no esté almacenada localmente y sea necesario descargarla de Docker Hub. Dicho tiempo de ejecución será directamente proporcional al tamaño de la propia imagen base.
+
+Sin embargo, lo común es que tengamos almacenada la imagen base con la que vamos a construir nuestra imagen cada vez que queramos ejecutar los tests. En dicho caso, exceptuando el caso de Debian, cuyo tiempo de ejecución es 2 minutos mayor, el resto de imágenes base tienen tiempos de ejecución muy similares, ya que la diferencia que observamos es de un máximo de dos segundos aún habiendo ejecutado los tests 100 veces, por lo que la velocidad pasa a ser un factor no determinante. 
+
+Por lo tanto, basaré mi decisión exclusivamente en el espacio que ocupen en disco, buscando siempre que sea el menor posible. Dado esto, la imagen base que usaré en mi contenedor para tests será **14.15.0-alpine3.12**. He utilizado este tag en otras asignaturas y, como he mencionado anteriormente, es el tipo de imagen más popular actualmente debido a su reducido tamaño, por lo que no es de extrañar que tras este análisis haya sido la imagen escogida.
