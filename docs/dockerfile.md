@@ -106,11 +106,11 @@ Gracias a la orden `docker history` podemos consultar el historial de una imagen
 
 `docker history davidspace/aroundtheworld:latest`
 
-![Historial de la imagen no aplastada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/docker_historial_latest.png)
+![Historial de la imagen no aplastada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/docker_history_latest.png)
 
 `docker history davidspace/aroundtheworld:squashed`
 
-![Historial de la imagen aplastada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/docker_historial_squashed.png)
+![Historial de la imagen aplastada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/docker_history_squashed.png)
 
 Podemos observar como en la segunda imagen, la correspondiente con el historial de la imagen "aplastada", todas las capas han sido mergeadas en una sola. Sin embargo, no he conseguido reducir el tamaño de la imagen mediante esta herramienta.
 
