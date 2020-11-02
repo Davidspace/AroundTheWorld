@@ -68,7 +68,7 @@ La imagen generada sobre la imagen del sistema operativo **Fedora**, **fedora:32
 ![Tiempo de ejecución de la imagen base fedora](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/fedora.png) ![Tiempo de ejecución de la imagen base fedora ya descargada](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/fedora-downloaded.png)
 
 
-Estudiando los resultados, podemos observar que el tiempo de ejecución varía bastante en el caso de que la imagen base no esté almacenada localmente y sea necesario descargarla de Docker Hub. Dicho tiempo de ejecución será directamente proporcional al tamaño de la propia imagen base.
+Estudiando los resultados, podemos observar que el tiempo de ejecución varía bastante en el caso de que la imagen base no esté almacenada localmente y sea necesario descargarla de Docker Hub. Dicho tiempo de ejecución será directamente proporcional al tamaño de la propia imagen base (con algunas varianzas debido a la irregularidad de la conexión a internet).
 
 Sin embargo, lo común es que tengamos almacenada la imagen base con la que vamos a construir nuestra imagen cada vez que queramos ejecutar los tests. En dicho caso, exceptuando el caso de Debian, cuyo tiempo de ejecución es 2 minutos mayor, el resto de imágenes base tienen tiempos de ejecución muy similares, ya que la diferencia que observamos es de un máximo de dos segundos aún habiendo ejecutado los tests 100 veces, por lo que la velocidad pasa a ser un factor no determinante. 
 
