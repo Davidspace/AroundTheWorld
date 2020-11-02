@@ -20,16 +20,14 @@ Elegiremos una imagen de cada uno de los principales tags.
 
 Aún dados los motivos anteriores por los que es más óptimo escoger una imagen oficial del lenguaje que vamos a utilizar, voy a seleccionar dos imágenes oficiales de dos sistemas operativos diferentes a las cuales les instalaremos **npm** y **node** con el objetivo de testear sus rendimientos y observar sus tamaños. Estas dos imágenes serán:
 
-- Imagen base de la distribución de Linux **CentOS**.
+- Imagen base de la distribución de Linux **Debian**.
 
 - Imagen base de la distribución de Linux **Fedora**.
 
-Para la creación de la imagen sobre la imagen base de **CentOS** añadiré al Dockerfile los comandos necesarios para, como he dicho con anterioridad, instalar **npm** y **node**. Estos comandos son:
+Para la creación de la imagen sobre la imagen base de **Debian** añadiré al Dockerfile los comandos necesarios para, como he dicho con anterioridad, instalar **npm** y **node**. Estos comandos son:
 
-`yum groupinstall "Development Tools"`\
-`dnf install update`\
-`dnf module list nodejs`
-`dnf module install nodejs`
+`apt update`\
+`apt -y install nodejs npm`
 
 De igual forma, en el Dockerfile en el que incluiré la imagen base de **fedora** añadiré los siguientes comandos:
 
@@ -40,7 +38,7 @@ De igual forma, en el Dockerfile en el que incluiré la imagen base de **fedora*
 
 ## Realización de pruebas a las imágenes base
 
-He decidido basar mi decisión sobre qué imagen base usar en dos de sus aspectos más relevantes: la velocidad y el tamaño. El tamaño de cada imagen lo podemos consultar en la propia página web de Docker Hub, que será de donde descargue las imágenes. La velocidad, por otro lado, la consultaré mediante la observación del tiempo de ejecución de un sencillo script que descarga cada imagen del repositorio de Docker Hub y hará que lleve a cabo los tests 100 veces. Dicho script es el siguiente:
+He decidido basar mi decisión sobre qué imagen base usar en dos de sus aspectos más relevantes: la velocidad y el tamaño. El tamaño de cada imagen lo consultaré mediante el comando `docker images`, el cual muestra un listado de las imágenes que hay en mi equipo. La velocidad, por otro lado, la consultaré mediante la observación del tiempo de ejecución de un sencillo script que descarga la imagen del repositorio de Docker Hub y hará que lleve a cabo los tests 100 veces. Dicho script es el siguiente:
 
 ![Script de prueba](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/prueba_imagenes.png)
 
@@ -57,7 +55,7 @@ La imagen con el tag **alpine**, **14.15.0-alpine3.12**, ocupa 117MB y su tiempo
 
 ![Tiempo de ejecución de la imagen base alpine](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/alpine.png)
 
-La imagen del sistema operativo **CentOS**, **centos8:centos8**, ocupa ...MB y su tiempo de ejecución ha sido de **... minutos y ... segundos**.
+La imagen del sistema operativo **Debian**, **debian:10.6**, ocupa ...MB y su tiempo de ejecución ha sido de **... minutos y ... segundos**.
 
 ![Tiempo de ejecución de la imagen base CentOS](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/centos.png)
 
