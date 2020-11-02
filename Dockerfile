@@ -1,5 +1,5 @@
 # Indico la imagen que utilizaré como base en mi contenedor
-FROM centos:centos8
+FROM debian:10.6
 
 # Documento el creador de la imagen
 LABEL version = "1.0" maintainer = "David García Martínez <dgarmar@gmail.com>"
@@ -10,7 +10,7 @@ RUN useradd node
 # Copio los ficheros que almacenan las dependencias del proyecto
 COPY package*.json ./
 
-RUN yum groupinstall "Development Tools" && dnf install update && dnf module list nodejs && dnf module install nodejs
+RUN apt update && apt install nodejs npm
 
 # Instalo las dependencias, instalo el task runner, limpio la cache y elimino el fichero de dependencias
 RUN npm install --no-optional && npm install -g gulp-cli && npm cache clean --force && rm ./package*.json
