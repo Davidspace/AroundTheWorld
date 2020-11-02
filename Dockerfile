@@ -1,11 +1,15 @@
 # Indico la imagen que utilizaré como base en mi contenedor
-FROM node:14.15.0-buster-slim
+FROM fedora:32
 
 # Documento el creador de la imagen
 LABEL version = "1.0" maintainer = "David García Martínez <dgarmar@gmail.com>"
 
+RUN useradd node
+
 # Copio los ficheros que almacenan las dependencias del proyecto
 COPY package*.json ./
+
+RUN dnf -y install nodejs npm && npm -g install npm && npm -g install n && n stable
 
 # Instalo las dependencias, instalo el task runner, limpio la cache y elimino el fichero de dependencias
 RUN npm install --no-optional && npm install -g gulp-cli && npm cache clean --force && rm ./package*.json
