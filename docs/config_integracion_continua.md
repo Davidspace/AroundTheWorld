@@ -52,7 +52,15 @@ Una vez dado de alta, procedo a activar el repositorio en el que se va a aplicar
 
 ### Creación del fichero de configuración .shippable.yml
 
-...
+El fichero **.shippable.yml** debe contener el mismo tipo de información y con la misma estructura que el fichero **.travis.yml**. Por lo tanto, quedaría de la siguiente forma:
+
+```
+before_install:
+  docker build -t davidspace/aroundtheworld .
+
+script:
+  docker run -t -v \`pwd\`:/test davidspace/aroundtheworld
+```
 
 
 
