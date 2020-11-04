@@ -1,5 +1,5 @@
 language:
-  - node
+  - node_js
 
 node.js:
   - 14.15.0
