@@ -68,7 +68,25 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 
 - Actualizar el listado de [herramientas](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) utilizadas.
 
-- [Registro del contenedor](https://github.com/users/Davidspace/packages/container/package/aroundtheworld) en GitHub Container Registry y [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_GHCR.md) del proceso.
+- [Registro del contenedor](https://github.com/users/Davidspace/packages/container/package/aroundtheworld)
+
+## Hito 4: Integración continua
+
+- Añadir Travis y Shippable como sistemas de integración continua elegidos en mi [listado de herramientas utilizadas](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) y añadir la justificación del porqué.
+
+- Llevar a cabo la configuración en el sistema de integración continua Travis.
+
+- Crear y añadir a mi repositorio el fichero de configuración [.travis.yml](https://github.com/Davidspace/AroundTheWorld/blob/master/.travis.yml).
+
+- Llevar a cabo la configuración en el sistema de integración continua Shippable.
+
+- Crear y añadir a mi repositorio el fichero de configuración [.shippable.yml](https://github.com/Davidspace/AroundTheWorld/blob/master/.shippable.yml).
+
+- Documentar el [proceso](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md) llevado a cabo en ambas configuraciones
+
+- Documentar el [correcto uso del gestor de tareas](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md#uso-correcto-del-task-runner) en ambos sistemas de CI.
+
+- Documentar el [aprovechamiento del contenedor Docker](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/docker_ci.md) en ambos sistemas de CI.
 
 - Creación de nuevas historias de usuario y avances en el [código](https://github.com/Davidspace/AroundTheWorld/tree/master/src) y [tests](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
 
