@@ -11,7 +11,7 @@
 
 - [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md) puede consultar la documentación relacionada con la puesta en marcha de los sistemas de integración continua añadidos al proyecto.
 
-- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md#uso-correcto-del-task-runner) puede consultar la documentación sobre el correcto uso del gestor de tareas en ambos sistemas de CI.
+- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/uso_correcto_task_runner_CI.md) puede consultar la documentación sobre el correcto uso del gestor de tareas en ambos sistemas de CI.
 
 - [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/docker_ci.md) puede consultar la documentación sobre el aprovechamiento del contenedor de Docker en los sistemas de CI.
 
