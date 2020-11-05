@@ -12,5 +12,4 @@ build:
   ci:
     - npm install
     - npm install -g gulp
-    - npm install -g gulp-cli
     - gulp test
