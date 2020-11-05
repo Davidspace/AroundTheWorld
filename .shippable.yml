@@ -1,13 +1,15 @@
+# Lenguaje de la aplicación
 language:
   - node_js
 
+# Distintas versiones del lenguaje sobre las que voy a ejecutar los tests
 node.js:
-  - "10"
-  - "14"
+  - "14.15.0"
 
+# Instalo las dependencias de la aplicación mediante npm, instalo el task runner y
+# mediante él ejecuto los tests
 build:
   ci:
     - npm install
     - npm install -g gulp
     - gulp test
-  
