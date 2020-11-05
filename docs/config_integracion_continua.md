@@ -52,7 +52,7 @@ Una vez dado de alta, procedo a activar el repositorio en el que se va a aplicar
 
 ### Creación del fichero de configuración .shippable.yml
 
-El fichero **.shippable.yml** debe contener el mismo tipo de información que el **.travis.yml**, pero mediante otra sintaxis. Además Por lo tanto, quedaría de la siguiente forma:
+El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml**, pero mediante otra sintaxis. Por lo tanto, quedaría de la siguiente forma:
 
 ```
 language:
