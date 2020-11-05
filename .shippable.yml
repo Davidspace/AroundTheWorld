@@ -4,8 +4,10 @@ language:
 node.js:
   - 14.15.0
 
-before_install:
-  - docker build -t davidspace/aroundtheworld .
+build:
+  pre-ci-boot:
+    - docker build -t davidspace/aroundtheworld .
 
-script:
-  - docker run -t -v `pwd`:/test davidspace/aroundtheworld
+  ci:
+    - docker run -t -v `pwd`:/test davidspace/aroundtheworld
+  
