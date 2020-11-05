@@ -1,5 +1,6 @@
 const Alojamiento = require("./alojamiento.js");
 const Punto_interes = require("./punto_interes.js");
+const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 
 class Viaje{
@@ -129,7 +130,7 @@ class Viaje{
   /**
    * [HU009] Método que elimina del viaje la reserva realizada en un alojamiento 
    * 
-   * @param {Alojamiento} nombre_alojamiento - Nombre del alojamiento en el que se ha realizado la reserva
+   * @param {String} nombre_alojamiento - Nombre del alojamiento en el que se ha realizado la reserva
    * 
    * @returns {Alojamiento[]} Alojamiento cuya reserva ha sido eliminada
    */
@@ -138,6 +139,22 @@ class Viaje{
     var index = this.alojamientos.findIndex(alojamiento => alojamiento.nombre === nombre_alojamiento);
 
     var reserva_eliminada = this.alojamientos.splice(index, 1);
+
+    return reserva_eliminada;
+  }
+
+  /**
+   * [HU010] Método que elimina del viaje la reserva realizada en un punto de interés
+   * 
+   * @param {String} nombre_punto_interes - Nombre del punto de interés en el que se ha realizado la reserva
+   * 
+   * @returns {Punto_interes[]} Punto de interés cuya reserva ha sido eliminada
+   */
+
+  eliminar_reserva_punto_interes(nombre_punto_interes){
+    var index = this.puntos_interes.findIndex(punto_interes => punto_interes.nombre === nombre_punto_interes);
+
+    var reserva_eliminada = this.puntos_interes.splice(index, 1);
 
     return reserva_eliminada;
   }

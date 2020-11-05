@@ -68,4 +68,25 @@ describe("Testeando las funciones incluidas en viaje.js con la interfaz ASSERT d
       done()
     });
   });
+
+  /** Testeamos la función correspondiente a HU010 */
+  describe("Testeando el método eliminar_reserva_punto_interes [HU010]", function(){
+
+    it("Comprobando que la reserva del punto de interés se elimina correctamente", function(done){
+      /** Obtenemos el nombre del punto de interés cuya reserva queremos deshacer */
+      var nombre_punto_interes = Index.viajes[0]._puntos_interes[0]._nombre;
+
+      /** Eliminamos la reserva del punto de interés con dicho nombre */
+      var reserva_eliminada = Index.viajes[0].eliminar_reserva_punto_interes(nombre_punto_interes);
+
+      /** Comprobamos que, efectivamente, la reserva eliminada ha sido la que deseabamos */
+      expect(reserva_eliminada[0]._nombre).to.equal(nombre_punto_interes);
+
+      /** Comprobamos también que tras eliminar esa reserva, que era la única existente,
+       *  el array de reservas de puntos de interés queda vacio
+       */
+      expect(Index.viajes[0]._puntos_interes.length).to.equal(0);
+      done()
+    });
+  });
 });
