@@ -2,12 +2,13 @@ language:
   - node_js
 
 node.js:
-  - 14.15.0
+  - 10
+  - 12
+  - 14
 
 build:
-  pre-ci-boot:
-    - docker build -t davidspace/aroundtheworld .
-
   ci:
-    - docker run -t -v `pwd`:/test davidspace/aroundtheworld
+    - npm install
+    - npm install -g gulp-cli
+    - gulp test
   
