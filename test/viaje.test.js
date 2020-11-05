@@ -47,4 +47,25 @@ describe("Testeando las funciones incluidas en viaje.js con la interfaz ASSERT d
       done()
     });
   });
+
+  /** Testeamos la función correspondiente a HU009 */
+  describe("Testeando el método eliminar_reserva_alojamiento [HU009]", function(){
+
+    it("Comprobando que la reserva del alojamiento se elimina correctamente", function(done){
+      /** Obtenemos el nombre del alojamiento cuya reserva queremos deshacer */
+      var nombre_alojamiento = Index.viajes[0]._alojamientos[0]._nombre;
+
+      /** Eliminamos la reserva del alojamiento con dicho nombre */
+      var reserva_eliminada = Index.viajes[0].eliminar_reserva_alojamiento(nombre_alojamiento);
+
+      /** Comprobamos que, efectivamente, la reserva eliminada ha sido la que deseabamos */
+      expect(reserva_eliminada[0]._nombre).to.equal(nombre_alojamiento);
+
+      /** Comprobamos también que tras eliminar esa reserva, que era la única existente,
+       *  el array de reservas de alojamientos queda vacio
+       */
+      expect(Index.viajes[0]._alojamientos.length).to.equal(0);
+      done()
+    });
+  });
 });

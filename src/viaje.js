@@ -125,6 +125,22 @@ class Viaje{
 
     return num_reservas;
   }
+
+  /**
+   * [HU009] Método que elimina del viaje la reserva realizada en un alojamiento 
+   * 
+   * @param {Alojamiento} nombre_alojamiento - Nombre del alojamiento en el que se ha realizado la reserva
+   * 
+   * @returns {Alojamiento[]} Alojamiento cuya reserva ha sido eliminada
+   */
+
+  eliminar_reserva_alojamiento(nombre_alojamiento){
+    var index = this.alojamientos.findIndex(alojamiento => alojamiento.nombre === nombre_alojamiento);
+
+    var reserva_eliminada = this.alojamientos.splice(index, 1);
+
+    return reserva_eliminada;
+  }
 }
 
 module.exports = Viaje;
