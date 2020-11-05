@@ -2,9 +2,8 @@ language:
   - node_js
 
 node.js:
-  - 10
-  - 12
-  - 14
+  - "10"
+  - "14"
 
 build:
   ci:
