@@ -89,4 +89,25 @@ describe("Testeando las funciones incluidas en viaje.js con la interfaz ASSERT d
       done()
     });
   });
+
+  /** Testeamos la función correspondiente a HU011 */
+  describe("Testeando el método eliminar_reserva_transporte [HU011]", function(){
+
+    it("Comprobando que la reserva del transporte se elimina correctamente", function(done){
+      /** Obtenemos el nombre del transporte cuya reserva queremos deshacer */
+      var nombre_transporte = Index.viajes[0]._transportes[0]._nombre;
+
+      /** Eliminamos la reserva del transporte con dicho nombre */
+      var reserva_eliminada = Index.viajes[0].eliminar_reserva_transporte(nombre_transporte);
+
+      /** Comprobamos que, efectivamente, la reserva eliminada ha sido la que deseabamos */
+      expect(reserva_eliminada[0]._nombre).to.equal(nombre_transporte);
+
+      /** Comprobamos también que tras eliminar esa reserva, que era la única existente,
+       *  el array de reservas de transportes queda vacio
+       */
+      expect(Index.viajes[0]._transportes.length).to.equal(0);
+      done()
+    });
+  });
 });

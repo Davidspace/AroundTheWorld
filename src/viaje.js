@@ -158,6 +158,22 @@ class Viaje{
 
     return reserva_eliminada;
   }
+
+  /**
+   * [HU011] Método que elimina del viaje la reserva realizada en un transporte
+   * 
+   * @param {String} nombre_transportes - Nombre del transporte en el que se ha realizado la reserva
+   * 
+   * @returns {Transporte[]} Transporte cuya reserva ha sido eliminada
+   */
+
+  eliminar_reserva_transporte(nombre_transporte){
+    var index = this.transporte.findIndex(transporte => transporte.nombre === nombre_transporte);
+
+    var reserva_eliminada = this.transporte.splice(index, 1);
+
+    return reserva_eliminada;
+  }
 }
 
 module.exports = Viaje;
