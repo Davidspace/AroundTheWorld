@@ -1,6 +1,5 @@
 const Alojamiento = require("./alojamiento.js");
 const Punto_interes = require("./punto_interes.js");
-const Punto_interes = require("./punto_interes.js");
 const Transporte = require("./transporte.js");
 
 class Viaje{
@@ -168,9 +167,9 @@ class Viaje{
    */
 
   eliminar_reserva_transporte(nombre_transporte){
-    var index = this.transporte.findIndex(transporte => transporte.nombre === nombre_transporte);
+    var index = this.transportes.findIndex(transporte => transporte.nombre === nombre_transporte);
 
-    var reserva_eliminada = this.transporte.splice(index, 1);
+    var reserva_eliminada = this.transportes.splice(index, 1);
 
     return reserva_eliminada;
   }
