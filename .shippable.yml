@@ -8,6 +8,6 @@ node.js:
 build:
   ci:
     - npm install
-    - npm install -g gulp-cli
+    - npm install -g gulp
     - gulp test
   
