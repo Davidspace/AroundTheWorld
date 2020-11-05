@@ -1,27 +1,51 @@
 # AroundTheWorld
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-## Desarrollo del proyecto
+## Desarrollo y herramientas del proyecto
 
 - En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md) puede observar los pasos dados para la realización del proyecto
 
 - En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) puede observar el listado de herramientas con las que el proyecto cuenta hasta el momento.
 
+## Integración continua
+
+- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md) puede consultar la documentación relacionada con la puesta en marcha de los sistemas de integración continua añadidos al proyecto.
+
+- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md#uso-correcto-del-task-runner) puede consultar la documentación sobre el correcto uso del gestor de tareas en ambos sistemas de CI.
+
+- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/docker_ci.md) puede consultar la documentación sobre el aprovechamiento del contenedor de Docker en los sistemas de CI.
+
+## Código fuente
+- Puede acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
+
+- La **clase principal** del proyecto es la clase **Destino**. Esta clase se puede consultar [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/destino.js).
+
+- El **fichero fuente principal** del proyecto es el llamado **index.js**. El contenido de este puede ser consultado [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/index.js).
+
+## Ficheros de test
+- El directorio donde se localizan los ficheros de test se denomina [test](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
+
+- El fichero que contiene los tests relacionados con el fichero fuente principal se denomina [index.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/index.test.js).
+
+- El fichero que contiene los tests relacionados con la clase principal se denomina [destino.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/destino.test.js).
+
+- El fichero que contiene los tests relacionados con la clase que modela los viajes se denomina [viaje.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/viaje.test.js).
+
 ## Docker
 
-- [Aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/comparacion_imagenes_base.md) puede consultar la comparativa realizada entre imágenes base y el por qué de la elección de la usada.
+- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/comparacion_imagenes_base.md) puede consultar la comparativa realizada entre imágenes base y el por qué de la elección de la usada.
 
-- Pinche en el siguiente enlace para acceder al [Dockerfile](https://github.com/Davidspace/AroundTheWorld/blob/master/Dockerfile). Para ver su documentación, [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
+- Pinche en el siguiente enlace para acceder al [Dockerfile](https://github.com/Davidspace/AroundTheWorld/blob/master/Dockerfile). Para ver su documentación, [clicke aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
 
 - Para ver todo el proceso seguido para subir el contenedor a Docker Hub y activar la actualización automática, clicke en [este enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_DockerHub.md).
 
-- Para acceder a mi repositorio en Docker Hub, pulse [aqui](https://hub.docker.com/repository/docker/davidspace/aroundtheworld).
+- Para acceder a mi repositorio en Docker Hub, pulse [aquí](https://hub.docker.com/repository/docker/davidspace/aroundtheworld).
 
-- Para ver todos los pasos dados para publicar mi contenedor en GitHub Container Registry [clicke aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_GHCR.md).
+- Para ver todos los pasos dados para publicar mi contenedor en GitHub Container Registry [clicke aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_GHCR.md).
 
-- Para acceder a mi paquete en GitHub Container Registry, pulse [aqui](https://github.com/users/Davidspace/packages/container/package/aroundtheworld).
+- Para acceder a mi paquete en GitHub Container Registry, pulse [aquí](https://github.com/users/Davidspace/packages/container/package/aroundtheworld).
 
-- La documentación sobre el seguimiento de buenas prácticas en la optimización del tamaño y velocidad del contenedor resultante se encuentra [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md).
+- La documentación sobre el seguimiento de buenas prácticas en la optimización del tamaño y velocidad del contenedor resultante se encuentra [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/dockerfile.md#buenas-pr%C3%A1cticas-seguidas-en-el-desarrollo).
 
 ## Ejecución de los tests en un contenedor Docker
 
@@ -38,22 +62,6 @@ A continuación debe descargarse la imagen desde alguno de las dos siguientes pl
 Una vez cumple estos dos requisitos, debe dirigirse al directorio del repositorio y ejecutar el siguiente comando:
 
 <code>docker run -t -v \`pwd\`:/test davidspace/aroundtheworld</code>
-
-## Código fuente
-- Puede acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
-
-- La **clase principal** del proyecto es la clase **Destino**. Esta clase se puede consultar [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/destino.js).
-
-- El **fichero fuente principal** del proyecto es el llamado **index.js**. El contenido de este puede ser consultado [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/src/index.js).
-
-## Ficheros de test
-- El directorio donde se localizan los ficheros de test se denomina [test](https://github.com/Davidspace/AroundTheWorld/tree/master/test).
-
-- El fichero que contiene los tests relacionados con el fichero fuente principal se denomina [index.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/index.test.js).
-
-- El fichero que contiene los tests relacionados con la clase principal se denomina [destino.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/destino.test.js).
-
-- El fichero que contiene los tests relacionados con la clase que modela los viajes se denomina [viaje.test.js](https://github.com/Davidspace/AroundTheWorld/blob/master/test/viaje.test.js).
 
 ## Instalación
 La propia aplicación cuenta con una herramientas de construcción, **Gulp**, la cual automatiza el proceso de instalación de la misma en su equipo. Para llevar a cabo este proceso, debe ejecutar la siguiente orden:
@@ -100,25 +108,25 @@ El listado de dudas sigue y sigue. En una sociedad tan globalizada como la nuest
 - **Gestor de contenedores:** [Docker](https://www.docker.com/).
 
 ## Documentación
-- La **configuración de GitHub** puede ser comprobada [aqui](documentos/configGit.md).
+- La **configuración de GitHub** puede ser comprobada [aquí](documentos/configGit.md).
 
-- La **justificación sobre el uso de las herramientas** listadas con anterioridad puede consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md).
+- La **justificación sobre el uso de las herramientas** listadas con anterioridad puede consultarse [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md).
 
-- Las **milestones** en las que se divide el desarrollo del proyecto pueden ser consultadas [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
+- Las **milestones** en las que se divide el desarrollo del proyecto pueden ser consultadas [aquí](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
 
-- Las **historias de usuario** activas en este momento pueden consultarse [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
+- Las **historias de usuario** activas en este momento pueden consultarse [aquí](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue+label%3Auser-stories).
 
-- Los **issues abiertos** en este momento del desarrollo del proyecto pueden ser consultados [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue).
+- Los **issues abiertos** en este momento del desarrollo del proyecto pueden ser consultados [aquí](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aopen+is%3Aissue).
 
-- Los **issues cerrados** que han dado pie al estado actual del proyecto pueden ser consultados [aqui](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aissue+is%3Aclosed).
+- Los **issues cerrados** que han dado pie al estado actual del proyecto pueden ser consultados [aquí](https://github.com/Davidspace/AroundTheWorld/issues?q=is%3Aissue+is%3Aclosed).
 
-- Los **pasos seguidos en el desarrollo del proyecto** pueden ser examinados [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md).
+- Los **pasos seguidos en el desarrollo del proyecto** pueden ser examinados [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md).
 
 ## Fichero iv.yaml
 Clicke en el siguiente enlace para acceder al fichero [iv.yaml](https://github.com/Davidspace/AroundTheWorld/blob/master/iv.yaml), cuya finalidad es especificar ficheros y otros parámetros de configuración para test.
 
 ## Fichero para automatización de tareas
-El fichero designado para configurar la **automatización de tareas** por parte de **Gulp** es el denominado **gulpfile.js**. Puede acceder a su contenido clickando [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js).
+El fichero designado para configurar la **automatización de tareas** por parte de **Gulp** es el denominado **gulpfile.js**. Puede acceder a su contenido clickando [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/gulpfile.js).
 
 ## Autor
 [David García Martínez](https://github.com/Davidspace)
