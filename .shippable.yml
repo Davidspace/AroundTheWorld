@@ -4,7 +4,7 @@ language:
 
 # Distintas versiones del lenguaje sobre las que voy a ejecutar los tests
 node.js:
-  - "12"
+  - 7.2.4
 
 # Instalo las dependencias de la aplicación mediante npm, instalo el task runner y
 # mediante él ejecuto los tests
