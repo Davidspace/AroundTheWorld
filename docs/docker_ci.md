@@ -8,7 +8,7 @@ La opción más óptima era, sin duda, hacer que los sistemas de integración co
 
 ## Entorno previamente preparado
 
-En ambos sistemas de CI, en la estructura general del fichero de configuración se indican tanto el lenguaje de programación que se va a usar como las versiones de este con las que se va a trabajar:
+En la estructura general del fichero de configuración de Travis se indican tanto el lenguaje de programación que se va a usar como las versiones de este con las que se va a trabajar:
 
 ```
 language:
@@ -42,5 +42,3 @@ before_install:
 script:
   - docker run -t -v `pwd`:/test davidspace/aroundtheworld
 ```
-
-`

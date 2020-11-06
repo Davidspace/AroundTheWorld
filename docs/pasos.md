@@ -84,7 +84,7 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 
 - Documentar el [proceso](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md) llevado a cabo en ambas configuraciones
 
-- Documentar el [correcto uso del gestor de tareas](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md#uso-correcto-del-task-runner) en ambos sistemas de CI.
+- Documentar el [correcto uso del gestor de tareas](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/uso_correcto_task_runner_CI.md) en ambos sistemas de CI.
 
 - Documentar el [aprovechamiento del contenedor Docker](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/docker_ci.md) en ambos sistemas de CI.
 
