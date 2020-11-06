@@ -2,7 +2,7 @@
 
 La integración continua es un tipo de acción que se ejecuta cuando sucede algún evento en un repositorio; en general, se tratará de hacer pasar tests sobre la base de código cada vez que se quiera incorporar algo a la rama máster. Este proceso permite a los desarrolladores de software evitar una larga y problemática fase de integración al final de un proyecto. 
 
-La implementación de integración continua en mi proyecto puede facilitarse en gran medida con la ayuda de software específico, los llamados CI tools. El proceso que estas herramientas automatizarán serán o el de ejecutar directamente los tests en el propio repositorio o el de acceder a nuestro repositorio, clonarlo, crear un contenedor a partir de la imagen creada bajo las especificaciones de mi Dockerfile y ejecutar los tests que he desarrollado dentro de dicho contenedor. Cualquiera de las dos opciones se llevará a cabo cada vez que realice un cambio en el proyecto.
+La implementación de integración continua en mi proyecto puede facilitarse en gran medida con la ayuda de software específico, los llamados CI tools. El proceso que estas herramientas automatizarán serán o el de ejecutar directamente los tests tras instalar las dependencias necesarias o el de acceder a nuestro repositorio, clonarlo, crear un contenedor a partir de la imagen creada bajo las especificaciones de mi Dockerfile y ejecutar los tests que he desarrollado dentro de dicho contenedor. Cualquiera de las dos opciones se llevará a cabo cada vez que realice un cambio en el proyecto.
 
 Las CI tools que he elegido para utilizar en mi proyecto han sido **Travis** y **Shippable**. Puede consultar la justificación de sus elecciones [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md).
 
