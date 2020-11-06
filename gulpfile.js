@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var mocha = require('gulp-mocha');
-var babel = require('babel-register');
+var babel = require('@babel/register');
 var run = require('gulp-run');
 
 /** Tarea que se encarga de instalar las dependencias */
