@@ -4,7 +4,7 @@ El contenedor de Docker creado con anterioridad con el objetivo de ejecutar los 
 
 ## Entorno de ejecución de los tests
 
-La opción más óptima era hacer que los sistemas de integración continua ejecutasen los tests dentro del contenedor, ya que toda la configuración estaba hecha y se sigue tratando del entorno idóneo donde llevarlos a cabo. De este modo, Travis llevan a cabo automáticamente después de cualquier actualización del repositorio la construcción de la imagen a partir del Dockerfile de mi repositorio y la posterior creación del contenedor a partir de dicha imagen, en el cual se indica que deben ejecutarse los tests.
+La opción más óptima era hacer que los sistemas de integración continua ejecutasen los tests dentro del contenedor, ya que toda la configuración estaba hecha y se sigue tratando del entorno idóneo donde llevarlos a cabo. De este modo, Travis lleva a cabo automáticamente después de cualquier actualización del repositorio la construcción de la imagen a partir del Dockerfile de mi repositorio y la posterior creación del contenedor a partir de dicha imagen, en el cual se indica que deben ejecutarse los tests.
 
 ## Entorno previamente preparado
 
