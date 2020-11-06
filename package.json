@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Davidspace/AroundTheWorld#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/register": "^7.12.1",
     "chai": "^4.2.0",
     "gulp": "^4.0.2",
     "gulp-mocha": "^7.0.2",
