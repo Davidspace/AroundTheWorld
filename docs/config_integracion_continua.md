@@ -52,20 +52,37 @@ Una vez dado de alta, procedo a activar el repositorio en el que se va a aplicar
 
 ### Creación del fichero de configuración .shippable.yml
 
-El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml**, pero mediante otra sintaxis. Por lo tanto, quedaría de la siguiente forma:
+El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml** mediante la misma estructura. Por lo tanto, quedaría de la siguiente forma:
 
 ```
 language:
   - node_js
 
-node.js:
-  - "10"
-  - "14"
+before_install:
+  - source ~/.nvm/nvm.sh && nvm install v14.13.0
+  - node --version
 
-build:
-  ci:
-    - npm install
-    - npm install -g gulp
-    - gulp test
-  
+install:
+  - npm install
+  - npm install -g gulp-cli
+
+script:
+  - gulp test
 ```
+
+En primera instancia intenté utilizar las imágenes por defecto que Shippable aporta para utilizar distintas versiones de Node.js mediante el siguiente campo:
+
+```
+node_js:
+ - 7.2.4
+```
+
+Sin embargo, mediante este método no he conseguido que Shippable actualizase la versión de Node que utilizaba en la ejecución de la CI (siempre utilizaba por defecto v0.12, lo que me impedía instalar las dependencias correctamente, las cuales requieren versiones más actualizadas de Node). Por lo tanto, he optado por instalar por mi propia cuenta la versión de Node con la que llevaré a cabo los test mediante el uso de NVM:
+
+```
+before_install:
+  - source ~/.nvm/nvm.sh && nvm install v14.13.0
+  - node --version
+```
+
+Con este cambio, la configuración de Shippable está completa y lleva a cabo la ejecución de los tests de manera correcta cada vez que sucede un cambio en el contenido de mi repositorio.

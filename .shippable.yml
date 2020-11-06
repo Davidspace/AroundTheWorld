@@ -2,19 +2,16 @@
 language:
   - node_js
 
-# Distintas versiones del lenguaje sobre las que voy a ejecutar los tests
-node.js:
-  - 7.2.4
-
-# Instalo las dependencias de la aplicación mediante npm, instalo el task runner y
-# mediante él ejecuto los tests
+# Instalo la versión de node 14.13.0.
 before_install:
   - source ~/.nvm/nvm.sh && nvm install v14.13.0
   - node --version
 
+# Acto seguido, instalo todas las dependencias de la aplicación y el task runner
 install:
   - npm install
   - npm install -g gulp-cli
 
+# Mediante el task runner ejecuto los tests
 script:
   - gulp test
