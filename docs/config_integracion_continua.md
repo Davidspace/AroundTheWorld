@@ -86,3 +86,11 @@ before_install:
 ```
 
 Con este cambio, la configuración de Shippable está completa y lleva a cabo la ejecución de los tests de manera correcta cada vez que sucede un cambio en el contenido de mi repositorio.
+
+### Build exitoso
+
+![Build](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippable7.png)
+
+![Log del build - 1](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippable8.png)
+
+![Log del build - 2](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippable9.png)
