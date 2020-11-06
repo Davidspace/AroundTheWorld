@@ -8,15 +8,16 @@ node.js:
 
 # Instalo las dependencias de la aplicación mediante npm, instalo el task runner y
 # mediante él ejecuto los tests
-build:
-  pre_ci_boot:
-    image_name: davidspace/aroundtheworld
-    image_tag: latest
-    pull: true
-    env: FOO=bar
-    options: "-e HOME=/root"
-
-  ci:
-    - npm install
-    - npm install -g gulp
-    - gulp test
+jobs:
+  - name: use_custom_image
+    type: runSh
+    steps:
+      - TASK:
+          name: need_to_use_custom_container
+          runtime:
+            options:
+              imageName: davidspace/aroundtheworld    # Replace with your image
+              imageTag: latest                        # Replace with your image tag  
+              pull: true                                  # Set to true so it will be pulled
+          script:
+            - docker run -t -v `pwd`:/test davidspace/aroundtheworld
