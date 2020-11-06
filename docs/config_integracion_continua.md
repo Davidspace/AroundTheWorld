@@ -77,7 +77,7 @@ node_js:
  - 7.2.4
 ```
 
-Sin embargo, mediante este método no he conseguido que Shippable actualizase la versión de Node que utilizaba en la ejecución de la CI (siempre utilizaba por defecto v0.12, lo que me impedía instalar las dependencias correctamente, las cuales requieren versiones más actualizadas de Node). Por lo tanto, he optado por instalar por mi propia cuenta la versión de Node con la que llevaré a cabo los test mediante el uso de NVM:
+Sin embargo, mediante este método no he conseguido que Shippable actualizase la versión de Node que utilizaba en la ejecución de la CI (siempre utilizaba por defecto v0.12, lo que me impedía instalar las dependencias correctamente, las cuales requieren versiones más actualizadas de Node). Por lo tanto, he optado por instalar por mi propia cuenta la versión de Node con la que llevaré a cabo los tests mediante el uso de NVM:
 
 ```
 before_install:
