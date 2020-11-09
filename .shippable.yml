@@ -3,6 +3,7 @@ language:
   - node_js
 
 node_js:
+  - "8" # Versión más antigua que funciona
   - "12.19.0" # Versión LTS
   - "14.13.0" # Versión de mi PC
   - "14.15.0" # Versión de mi contenedor (LTS)
