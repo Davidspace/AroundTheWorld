@@ -52,40 +52,35 @@ Una vez dado de alta, procedo a activar el repositorio en el que se va a aplicar
 
 ### Creación del fichero de configuración .shippable.yml
 
-El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml** mediante la misma estructura. Por lo tanto, quedaría de la siguiente forma:
+El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml** mediante la misma estructura. Sin embargo, al contrario que mi fichero de configuración de Travis, el cual aprovecha el uso del contenedor para no especificar ninguna versión de Node debido a que el propio contenedor tiene instalada una (en mi caso, v14.15.0), en este fichero **si** especificaré distintas versiones de Node, con el objetivo de ejecutar mis tests bajo todas ellas y asi poder comprobar cuales son las versiones mínimas y máximas con las que mi aplicación puede funcionar. Por lo tanto, quedaría de la siguiente forma:
 
 ```
 language:
   - node_js
 
-before_install:
-  - source ~/.nvm/nvm.sh && nvm install v14.13.0
-  - node --version
+node_js:
+  - "12.19.0" # Versión LTS
+  - "14.13.0" # Versión de mi PC
+  - "14.15.0" # Versión de mi contenedor (LTS)
+  - "15.1.0" # Versión más reciente
 
 install:
   - npm install
-  - npm install -g gulp-cli
+  - npm install -g gulp
 
 script:
   - gulp test
 ```
 
-En primera instancia intenté utilizar las imágenes por defecto que Shippable aporta para utilizar distintas versiones de Node.js mediante el siguiente campo:
+En el fichero final me quedo con unas pocas versiones de todas las posibles, que son las que suelo utilizar. Sin embargo, he ido llevando a cabo pruebas con más versiones con el objetivo de, como ya he expuesto anteriormente, averiguar las versiones mínimas y máximas de Node que mi aplicación soporta. Las pruebas han arrojado los siguientes resultados:
 
-```
-node_js:
- - 7.2.4
-```
+![Desde v4 a v9](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippablev2.png)
 
-Sin embargo, mediante este método no he conseguido que Shippable actualizase la versión de Node que utilizaba en la ejecución de la CI (siempre utilizaba por defecto v0.12, lo que me impedía instalar las dependencias correctamente, las cuales requieren versiones más actualizadas de Node). Por lo tanto, he optado por instalar por mi propia cuenta la versión de Node con la que llevaré a cabo los tests mediante el uso de NVM:
+![Desde v10 a v15.1](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippablev1.png)
 
-```
-before_install:
-  - source ~/.nvm/nvm.sh && nvm install v14.13.0
-  - node --version
-```
+Gracias a estas pruebas he sido capaz de conseguir una información valiosa sobre los límites de uso de mi aplicación: es capaz de funcionar sin problemas con una **versión de Node igual o superior a la 8**.
 
-Con este cambio, la configuración de Shippable está completa y lleva a cabo la ejecución de los tests de manera correcta cada vez que sucede un cambio en el contenido de mi repositorio.
+Con esto, la configuración de Shippable está completa y lleva a cabo la ejecución de los tests de manera correcta cada vez que sucede un cambio en el contenido de mi repositorio.
 
 ### Build exitoso
 
