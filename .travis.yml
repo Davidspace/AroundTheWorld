@@ -2,7 +2,7 @@ language:
   - minimal
 
 before_install:
-  - docker pull davidspace/aroundtheworld .
+  - docker pull davidspace/aroundtheworld
 
 script:
   - docker run -t -v $TRAVIS_BUILD_DIR:/test davidspace/aroundtheworld
