@@ -1,23 +1,23 @@
 # AroundTheWorld
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+## Rúbricas cubiertas
+
+- [Integración continua](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md) funcionando y correcta [justificación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) de la misma.
+
+- Configuración de algún sistema de [integración continua adicional](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md#shippable) ([justificado](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) de la misma forma).
+
+- [Uso correcto del gestor de tareas](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/uso_correcto_task_runner_CI.md) en todos los casos anteriores.
+
+- [Aprovechamiento del contenedor de Docker](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/docker_ci.md) generado en el milestone anterior en alguno de los sistemas de CI, especialmente si hay un cambio o adaptación del mismo.
+
+- [Tests significativos](https://github.com/Davidspace/AroundTheWorld/blob/master/test/viaje.test.js) y/o [avance del proyecto](https://github.com/Davidspace/AroundTheWorld/blob/master/src/viaje.js) en sí más allá del milestone anterior. 
+
 ## Desarrollo y herramientas del proyecto
 
 - En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md) puede observar los pasos dados para la realización del proyecto
 
 - En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) puede observar el listado de herramientas con las que el proyecto cuenta hasta el momento.
-
-## Integración continua
-
-- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md) puede consultar la documentación relacionada con la puesta en marcha de los sistemas de integración continua añadidos al proyecto.
-
-- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/uso_correcto_task_runner_CI.md) puede consultar la documentación sobre el correcto uso del gestor de tareas en ambos sistemas de CI.
-
-- [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/docker_ci.md) puede consultar la documentación sobre el aprovechamiento del contenedor de Docker en los sistemas de CI.
-
-## Metodos y tests implementados
-
-He creado tres nuevas historias de usuario, las cuales he implementado mediante métodos de la clase Viaje. Dicha clase puede ser consultada [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/viaje.js). Los tests correspondientes pueden ser consultados [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/test/viaje.test.js).
 
 ## Código fuente
 - Puede acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
