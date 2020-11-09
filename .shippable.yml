@@ -9,9 +9,9 @@ before_install:
 
 # Acto seguido, instalo todas las dependencias de la aplicación y el task runner
 install:
-  - npm install
   - npm install -g gulp-cli
 
 # Mediante el task runner ejecuto los tests
 script:
+  - gulp install
   - gulp test
