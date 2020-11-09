@@ -14,6 +14,8 @@ El ejercicio [10](https://github.com/Davidspace/Ejercicios_IV/blob/main/TDD/Ejer
 
 ## Shippable
 
+La justificación sobre la elección de esta herramienta puede ser consultada [aqui](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md).
+
 El proceso de configuración de Shippable es bastante parecido al de Travis. Tras darme de alta y activar la integración en el repositorio que contiene mi proyecto, procedo a crear el fichero de configuración de este sistema de CI.
 
 ### Creación del fichero de configuración .shippable.yml
