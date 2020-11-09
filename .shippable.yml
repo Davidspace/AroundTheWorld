@@ -2,10 +2,8 @@
 language:
   - node_js
 
-# Instalo la versión de node 14.13.0.
-before_install:
-  - source ~/.nvm/nvm.sh && nvm install v14.13.0
-  - node --version
+node_js:
+  - 4.2.3
 
 # Acto seguido, instalo el task runner
 install:
