@@ -3,11 +3,11 @@ language:
   - node_js
 
 build:
-  - pre-ci:
+  pre-ci:
     - source ~/.nvm/nvm.sh && nvm install v14.13.0
     - node --version
     - npm install -g gulp-cli
 
-  - ci:
+  ci:
     - gulp install
     - gulp test
