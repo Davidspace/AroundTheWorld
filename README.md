@@ -15,6 +15,10 @@
 
 - [Aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/docker_ci.md) puede consultar la documentación sobre el aprovechamiento del contenedor de Docker en los sistemas de CI.
 
+## Metodos y tests implementados
+
+He creado tres nuevas historias de usuario, las cuales he implementado mediante métodos de la clase Viaje. Dicha clase puede ser consultada [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/src/viaje.js). Los tests correspondientes pueden ser consultados [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/test/viaje.test.js).
+
 ## Código fuente
 - Puede acceder al directorio que contiene el código fuente del microservicio clickando [en este enlace](https://github.com/Davidspace/AroundTheWorld/tree/master/src).
 
