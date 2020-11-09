@@ -3,15 +3,10 @@ language:
   - node_js
 
 node_js:
-  - 7.1
-  - 7.2
-  - 7.3
-  - 7.4
-  - 7.5
-  - 7.6
-  - 7.7
-  - 7.8
-  - 7.9
+  - "12.19.0" # Versión LTS
+  - "14.13.0" # Versión de mi PC
+  - "14.15.0" # Versión de mi contenedor (LTS)
+  - "15.1.0" # Versión más reciente
 
 # Acto seguido, instalo el task runner
 install:
