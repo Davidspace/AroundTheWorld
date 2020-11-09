@@ -5,4 +5,4 @@ before_install:
   - docker pull davidspace/aroundtheworld .
 
 script:
-  - docker run -t -v `pwd`:/test davidspace/aroundtheworld
+  - docker run -t -v $TRAVIS_BUILD_DIR:/test davidspace/aroundtheworld
