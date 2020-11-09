@@ -3,13 +3,11 @@ language:
   - node_js
 
 build:
-# Instalo la versión de node 14.13.0. Acto seguido, instalo el task runner.
   - pre-ci:
     - source ~/.nvm/nvm.sh && nvm install v14.13.0
     - node --version
     - npm install -g gulp-cli
 
-# Mediante el task runner ejecuto los tests
   - ci:
     - gulp install
     - gulp test
