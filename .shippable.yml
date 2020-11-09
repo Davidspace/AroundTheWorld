@@ -10,12 +10,11 @@ node_js:
   - "14.15.0" # Versión de mi contenedor (LTS)
   - "15.1.0" # Versión más reciente
 
-
 # Acto seguido, instalo el task runner
 install:
-  - npm install gulp
+  - npm install
+  - npm install -g gulp
 
 # Mediante el task runner instalo las dependencias y ejecuto los tests
 script:
-  - gulp install
   - gulp test
