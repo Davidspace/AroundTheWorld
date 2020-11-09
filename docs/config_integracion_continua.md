@@ -42,11 +42,13 @@ En el fichero final me quedo con unas pocas versiones de todas las posibles, que
 
 ![Desde v4 a v9](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippablev2.png)
 
+![Desde v7.0 a v7.9](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippablev3.png)
+
 ![Desde v10 a v15.1](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippablev1.png)
 
 Gracias a estas pruebas he sido capaz de conseguir una información valiosa sobre los límites de uso de mi aplicación: es capaz de funcionar sin problemas con una **versión de Node igual o superior a la 8**.
 
-Con esto, la configuración de Shippable está completa y lleva a cabo la ejecución de los tests de manera correcta cada vez que sucede un cambio en el contenido de mi repositorio.
+Con esto, la configuración de Shippable está completa y lleva a cabo la ejecución de los tests de manera correcta sobre distintas versiones de Node cada vez que sucede un cambio en el contenido de mi repositorio.
 
 ### Build exitoso
 
