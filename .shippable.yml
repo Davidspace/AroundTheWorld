@@ -8,7 +8,7 @@ node_js:
 # Acto seguido, instalo el task runner
 before_install:
   - npm install -g gulp
-  - cat $NODE_PATH
+  - echo $NODE_PATH
 
 # Mediante el task runner instalo las dependencias
 install:
