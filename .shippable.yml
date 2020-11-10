@@ -13,7 +13,8 @@ node_js:
 before_install:
   - npm install -g gulp gulp-mocha gulp-run
 
-  node_version: &node_version $SHIPPABLE_NODE_VERSION
+node_version: 
+  - &node_version $SHIPPABLE_NODE_VERSION
 
 # Indico en la variable de entorno NODE_PATH la ruta donde se localizan los módulos instalados de manera global
 env: 
