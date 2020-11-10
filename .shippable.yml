@@ -9,6 +9,7 @@ node_js:
 install:
   - npm install -g gulp
   - npm link gulp
+  - npm link gulp-mocha
 
 # Mediante el task runner instalo las dependencias y ejecuto los tests
 script:
