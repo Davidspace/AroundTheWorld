@@ -3,12 +3,11 @@ language: node_js
 
 # Versiones utilizadas del lenguaje
 node_js: "14.13.0" # Versión de mi PC
-
-env:
-  - NODE_PATH=eval echo "/root/.nvm/versions/node/${SHIPPABLE_NODE_VERSION}/lib/node_modules"
+  
 # Acto seguido, instalo el task runner junto a los paquetes que necesita para su funcionamiento
 before_install: 
   - npm install -g gulp gulp-mocha gulp-run
+  - NODE_PATH=eval echo "/root/.nvm/versions/node/${SHIPPABLE_NODE_VERSION}/lib/node_modules"
 
 # Mediante el task runner instalo todas las dependencias del proyecto
 install: gulp install
