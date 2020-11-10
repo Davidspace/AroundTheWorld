@@ -42,6 +42,8 @@ Sin embargo, como he indicado al comienzo de la exposición de este problema, la
 
 El problema es que lo que se encuentre dentro del campo **env** no se ejecutará como comandos shell, sino que solo admite asignaciones de variables de entorno del tipo `FOO=BAR`.
 
+También he intentado asignar a NODE_PATH dicho valor desde **before\_install** donde si se ejecutará `eval`, pero no me ha resultado posible.
+
 ![Variable de entorno no muestra su valor](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippableerr1.png)
 
 Por lo tanto, tengo dos opciones: utilizar **Gulp** para instalar las dependencias y ejecutar los tests pero solo sobre una versión de Node, o utilizar el comando `npm install`, el cual si funciona sin problemas de localización de módulos, para la instalación de las dependencias, **Gulp** para ejecutar los tests y, esta vez si, sobre varias versiones de Node. Dado que el estudio de las versiones mínimas y máximas no tiene que darse en cada ejecución y puedo llevarlo a cabo con una configuración distinta, me es más interesante utilizar de manera correcta el task runner, por lo que finalmente el fichero de configuración quedaría de la siguiente manera:
