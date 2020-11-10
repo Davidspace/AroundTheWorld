@@ -2,4 +2,4 @@ language:
   - minimal
 
 script:
-  - docker run -t -v $HOME:/test davidspace/aroundtheworld
+  - docker run -t -v $TRAVIS_BUILD_DIR:/test davidspace/aroundtheworld
