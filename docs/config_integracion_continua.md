@@ -20,7 +20,11 @@ El proceso de configuración de Shippable es bastante parecido al de Travis. Tra
 
 ### Creación del fichero de configuración .shippable.yml
 
-El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml** mediante la misma estructura. Sin embargo, al contrario que mi fichero de configuración de Travis, el cual aprovecha el uso del contenedor para no especificar ninguna versión de Node debido a que el propio contenedor tiene instalada una (en mi caso, v14.15.0), en este fichero **si** especificaré distintas versiones de Node, con el objetivo de ejecutar mis tests bajo todas ellas y asi poder comprobar cuales son las versiones mínimas y máximas con las que mi aplicación puede funcionar. Por lo tanto, quedaría de la siguiente forma:
+El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml** mediante la misma estructura. Sin embargo, en este caso no voy a utilizar el contenedor Docker para la ejecución de los tests. Por lo tanto, al contrario que mi fichero de configuración de Travis, el cual aprovecha el uso del contenedor para no especificar ninguna versión de Node debido a que el propio contenedor tiene instalada una (en mi caso, v14.15.0), en este fichero **si** podré y especificaré distintas versiones de Node, con el objetivo de ejecutar mis tests bajo todas ellas. Gracias a estas pruebas también podré comprobar cuales son las versiones mínimas y máximas con las que mi aplicación puede funcionar. 
+
+Además, el no utilizar el contenedor Docker en este caso me obliga a llevar a cabo la instalación manual del task runner, con el que posteriormente instalaré todas las dependencias del proyecto y ejecutaré los tests. 
+
+Por lo tanto, el fichero de configuración quedaría de la siguiente forma:
 
 ```
 language:
@@ -33,10 +37,10 @@ node_js:
   - "15.1.0" # Versión más reciente
 
 install:
-  - npm install
   - npm install -g gulp
 
 script:
+  - gulp install
   - gulp test
 ```
 
