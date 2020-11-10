@@ -8,14 +8,14 @@ node_js:
   - "14.15.0" # Versión de mi contenedor (LTS)
   - "15.1.0" # Versión más reciente
 
+build:
 # Acto seguido, instalo el task runner junto a los paquetes que necesita para su funcionamiento
-before_install: npm install -g gulp gulp-mocha gulp-run
-
-# Indico en la variable de entorno NODE_PATH la ruta donde se localizan los módulos instalados de manera global
-env: NODE_PATH="/root/.nvm/versions/node/"$SHIPPABLE_NODE_VERSION"/lib/node_modules"
+  ci: 
+    - npm install -g gulp gulp-mocha gulp-run
+    - export NODE_PATH="/root/.nvm/versions/node/${SHIPPABLE_NODE_VERSION}/lib/node_modules"
 
 # Mediante el task runner instalo todas las dependencias del proyecto
-install: gulp install
+    - gulp install
 
 # Mediante el task runner ejecuto los tests
-script: gulp test
+    - gulp test
