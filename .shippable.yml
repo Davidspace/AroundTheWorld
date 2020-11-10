@@ -7,7 +7,7 @@ node_js:
 
 # Acto seguido, instalo el task runner
 install:
-  - npm install -g gulp-cli
+  - npm install gulp
 
 # Mediante el task runner instalo las dependencias y ejecuto los tests
 script:
