@@ -11,5 +11,7 @@ install:
 
 # Mediante el task runner instalo las dependencias y ejecuto los tests
 script:
+  - ls
+  - ls node_modules
   - gulp install
   - gulp test
