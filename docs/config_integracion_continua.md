@@ -20,44 +20,52 @@ El proceso de configuración de Shippable es bastante parecido al de Travis. Tra
 
 ### Creación del fichero de configuración .shippable.yml
 
-El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml** mediante la misma estructura. Sin embargo, en este caso no voy a utilizar el contenedor Docker para la ejecución de los tests. Por lo tanto, al contrario que mi fichero de configuración de Travis, el cual aprovecha el uso del contenedor para no especificar ninguna versión de Node debido a que el propio contenedor tiene instalada una (en mi caso, v14.15.0), en este fichero **si** podré y especificaré distintas versiones de Node, con el objetivo de ejecutar mis tests bajo todas ellas. Gracias a estas pruebas también podré comprobar cuales son las versiones mínimas y máximas con las que mi aplicación puede funcionar. 
+El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml** mediante la misma estructura. Sin embargo, en este caso no voy a utilizar el contenedor Docker para la ejecución de los tests, sino que lo haré de manera directa mediante el task runner.
 
-Además, el no utilizar el contenedor Docker en este caso me obliga a llevar a cabo la instalación manual del task runner, con el que posteriormente instalaré todas las dependencias del proyecto y ejecutaré los tests. 
+El no utilizar contenedor Docker en este caso me obliga a llevar a cabo la instalación manual del task runner junto a los paquetes que necesita, con el que posteriormente instalaré todas las dependencias del proyecto y ejecutaré los tests. Esto lo llevaré a cabo mediante el comando `npm install -g gulp gulp-mocha gulp-run`.
 
-Un problema con el que me he encontrado es el hecho de que no se encuentren los módulos instalados de manera global. Dado esto, me he visto obligado a darle un nuevo valor a la variable de entorno **NODE_PATH**, el cual será la ruta hacia el directorio donde se almacenarán dichos módulos.
+Un problema con el que me he encontrado es el hecho de que no se encuentran los módulos instalados de manera global con las rutas por defecto. Por ejemplo, tras la instalación del task runner, la llamada a `gulp install` con el objetivo de instalar las dependencias devuelve el siguiente error:
 
-Por lo tanto, el fichero de configuración quedaría de la siguiente forma:
+![Error en gulp install](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippableerr2.png)
+
+Esto es debido a que los módulos instalados globalmente no se encuentran en la ruta que aparece, en la cual se buscan. Dado esto, me he visto obligado a darle un nuevo valor a la variable de entorno **NODE_PATH**, el cual será la ruta hacia el directorio donde se almacenarán dichos módulos:
+
+`env: NODE_PATH="/root/.nvm/versions/node/v14.13.0/lib/node_modules"`
+
+Este hecho resulta un problema debido a que en Shippable no existe forma de crear una variable de entorno a partir del valor de otra. Dado que la ruta que debemos asignar a la variable de entorno depende de la versión de Node que se esté utilizando en ese build concreto (en el ejemplo, v14.13.0), si indicamos varias versiones en el fichero de configuración deberíamos ir variando el valor de NODE\_PATH en cada build de cada versión distinta. Este problema podría ser solventado mediante la variable de entorno $SHIPPABLE_NODE_VERSION, la cual almacena la versión de Node que se está utilizando en el build actual. Podriamos usarla para construir la ruta necesaria en cada build de la siguiente manera:
+
+`env: NODE_PATH="/root/.nvm/versions/node/$SHIPPABLE_NODE_VERSION/lib/node_modules"`
+
+Sin embargo, como he indicado al comienzo de la exposición de este problema, la cadena asignada a NODE\_PATH incluye de manera literal $SHIPPABLE_NODE_VERSION en lugar de, por ejemplo, v14.13.0, por lo que programar este comportamiento no me será posible
+
+![Variable de entorno no muestra su valor](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippableerr1.png)
+
+Por lo tanto, tengo dos opciones: utilizar **Gulp** para instalar las dependencias y ejecutar los tests pero solo sobre una versión de Node, o utilizar el comando `npm install`, el cual si funciona sin problemas de localización de módulos, para la instalación de las dependencias, **Gulp** para ejecutar los tests y, esta vez si, sobre varias versiones de Node. Dado que el estudio de las versiones mínimas y máximas no tiene que darse en cada ejecución y puedo llevarlo a cabo con una configuración distinta, me es más interesante utilizar de manera correcta el task runner, por lo que finalmente el fichero de configuración quedaría de la siguiente manera:
 
 ```
 # Lenguaje de la aplicación
-language:
-  - node_js
+language: node_js
 
 # Versiones utilizadas del lenguaje
-node_js:
-  - "12.19.0" # Versión LTS
-  - "14.13.0" # Versión de mi PC
-  - "14.15.0" # Versión de mi contenedor (LTS)
-  - "15.1.0" # Versión más reciente
+node_js: "14.13.0" # Versión de mi PC
 
 # Indico en la variable de entorno NODE_PATH la ruta donde se localizan los módulos instalados de manera global
-env:
-  - NODE_PATH="/root/.nvm/versions/node/v12.19.0/lib/node_modules"
+env: NODE_PATH="/root/.nvm/versions/node/v14.13.0/lib/node_modules"
 
 # Acto seguido, instalo el task runner junto a los paquetes que necesita para su funcionamiento
-before_install:
-  - npm install -g gulp gulp-mocha gulp-run
+before_install: npm install -g gulp gulp-mocha gulp-run
 
 # Mediante el task runner instalo todas las dependencias del proyecto
-install:
-  - gulp install
+install: gulp install
 
 # Mediante el task runner ejecuto los tests
-script:
-  - gulp test
+script: gulp test
 ```
+La elección de esta versión se debe a que coincide con la de mi PC, de modo que la ejecución correcta de los tests mediante Shippable me confirma su también correcta ejecución en mi local.
 
-En el fichero final me quedo con unas pocas versiones de todas las posibles:
+Por último, al contrario que mi fichero de configuración de Travis, el cual aprovecha el uso del contenedor para no especificar ninguna versión de Node debido a que el propio contenedor tiene instalada una (en mi caso, v14.15.0), en este fichero **si** podré y especificaré distintas versiones de Node, con el objetivo de ejecutar mis tests bajo todas ellas. Gracias a estas pruebas también podré comprobar cuales son las versiones mínimas y máximas con las que mi aplicación puede funcionar. 
+
+En las pruebas con distintas versiones he utilizado varias minors. Su elección tan particular se debe a los siguientes motivos:
 
 - **v12.19.0** es LTS, por lo que su uso será apropiado ya que sigue siendo soportada y está bastante extendida.
 
@@ -77,12 +85,4 @@ Sin embargo, he ido llevando a cabo pruebas con más versiones con el objetivo d
 
 Gracias a estas pruebas he sido capaz de conseguir una información valiosa sobre los límites de uso de mi aplicación: es capaz de funcionar sin problemas con una **versión de Node igual o superior a la 8**.
 
-Con esto, la configuración de Shippable está completa y lleva a cabo la ejecución de los tests de manera correcta sobre distintas versiones de Node cada vez que sucede un cambio en el contenido de mi repositorio.
-
-### Build exitoso
-
-![Build](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippable7.png)
-
-![Log del build - 1](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippable8.png)
-
-![Log del build - 2](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippable9.png)
+[Aquí]() puede consultar un build exitoso.
