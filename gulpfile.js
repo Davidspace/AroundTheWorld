@@ -1,4 +1,4 @@
-var gulp = require('/root/.nvm/versions/node/v14.13.0/lib/node_modules/gulp');
+var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 var run = require('gulp-run');
 

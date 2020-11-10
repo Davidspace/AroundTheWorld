@@ -5,6 +5,9 @@ language:
 node_js:
   - "14.13.0" # Versión de mi PC
 
+env:
+  - NODE_PATH=/root/.nvm/versions/node/v14.13.0/lib/node_modules
+
 # Acto seguido, instalo el task runner
 before_install:
   - npm install -g gulp
