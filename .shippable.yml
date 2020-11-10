@@ -11,6 +11,8 @@ node_js:
 
 # Indico en la variable de entorno NODE_PATH la ruta donde se localizan los módulos instalados de manera global
 env:
+  - if [ "$SHIPPABLE_NODE_VERSION" == "12.19.0" ]; then NODE_PATH="/root/.nvm/versions/node/v12.19.0/lib/node_modules"; fi
+
   - NODE_PATH="/root/.nvm/versions/node/${SHIPPABLE_NODE_VERSION}/lib/node_modules"
 
 # Acto seguido, instalo el task runner junto a los paquetes que necesita para su funcionamiento
