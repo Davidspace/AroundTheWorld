@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var mocha = require('gulp-mocha');
-var babel = require('@babel/register');
 var run = require('gulp-run');
 
 /** Tarea que se encarga de instalar las dependencias */
@@ -12,7 +11,7 @@ gulp.task('install', async function(){
 /** Tarea que se encarga de ejecutar los tests unitarios */
 gulp.task('test', async function(){
   gulp.src(['test/*.js'])
-  .pipe(mocha({compilers:babel}));
+  .pipe(mocha());
 });
 
 /** Tarea que se ejecutará por defecto */
