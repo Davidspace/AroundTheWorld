@@ -2,17 +2,22 @@
 language:
   - node_js
 
+# Versiones utilizadas del lenguaje
 node_js:
+  - "12.19.0" # Versión LTS
   - "14.13.0" # Versión de mi PC
+  - "14.15.0" # Versión de mi contenedor (LTS)
+  - "15.1.0" # Versión más reciente
 
+# Indico en la variable de entorno NODE_PATH la ruta donde se localizan los módulos instalados de manera global
 env:
-  - NODE_PATH=/root/.nvm/versions/node/v14.13.0/lib/node_modules
+  - NODE_PATH=/root/.nvm/versions/node/$SHIPPABLE_NODE_VERSION/lib/node_modules
 
-# Acto seguido, instalo el task runner
+# Acto seguido, instalo el task runner junto a los paquetes que necesita para su funcionamiento
 before_install:
   - npm install -g gulp gulp-mocha gulp-run
 
-# Mediante el task runner instalo las dependencias
+# Mediante el task runner instalo todas las dependencias del proyecto
 install:
   - gulp install
 
