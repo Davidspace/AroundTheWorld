@@ -32,11 +32,15 @@ Esto es debido a que los módulos instalados globalmente no se encuentran en la 
 
 `env: NODE_PATH="/root/.nvm/versions/node/v14.13.0/lib/node_modules"`
 
-Este hecho resulta un problema debido a que en Shippable no existe forma de crear una variable de entorno a partir del valor de otra. Dado que la ruta que debemos asignar a la variable de entorno depende de la versión de Node que se esté utilizando en ese build concreto (en el ejemplo, v14.13.0), si indicamos varias versiones en el fichero de configuración deberíamos ir variando el valor de NODE\_PATH en cada build de cada versión distinta. Este problema podría ser solventado mediante la variable de entorno $SHIPPABLE_NODE_VERSION, la cual almacena la versión de Node que se está utilizando en el build actual. Podriamos usarla para construir la ruta necesaria en cada build de la siguiente manera:
+Este hecho resulta un problema debido a que desde el fichero YAML de configuración no existe forma de crear una variable de entorno a partir del valor de otra. Dado que la ruta que debemos asignar a la variable de entorno depende de la versión de Node que se esté utilizando en ese build concreto (en el ejemplo, v14.13.0), si indicamos varias versiones en el fichero de configuración deberíamos ir variando el valor de NODE\_PATH en cada build de cada versión distinta. Este problema podría ser solventado mediante la variable de entorno $SHIPPABLE_NODE_VERSION, la cual almacena la versión de Node que se está utilizando en el build actual. Podriamos usarla para construir la ruta necesaria en cada build de la siguiente manera:
 
-`env: NODE_PATH="/root/.nvm/versions/node/$SHIPPABLE_NODE_VERSION/lib/node_modules"`
+`env: NODE_PATH="/root/.nvm/versions/node/v${SHIPPABLE_NODE_VERSION}/lib/node_modules"`
 
-Sin embargo, como he indicado al comienzo de la exposición de este problema, la cadena asignada a NODE\_PATH incluye de manera literal $SHIPPABLE_NODE_VERSION en lugar de, por ejemplo, v14.13.0, por lo que programar este comportamiento no me será posible
+Sin embargo, como he indicado al comienzo de la exposición de este problema, la cadena asignada a NODE\_PATH incluye de manera literal ${SHIPPABLE_NODE_VERSION} en lugar de, por ejemplo, v14.13.0, por lo que programar este comportamiento no me será posible. He intentado utilizar la instrucción `eval` de shell para resolver el valor de la variable de entorno y poder conseguir el comportamiento que deseo de la siguiente manera:
+
+`NODE_PATH=eval "/root/.nvm/versions/node/v${SHIPPABLE_NODE_VERSION}/lib/node_modules"`
+
+El problema es que lo que se encuentre dentro del campo **env** no se ejecutará como comandos shell, sino que solo admite asignaciones de variables de entorno del tipo `FOO=BAR`.
 
 ![Variable de entorno no muestra su valor](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippableerr1.png)
 
