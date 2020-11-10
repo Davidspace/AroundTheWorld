@@ -24,27 +24,50 @@ El fichero **.shippable.yml** debe contener el mismo tipo de información que el
 
 Además, el no utilizar el contenedor Docker en este caso me obliga a llevar a cabo la instalación manual del task runner, con el que posteriormente instalaré todas las dependencias del proyecto y ejecutaré los tests. 
 
+Un problema con el que me he encontrado es el hecho de que no se encuentren los módulos instalados de manera global. Dado esto, me he visto obligado a darle un nuevo valor a la variable de entorno **NODE_PATH**, el cual será la ruta hacia el directorio donde se almacenarán dichos módulos.
+
 Por lo tanto, el fichero de configuración quedaría de la siguiente forma:
 
 ```
+# Lenguaje de la aplicación
 language:
   - node_js
 
+# Versiones utilizadas del lenguaje
 node_js:
   - "12.19.0" # Versión LTS
   - "14.13.0" # Versión de mi PC
   - "14.15.0" # Versión de mi contenedor (LTS)
   - "15.1.0" # Versión más reciente
 
-install:
-  - npm install -g gulp
+# Indico en la variable de entorno NODE_PATH la ruta donde se localizan los módulos instalados de manera global
+env:
+  - NODE_PATH="/root/.nvm/versions/node/v12.19.0/lib/node_modules"
 
-script:
+# Acto seguido, instalo el task runner junto a los paquetes que necesita para su funcionamiento
+before_install:
+  - npm install -g gulp gulp-mocha gulp-run
+
+# Mediante el task runner instalo todas las dependencias del proyecto
+install:
   - gulp install
+
+# Mediante el task runner ejecuto los tests
+script:
   - gulp test
 ```
 
-En el fichero final me quedo con unas pocas versiones de todas las posibles, que son las que suelo utilizar. Sin embargo, he ido llevando a cabo pruebas con más versiones con el objetivo de, como ya he expuesto anteriormente, averiguar las versiones mínimas y máximas de Node que mi aplicación soporta. Las pruebas han arrojado los siguientes resultados:
+En el fichero final me quedo con unas pocas versiones de todas las posibles:
+
+- **v12.19.0** es LTS, por lo que su uso será apropiado ya que sigue siendo soportada y está bastante extendida.
+
+- **v14.13.0** es usada ya que es con la que cuenta mi PC, por lo que si funciona en Shippable, funciona en mi local.
+
+- **v14.15.0** es usada en mi contenedor (además de ser LTS), por lo que si funciona en Shippable, funciona en mi contenedor.
+
+- **v15.1.0** es la versión más reciente del lenguaje, por lo que es importante testear si mi proyecto funcionará bajo las características más recientes del lenguaje.
+
+Sin embargo, he ido llevando a cabo pruebas con más versiones con el objetivo de, como ya he expuesto anteriormente, averiguar las versiones mínimas y máximas de Node que mi aplicación soporta. Las pruebas han arrojado los siguientes resultados:
 
 ![Desde v4 a v9](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/shippablev2.png)
 
