@@ -18,7 +18,7 @@ La justificación sobre la elección de esta herramienta puede ser consultada [a
 
 El proceso de configuración de Shippable es bastante parecido al de Travis. Tras darme de alta y activar la integración en el repositorio que contiene mi proyecto, procedo a crear el fichero de configuración de este sistema de CI.
 
-### Creación del fichero de configuración .shippable.yml
+### Creación del fichero de configuración .shippable.yml 
 
 El fichero **.shippable.yml** debe contener el mismo tipo de información que el fichero **.travis.yml** mediante la misma estructura. Sin embargo, en este caso no voy a utilizar el contenedor Docker para la ejecución de los tests, sino que lo haré de manera directa mediante el task runner.
 
