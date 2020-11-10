@@ -85,4 +85,4 @@ Sin embargo, he ido llevando a cabo pruebas con más versiones con el objetivo d
 
 Gracias a estas pruebas he sido capaz de conseguir una información valiosa sobre los límites de uso de mi aplicación: es capaz de funcionar sin problemas con una **versión de Node igual o superior a la 8**.
 
-[Aquí]() puede consultar un build exitoso.
+[Aquí](https://app.shippable.com/github/Davidspace/AroundTheWorld/runs/95/1/console) puede consultar un build exitoso.
