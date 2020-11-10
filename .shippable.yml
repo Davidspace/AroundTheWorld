@@ -6,10 +6,14 @@ node_js:
   - "14.13.0" # Versión de mi PC
 
 # Acto seguido, instalo el task runner
-install:
+before_install:
   - npm install -g gulp
+  - cat $NODE_PATH
 
-# Mediante el task runner instalo las dependencias y ejecuto los tests
-script:
+# Mediante el task runner instalo las dependencias
+install:
   - gulp install
+
+# Mediante el task runner ejecuto los tests
+script:
   - gulp test
