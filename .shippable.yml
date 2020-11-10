@@ -10,8 +10,7 @@ env:
 
 # Acto seguido, instalo el task runner
 before_install:
-  - npm install -g gulp
-  - echo $NODE_PATH
+  - npm install -g gulp gulp-mocha gulp-run
 
 # Mediante el task runner instalo las dependencias
 install:
