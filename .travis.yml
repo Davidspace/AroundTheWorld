@@ -1,5 +1,15 @@
+# Lenguaje de la aplicación
 language:
-  - minimal
+  - node_js
 
+node_js:
+  - "14.13.0" # Versión de mi PC
+
+# Acto seguido, instalo el task runner
+install:
+  - npm install -g gulp
+
+# Mediante el task runner instalo las dependencias y ejecuto los tests
 script:
-  - docker run -t -v $TRAVIS_BUILD_DIR:/test davidspace/aroundtheworld
+  - gulp install
+  - gulp test
