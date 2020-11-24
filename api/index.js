@@ -7,7 +7,9 @@ module.exports = (req, res) => {
     usuarios.push(obj);
   });
 
-  var mensaje = "[";
+  var mensaje = "[\n";
+
+  num_mensaje = 0;
 
   if (usuarios.length !== 0){
     usuarios.forEach(function(obj){
@@ -19,13 +21,13 @@ module.exports = (req, res) => {
         "Teléfono: " + obj.telefono + "}";
 
       if (num_mensaje < usuarios.length - 1){
-        mensaje += ", ";
+        mensaje += ",\n\n";
 
         num_mensaje += 1;
       }
     });
 
-    mensaje += "]";
+    mensaje += "\n]";
   }
 
   else{
