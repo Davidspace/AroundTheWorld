@@ -1,18 +1,18 @@
+var viajesJson = require('./viajes.json');
+
 module.exports = (req, res) => {
-  var usuariosJson = require('./usuarios.json');
+  var viajes = [];
 
-  var usuarios = [];
-
-  usuariosJson.forEach(function(obj){
-    usuarios.push(obj);
+  viajesJson.forEach(function(obj){
+    viajes.push(obj);
   });
 
   var mensaje = "[";
 
   num_mensaje = 0;
 
-  if (usuarios.length !== 0){
-    usuarios.forEach(function(obj){
+  if (viajes.length !== 0){
+    viajes.forEach(function(obj){
       mensaje += "{" + "Destino: " + obj.nombre + ", " +
         "Apellidos: " + obj.apellidos + ", " +
         "Email: " + obj.email + ", " +
@@ -31,7 +31,7 @@ module.exports = (req, res) => {
   }
 
   else{
-    mensaje = "Aún no existen usuarios registrados en la aplicación";
+    mensaje = "No existen viajes creados por este usuario de momento";
   }
 
   res.status(200).send(mensaje);
