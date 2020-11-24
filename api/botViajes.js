@@ -34,11 +34,11 @@ module.exports = async (req, res) => {
     // Obtenemos el contenido del mensaje
     var text = req.body.message.text;
 
-    username = "";
+    var username = "";
 
-    password = "";
+    var password = "";
 
-    mensaje = "";
+    var mensaje = "";
 
     if (text == "/start"){
       mensaje = '¡Hola! Este bot ha sido desarrollado con el propósito de mostrar a cada usuario\
@@ -53,14 +53,14 @@ module.exports = async (req, res) => {
         comando /viajes.'
     }
 
-    usuario_index = -1;
+    var usuario_index = -1;
 
     if (text.startsWith('Username:')){
       username = text.split(" ", 2);
 
       username = nickname.split(",").pop();
 
-      usuario_existe = False;
+      var usuario_existe = False;
         
       for (i = 0; i < usuarios.length && !usuario_existe; i++){
         if (usuarios[i]['username'] === username){
@@ -86,7 +86,7 @@ module.exports = async (req, res) => {
 
       password = password.split(",").pop();
 
-      password_correcta = False;
+      var password_correcta = False;
 
       if (usuario_index != -1){
         if (usuarios[usuario_index]['password'] === password){
