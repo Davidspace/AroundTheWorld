@@ -6,7 +6,8 @@ class Viaje{
 
   /**
    * Constructor básico de la clase Viaje
-   * @param {String} destino - Nombre del destino
+   * @param {String} usuario - Nombre de usuario del usuario que ha creado este viaje
+   * @param {String} nombre_destino - Nombre del destino
    * @param {Alojamiento[]} alojamientos - Array de arrays de alojamientos reservados para el viaje
    *                                  junto a los dias de entrada y salida
    *  
@@ -18,8 +19,9 @@ class Viaje{
    * 
    * @param {Number} precio - Precio final del viaje
    */
-  constructor(nombre, alojamientos = [], puntos_interes = [], transportes = [], precio = 0){
-    this.nombre = nombre;
+  constructor(usuario, nombre_destino, alojamientos = [], puntos_interes = [], transportes = [], precio = 0){
+    this.usuario = usuario
+    this.nombre_destino = nombre_destino;
     this.alojamientos = alojamientos;
     this.puntos_interes = puntos_interes;
     this.transportes = transportes;
@@ -30,8 +32,12 @@ class Viaje{
    * Métodos get de la clase Viaje
    */
 
-  get _nombre(){
-    return this.nombre;
+  get _usuario(){
+    return this.usuario;
+  }
+
+  get _nombre_destino(){
+    return this.nombre_destino;
   }
 
   get _alojamientos(){
@@ -54,8 +60,12 @@ class Viaje{
    * Métodos set de la clase Viaje
    */
 
-  set _nombre(nuevo_nombre){
-    this.nombre = nuevo_nombre;
+  set _usuario(nuevo_usuario){
+    this.usuario = nuevo_usuario;
+  }
+
+  set _nombre_destino(nuevo_nombre_destino){
+    this.nombre_destino = nuevo_nombre_destino;
   }
 
   set _alojamientos(nuevos_alojamientos){
