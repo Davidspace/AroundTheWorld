@@ -40,14 +40,14 @@ module.exports = async (req, res) => {
 
     mensaje = "";
 
-    if (text == '/start'){
+    if (text == "/start"){
       mensaje = '¡Hola! Este bot ha sido desarrollado con el propósito de mostrar a cada usuario\
         de la aplicación la lista de viajes con los que cuentan. Comienza identificándote mediante\
         tu nombre de usuario de la siguiente manera: Username: <username>. \n\nUsa el comando /help\
         para conocer todos los comandos disponibles.'
     }
 
-    if (text == 'help'){
+    if (text == "/help"){
       mensaje = 'Debe iniciar sesión indicando sus credenciales primero mediante Username: <username> y\
         y después con Password: <password>. Si ya lo ha hecho, puede listar sus viajes mediante el\
         comando /viajes.'
@@ -81,7 +81,7 @@ module.exports = async (req, res) => {
       }
     }
 
-    if (text.startsWith('Password:')){
+    if (text.startsWith("Password:")){
       password = text.split(" ", 2);
 
       password = password.split(",").pop();
@@ -111,8 +111,8 @@ module.exports = async (req, res) => {
       }
     }
 
-    if (text == '/viajes'){
-      viajesUsuario(username, password);
+    if (text == "/viajes"){
+      mensaje = viajesUsuario(username, password);
     }
 
     var res_json = {text: mensaje, method: "sendMessage",  chat_id: chatID};
