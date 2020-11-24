@@ -5,16 +5,16 @@ class Usuario{
    * @param {String} nombre - Nombre del usuario
    * @param {String} apellidos - Apellidos del usuario
    * @param {String} email - E-mail del usuario
-   * @param {String} usernick - Nombre de usuario dentro de la aplicación del usuario
+   * @param {String} username - Nombre de usuario dentro de la aplicación del usuario
    * @param {String} direccion - Dirección del usuario
    * @param {String} telefono - Número de teléfono del usuario
    */
 
-  constructor(nombre, apellidos, email, usernick, direccion, telefono){
+  constructor(nombre, apellidos, email, username, direccion, telefono){
     this.nombre = nombre;
     this.apellidos = apellidos;
     this.email = email;
-    this.usernick = usernick;
+    this.username = username;
     this.direccion = direccion;
     this.telefono = telefono;
   }
@@ -35,8 +35,8 @@ class Usuario{
     return this.email;
   }
 
-  get _usernick(){
-    return this.usernick;
+  get _username(){
+    return this.username;
   }
 
   get _direccion(){
@@ -59,8 +59,8 @@ class Usuario{
     this.email = nuevo_email;
   }
 
-  set _usernick(nuevo_usernick){
-    this.usernick = nuevo_usernick;
+  set _username(nuevo_username){
+    this.username = nuevo_username;
   }
 
   set _direccion(nueva_direccion){
