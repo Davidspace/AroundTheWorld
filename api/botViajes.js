@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
   if (req.body != undefined){
     if (req.body.message.text != undefined){
       // Obtenemos el ID del chat de Telegram desde el que proviene el mensaje
-      var chatID = req.body.message.chat.id;
+      var chatID = req.body.message.from.id;
 
       // Obtenemos el contenido del mensaje
       var text = req.body.message.text;
