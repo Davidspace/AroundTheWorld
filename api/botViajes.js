@@ -20,7 +20,7 @@ function viajesUsuario(username, password){
   }
 
   else{
-    mensaje = 'Aún no se ha identificado.'
+    mensaje = 'Aún no se ha identificado.';
   }
 
   return mensaje;
@@ -44,13 +44,13 @@ module.exports = async (req, res) => {
       mensaje = '¡Hola! Este bot ha sido desarrollado con el propósito de mostrar a cada usuario\
         de la aplicación la lista de viajes con los que cuentan. Comienza identificándote mediante\
         tu nombre de usuario de la siguiente manera: Username: <username>. \n\nUsa el comando /help\
-        para conocer todos los comandos disponibles.'
+        para conocer todos los comandos disponibles.';
     }
 
     if (text == "/help"){
       mensaje = 'Debe iniciar sesión indicando sus credenciales primero mediante Username: <username> y\
         y después con Password: <password>. Si ya lo ha hecho, puede listar sus viajes mediante el\
-        comando /viajes.'
+        comando /viajes.';
     }
 
     var usuario_index = -1;
@@ -58,7 +58,7 @@ module.exports = async (req, res) => {
     if (text.startsWith('Username:')){
       username = text.split(" ", 2);
 
-      username = nickname.split(",").pop();
+      username = username.split(",").pop();
 
       var usuario_existe = False;
         
@@ -71,13 +71,12 @@ module.exports = async (req, res) => {
       }
 
       if (usuario_existe){
-        mensaje = 'Ahora, introduce tu contraseña de la siguiente manera: Password: <password>'
+        mensaje = 'Ahora, introduce tu contraseña de la siguiente manera: Password: <password>';
       }
 
       else{
         username = "";
-
-        mensaje = 'El usuario que has indicado no existe. Inténtalo de nuevo.'
+        mensaje = 'El usuario que has indicado no existe. Inténtalo de nuevo.';
       }
     }
 
@@ -96,17 +95,16 @@ module.exports = async (req, res) => {
 
       else{
         password = "";
-
-        mensaje = 'Aún no has introducido un usuario correcto.'
+        mensaje = 'Aún no has introducido un usuario correcto.';
       }
 
       if (usuario_index != -1){
         if (password_correcta){
-          mensaje = 'Te has identificado correctamente. Usa el comando /viajes para listar tus viajes.'
+          mensaje = 'Te has identificado correctamente. Usa el comando /viajes para listar tus viajes.';
         }
 
         else{
-          mensaje = 'La contraseña es incorrecta. Inténtalo de nuevo.'
+          mensaje = 'La contraseña es incorrecta. Inténtalo de nuevo.';
         }
       }
     }
@@ -115,7 +113,7 @@ module.exports = async (req, res) => {
       mensaje = viajesUsuario(username, password);
     }
 
-    var res_json = {text: mensaje, method: "sendMessage",  chat_id: chatID};
+    var res_json = {text: mensaje, method: "sendMessage", chat_id: chatID};
     res.setHeader("Content-Type","application/json");
     res.status(200).json(res_json);
   }
