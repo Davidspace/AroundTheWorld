@@ -13,26 +13,26 @@ module.exports = (req, res) => {
 
   if (usuarios.length !== 0){
     usuarios.forEach(function(obj){
-      mensaje += "{" + "Destino: " + obj.nombre + ",\n" +
-        "Apellidos: " + obj.apellidos + ",\n" +
-        "Email: " + obj.email + ",\n" +
-        "Username: " + obj.username + ",\n" +
-        "Dirección: " + obj.direccion + ",\n" + 
+      mensaje += "{" + "Destino: " + obj.nombre + ", " +
+        "Apellidos: " + obj.apellidos + ", " +
+        "Email: " + obj.email + ", " +
+        "Username: " + obj.username + ", " +
+        "Dirección: " + obj.direccion + ", " + 
         "Teléfono: " + obj.telefono + "}";
 
       if (num_mensaje < usuarios.length - 1){
-        mensaje += ",\n\n";
+        mensaje += ", ";
 
         num_mensaje += 1;
       }
     });
 
-    mensaje += "\n]";
+    mensaje += "]";
   }
 
   else{
     mensaje = "Aún no existen usuarios registrados en la aplicación";
   }
 
-  res.status(200).json(JSON.stringify(mensaje));
+  res.status(200).json(mensaje);
 }
