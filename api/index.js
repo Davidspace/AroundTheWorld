@@ -7,7 +7,7 @@ module.exports = (req, res) => {
     usuarios.push(obj);
   });
 
-  var mensaje = "[\n";
+  var mensaje = "[";
 
   num_mensaje = 0;
 
@@ -34,5 +34,5 @@ module.exports = (req, res) => {
     mensaje = "Aún no existen usuarios registrados en la aplicación";
   }
 
-  res.status(200).json(mensaje);
+  res.status(200).json(JSON.stringify(mensaje));
 }
