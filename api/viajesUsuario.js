@@ -2,13 +2,13 @@ var viajes = require('./viajes.json');
 
 module.exports = (req, res) => {
   if (req.query.username != undefined){
-    username = req.query.username;
-
     var mensaje = "Tus viajes son: ";
 
-    var i, j = 0;
+    if (viajes.length > 0){
+      username = req.query.username;  
+      
+      var i, j = 0;
 
-    if (viajes.length > 0){        
       for (i = 0; i < viajes.length; i++){
         if (viajes[i]['usuario'] === username){
           mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
