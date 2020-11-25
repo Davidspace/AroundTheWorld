@@ -1,6 +1,8 @@
-# Configuración de Netlify
+# Netlify
 
-En este fichero documentaré el proceso que he realizado para importar mi repositorio en Netlify y desplegarlo correctamente.
+En este fichero documentaré el proceso que he realizado para importar mi repositorio en Netlify y desplegarlo correctamente, además de la creación y despliegue de una función serverless.
+
+## Conexión entre GitHub y Netlify y despliegue de mi repo
 
 Los pasos a seguir han sido los siguientes:
 
@@ -19,3 +21,7 @@ Los pasos a seguir han sido los siguientes:
 4. Completo la configuración de despliegue de mi repositorio y procedo a desplegar el repositorio.
 
 ![Configuración de despliegue](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/imagenes/netlify3.png)
+
+## Creación de una función serverless
+
+Para la creación y despliegue de una función serverless en Netlify he seguido el siguiente proceso:
