@@ -25,3 +25,16 @@ Los pasos a seguir han sido los siguientes:
 ## Creación de una función serverless
 
 Para la creación y despliegue de una función serverless en Netlify he seguido el siguiente proceso:
+
+1. He creado el directorio [functions](https://github.com/Davidspace/AroundTheWorld/tree/master/functions) en el directorio raiz de mi repositorio, en el cual almacenaré los ficheros de datos necesarios y el fichero que contendrá a la función.
+
+2. He creado la [historia de usuario](https://github.com/Davidspace/AroundTheWorld/issues/128) y los issues correspondientes a la creación de una función que estará integrada dentro del proyecto general (no se trata de un ejemplo genérico).
+
+3. Como se puede observar en la propia historia de usuario, la función serverless a implementar llevará a cabo el listado de todos los usuarios registrados en el sistema. Todos los usuarios registrados en el sistema estan almacenados en el fichero JSON llamado [usuarios.json](https://github.com/Davidspace/AroundTheWorld/blob/master/functions/usuarios.json).
+
+4. La función lee del archivo JSON [usuarios.json](https://github.com/Davidspace/AroundTheWorld/blob/master/functions/usuarios.json) todos los usuarios de los que existen registros.
+
+5. Una vez obtenida la información de todos los usuarios, los introduce dentro de un objeto JSON y lo devuelve junto al código de estado **200**, el cual indica que la petición que hemos recibido ha sido procesada correctamente.
+
+Clickando en este [enlace](https://around-the-world-app.netlify.app/.netlify/functions/usuarios) puede observar el correcto funcionamiento de la función.
+
