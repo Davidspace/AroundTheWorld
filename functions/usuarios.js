@@ -7,8 +7,7 @@ exports.handler = async function(event, context){
     var mensaje = "[";
 
     for (var i = 0; i < usuarios.length; i++){
-      mensaje += "usuario" + i + ":{" +
-        "nombre: " + usuarios[i]['nombre'] + ", " +
+      mensaje += "{nombre: " + usuarios[i]['nombre'] + ", " +
         "apellidos: " + usuarios[i]['apellidos'] + ", " +
         "email: " + usuarios[i]['email'] + ", " +
         "username: " + usuarios[i]['username'] + ", " +
