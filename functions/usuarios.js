@@ -11,7 +11,7 @@ exports.handler = async function(event, context){
         "apellidos: " + usuarios[i]['apellidos'] + ", " +
         "email: " + usuarios[i]['email'] + ", " +
         "username: " + usuarios[i]['username'] + ", " +
-        "password" + usuarios[i]['password'] + ", " +
+        "password: " + usuarios[i]['password'] + ", " +
         "direccion: " + usuarios[i]['direccion'] + ", " +
         "telefono: " + usuarios[i]['telefono'] + "}";
 
