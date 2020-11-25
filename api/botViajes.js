@@ -21,7 +21,7 @@ function viajesUsuario(username){
         " Valoración: " + viajes[i]['alojamientos']['valoracion'] + "\n" + 
         " Precio: " + viajes[i]['alojamientos']['precio'] + "\n";
 
-      mensaje += "Puntos de interés:\n";
+      mensaje += "Puntos de interés:\n"
         " Nombre: " + viajes[i]['puntos_interes']['nombre'] + "\n" + 
         " Descripción: " + viajes[i]['puntos_interes']['descripcion'] + "\n" + 
         " Localización: " + viajes[i]['puntos_interes']['localizacion'] + "\n" + 
@@ -29,7 +29,7 @@ function viajesUsuario(username){
         " Valoración: " + viajes[i]['puntos_interes']['valoracion'] + "\n" + 
         " Precio: " + viajes[i]['puntos_interes']['precio'] + "\n";
       
-      mensaje += "Transportes:\n";
+      mensaje += "Transportes:\n"
         " Nombre: " + viajes[i]['transportes']['nombre'] + "\n" + 
         " Descripción: " + viajes[i]['transportes']['descripcion'] + "\n" +
         " Tipo: " + viajes[i]['transportes']['tipo'] + "\n" +  
