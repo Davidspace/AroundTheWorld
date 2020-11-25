@@ -2,12 +2,11 @@ const usuarios = require('./usuarios.json');
 
 exports.handler = async function(event, context){
   if (usuarios.length > 0){
-    var mensaje = "["
-
     var num_mensajes = 0;
 
     for (var i = 0; i < usuarios.length; i++){
-      mensaje += "{destino: " + usuarios[i]['nombre'] + ", " +
+      var mensaje = "usuario" + i + ":{" +
+        "destino: " + usuarios[i]['nombre'] + ", " +
         "apellidos: " + usuarios[i]['apellidos'] + ", " +
         "email: " + usuarios[i]['email'] + ", " +
         "username: " + usuarios[i]['username'] + ", " +
@@ -32,6 +31,6 @@ exports.handler = async function(event, context){
   return{
     statusCode: 200,
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({usuarios: mensaje})
+    body: JSON.stringify(mensaje)
   };
 }
