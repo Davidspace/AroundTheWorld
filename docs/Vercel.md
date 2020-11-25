@@ -75,7 +75,7 @@ Si el usuario que está utilizando el bot es capaz de proporcionar unas credenci
 
 Una vez obtenidos estos datos, debemos construir un JSON que estará formado por tres campos: **text**, cuyo valor será el mensaje que el bot enviará; **method**, que indicará que método utilizaremos para proporcionar dicha información y cuyo valor será **sendMessage** y **chat_id**, cuyo valor será el ID del chat anteriormente obtenido. Estableceremos una cabecera con el valor **Content-Type","application/json** indicando que la respuesta contiene un variable JSON y devolvemos dicha variable JSON junto al código de estado 200.
 
-Clickando en este [enlace](t.me/viajesAroundTheWorld_bot) podrá comenzar un chat con mi bot **AroundTheWorld**.
+Clickando en este [enlace](t.me/viajesAroundTheWorld_bot) podrá comenzar un chat con mi bot **AroundTheWorld**. Puede utilizar como crendenciales **Username: Davidspace Password: password1**.
 
 Clickando en este [enlace](https://around-the-world-glnuapbng.vercel.app/api/botViajes) puede acceder a la función desplegada en Vercel. Por defecto muestra un mensaje de inicialización del bot ya que en este caso el parámetro `req` no cuenta con ningún mensaje.
 
