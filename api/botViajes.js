@@ -1,34 +1,41 @@
 const usuarios = require('./usuarios.json')
 const viajes = require('./viajes.json')
 
-function viajesUsuario(username, password){
+function viajesUsuario(username){
   var mensaje = "";
 
-  if (username !== "" && password !== ""){
-    mensaje += "Tus viajes son: ";
+  mensaje += "Tus viajes son:";
 
-    var existen_viajes = -1;
+  var i, j = 0;
             
-    for (i = 0; i < viajes.length; i++){
-      if (viajes[i]['usuario'] === username){
-        mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
-          "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n" +
-          "Alojamientos: " + viajes[i]['alojamientos'] + "\n" +
-          "Puntos de interés: " + viajes[i]['puntos_interes'] + "\n" +
-          "Transportes: " + viajes[i]['transportes'] + "\n" + 
-          "Precio: " + viajes[i]['precio'];
+  for (i = 0; i < viajes.length; i++){
+    if (viajes[i]['usuario'] === username){
+      mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
+        "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n";
+        "Alojamientos:\n";
 
-        existen_viajes = 1;
+      for (j = 0; j < viajes[i]['alojamientos'].length; j++){
+        mensaje += viajes[i]['alojamientos'][j] + "\n";
       }
-    }
 
-    if (existen_viajes == -1){
-      mensaje += "¡ninguno! ¿No has pensado en darte un capricho?";
+      mensaje += "Puntos de interés:\n";
+
+      for (j = 0; j < viajes[i]['puntos_interes'].length; j++){
+        mensaje += viajes[i]['puntos_interes'][j] + "\n";
+      }
+
+      mensaje += "Transportes:\n";
+
+      for (j = 0; j < viajes[i]['transportes'].length; j++){
+        mensaje += viajes[i]['transportes'][j] + "\n";
+      }
+
+      mensaje += "Precio: " + viajes[i]['precio'];
     }
   }
 
-  else{
-    mensaje = 'Aún no se ha identificado.';
+  if (mensaje.endsWith('son:')){
+    mensaje += "¡ninguno! ¿No has pensado en darte un capricho?";
   }
 
   return mensaje;
@@ -64,73 +71,32 @@ module.exports = async (req, res) => {
 
     if (text.startsWith('Username:')){
       username = text.split(" ")[1];
-
-      var usuario_existe = -1;
         
-      for (i = 0; i < usuarios.length && usuario_existe == -1; i++){
+      for (i = 0; i < usuarios.length && usuario_index == -1; i++){
         if (usuarios[i]['username'] === username){
-          usuario_existe = 1;
 
           usuario_index = i;
         }
       }
 
-      if (usuario_existe == 1){
+      if (usuario_index != -1){
         password = text.split(" ").pop();
 
-        var password_correcta = -1;
-
-        if (usuario_index != -1){
-          if (usuarios[usuario_index]['password'] === password){
-            password_correcta = 1;
-          }
-        }
-
-        if (usuario_index != -1){
-          if (password_correcta == 1){
-            mensaje = 'Te has identificado correctamente. Usa el comando /viajes para listar tus viajes.';
-          }
-
-          else{
-            mensaje = 'La contraseña es incorrecta. Inténtalo de nuevo.';
-          }
-        }
-      }
-
-      else{
-        mensaje = 'El usuario que has indicado no existe. Inténtalo de nuevo.';
-      }
-    }
-
-    if (text.startsWith("Password:")){
-      password = text.split(" ").pop();
-
-      var password_correcta = -1;
-
-      if (usuario_index != -1){
         if (usuarios[usuario_index]['password'] === password){
-          password_correcta = 1;
-        }
-      }
+          mensaje = 'Te has identificado correctamente. A continuación se van a listar tus viajes ' +
+            'en el caso de que cuentes con alguno.\n\n';
 
-      else{
-        password = "";
-        mensaje = 'Aún no has introducido un usuario correcto.';
-      }
-
-      if (usuario_index != -1){
-        if (password_correcta == 1){
-          mensaje = 'Te has identificado correctamente. Usa el comando /viajes para listar tus viajes.';
+          mensaje += viajesUsuario(username);
         }
 
         else{
           mensaje = 'La contraseña es incorrecta. Inténtalo de nuevo.';
         }
       }
-    }
 
-    if (text == "/viajes"){
-      mensaje = viajesUsuario(username, password);
+      else{
+        mensaje = 'El usuario que has indicado no existe. Inténtalo de nuevo.';
+      }
     }
 
     var res_json = {text: mensaje, method: "sendMessage", chat_id: chatID};
