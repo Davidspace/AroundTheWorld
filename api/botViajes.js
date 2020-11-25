@@ -4,7 +4,7 @@ var fetch = require('node-fetch');
 module.exports = async (req, res) => {
   if (req.body.message != undefined){
     // Obtenemos el ID del chat de Telegram desde el que proviene el mensaje
-    var chat_id = req.body.message.from.id;
+    var chat_ID= req.body.message.from.id;
 
     // Obtenemos el contenido del mensaje
     var text = req.body.message.text;
@@ -76,7 +76,7 @@ module.exports = async (req, res) => {
       }
     }
 
-    var res_json = {text: mensaje, method: "sendMessage", chat_id: chat_id};
+    var res_json = {text: mensaje, method: "sendMessage", chat_id: chat_ID};
     res.setHeader("Content-Type","application/json");
     res.status(200).json(res_json);
   }
