@@ -9,6 +9,16 @@
 
 ## Rúbricas cubiertas
 
+- [Despliegue](https://around-the-world-seven.vercel.app/) correcto y funcionando, con [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Vercel.md#conexi%C3%B3n-entre-github-y-vercel-y-despliegue-de-mi-repo) de la conexión entre el repo en GitHub y Vercel para despliegue continuo.
+
+- Integración dentro del proyecto general (es decir, como todo el código deberá tener sus issues y/o HU correspondientes). En esta rúbrica se valorará que se haya ido más allá del despliegue de un ejemplo. En mi caso he creado una función serverless que se integra en mi proyecto, la cual puedes consultar [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/api/viajesUsuario.js). Puedes consultar su documentación [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Vercel.md#creaci%C3%B3n-de-una-funci%C3%B3n-serverless) y su HU correspondiente en este [enlace](https://github.com/Davidspace/AroundTheWorld/issues/127).
+
+- Uso (e integración) de varias plataformas de despliegue (es decir, no repetir la misma función en todas las plataformas, sino crear funciones nuevas que también se integren en el proyecto). En mi caso he escogido **Netfily** como segunda plataforma de despliegue. Su documentación se encuentra [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Netlify.md). La función desplegada en ella puede ser consultada [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/functions/usuarios.js) y su documentación en este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Netlify.md#creaci%C3%B3n-de-una-funci%C3%B3n-serverless)
+
+- En conjunción con la rúbrica 2, se asigna por originalidad, buena integración dentro del proyecto, tener que programarlos en un lenguaje diferente al resto del proyecto (si es que el lenguaje en que está este no está soportado en el sistema serverless), integración con un front-end web/bot de Telegram/webhook de cualquier tipo que funcione en la práctica. En mi caso, he creado un bot de Telegram. La documentación puede ser consultada [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Vercel.md#creaci%C3%B3n-de-un-bot-de-telegram) y la función serverless que lo maneja [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/api/botViajes.js).
+
+## Integración continua
+
 - [Integración continua](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md) funcionando y correcta justificación de la misma.
 
 - Configuración de algún sistema de [integración continua adicional](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/config_integracion_continua.md#shippable) (justificado de la misma forma).
