@@ -4,31 +4,27 @@ const viajes = require('./viajes.json')
 function viajesUsuario(username, password){
   var mensaje = "";
 
-  if (username !== "" && password !== ""){
-    mensaje += "Tus viajes son: ";
+  mensaje += "Tus viajes son: ";
 
-    var existen_viajes = -1;
+  var existen_viajes = -1;
             
-    for (i = 0; i < viajes.length; i++){
-      if (viajes[i]['usuario'] === username){
-        mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
-          "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n" +
-          "Alojamientos: " + viajes[i]['alojamientos'] + "\n" +
-          "Puntos de interés: " + viajes[i]['puntos_interes'] + "\n" +
-          "Transportes: " + viajes[i]['transportes'] + "\n" + 
-          "Precio: " + viajes[i]['precio'];
+  for (i = 0; i < viajes.length; i++){
+    if (viajes[i]['usuario'] === username){
+      mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
+        "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n" +
+        "Alojamientos: " + viajes[i]['alojamientos'] + "\n" +
+        "Puntos de interés: " + viajes[i]['puntos_interes'] + "\n" +
+        "Transportes: " + viajes[i]['transportes'] + "\n" + 
+        "Precio: " + viajes[i]['precio'];
 
+      if (existen_viajes == -1){
         existen_viajes = 1;
       }
     }
-
-    if (existen_viajes == -1){
-      mensaje += "¡ninguno! ¿No has pensado en darte un capricho?";
-    }
   }
 
-  else{
-    mensaje = 'Aún no se ha identificado.';
+  if (existen_viajes == -1){
+    mensaje += "¡ninguno! ¿No has pensado en darte un capricho?";
   }
 
   return mensaje;
@@ -50,21 +46,20 @@ module.exports = async (req, res) => {
 
     if (text == "/start"){
       mensaje = '¡Hola! Este bot ha sido desarrollado con el propósito de mostrar a cada usuario ' +
-        'de la aplicación la lista de viajes con los que cuentan. Comienza identificándote mediante ' +
-        'tu nombre de usuario de la siguiente manera: Username: <username>. \n\nUsa el comando /help ' +
-        'para conocer todos los comandos disponibles.';
+        'de la aplicación la lista de viajes con los que cuentan. Para ello, identifiquese de la ' +
+        'siguiente manera: Username: <username> Password: <password>. Si sus credenciales son correctos, ' +
+        'le serán mostrados sus viajes.';
     }
 
     if (text == "/help"){
-      mensaje = 'Debe iniciar sesión indicando sus credenciales primero mediante Username: <username> y ' +
-        'y después con Password: <password>. Si ya lo ha hecho, puede listar sus viajes mediante el ' +
-        'comando /viajes.';
+      mensaje = 'Debe iniciar sesión indicando sus credenciales mediante Username: <username> ' +
+        'Password: <password>. Automáticamente después se le mostrarán sus viajes.';
     }
 
     var usuario_index = -1;
 
     if (text.startsWith('Username:')){
-      username = text.split(" ").pop();
+      username = text.split(" ")[1];
 
       var usuario_existe = -1;
         
@@ -77,44 +72,33 @@ module.exports = async (req, res) => {
       }
 
       if (usuario_existe == 1){
-        mensaje = 'Ahora, introduce tu contraseña de la siguiente manera: Password: <password>';
+        password = text.split(" ").pop();
+
+        var password_correcta = -1;
+
+        if (usuario_index != -1){
+          if (usuarios[usuario_index]['password'] === password){
+            password_correcta = 1;
+          }
+        }
+
+        if (usuario_index != -1){
+          if (password_correcta == 1){
+            mensaje = 'Te has identificado correctamente. Tus viajes, en el caso de que existan, van a ser ' + 
+            'listados a continuación.\n\n';
+
+            mensaje += viajesUsuario(username, password);
+          }
+
+          else{
+            mensaje = 'La contraseña es incorrecta. Inténtalo de nuevo.';
+          }
+        }
       }
 
       else{
-        username = "";
         mensaje = 'El usuario que has indicado no existe. Inténtalo de nuevo.';
       }
-    }
-
-    if (text.startsWith("Password:")){
-      password = text.split(" ").pop();
-
-      var password_correcta = -1;
-
-      if (usuario_index != -1){
-        if (usuarios[usuario_index]['password'] === password){
-          password_correcta = 1;
-        }
-      }
-
-      else{
-        password = "";
-        mensaje = 'Aún no has introducido un usuario correcto.';
-      }
-
-      if (usuario_index != -1){
-        if (password_correcta == 1){
-          mensaje = 'Te has identificado correctamente. Usa el comando /viajes para listar tus viajes.';
-        }
-
-        else{
-          mensaje = 'La contraseña es incorrecta. Inténtalo de nuevo.';
-        }
-      }
-    }
-
-    if (text == "/viajes"){
-      mensaje = viajesUsuario(username, password);
     }
 
     var res_json = {text: mensaje, method: "sendMessage", chat_id: chatID};
