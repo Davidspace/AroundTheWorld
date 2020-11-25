@@ -55,7 +55,7 @@ module.exports = async (req, res) => {
 
     var mensaje = "";
 
-    if (text == "/start"){
+    if (text === "/start"){
       mensaje = '¡Hola! Este bot ha sido desarrollado con el propósito de mostrar a cada usuario ' +
         'de la aplicación la lista de viajes con los que cuentan. Para ello, identifiquese de la ' +
         'siguiente manera: Username: <username> Password: <password>. Si sus credenciales son correctos, ' +
@@ -63,7 +63,7 @@ module.exports = async (req, res) => {
     }
 
     else{
-      if (text == "/help"){
+      if (text === "/help"){
         mensaje = 'Debe iniciar sesión indicando sus credenciales mediante Username: <username> ' +
           'Password: <password>. Automáticamente después se le mostrarán sus viajes.';
       }
@@ -81,7 +81,7 @@ module.exports = async (req, res) => {
             }
           }
 
-          if (usuario_index != -1){
+          if (usuario_index !== -1){
             password = text.split(" ").pop();
 
             if (usuarios[usuario_index]['password'] === password){
@@ -105,6 +105,8 @@ module.exports = async (req, res) => {
           mensaje = 'Este mensaje no corresponde a ninguna acción. Utiliza el comando /help ' + 
             'para saber qué debes de hacer.';
         }
+      }
+    }
 
     var res_json = {text: mensaje, method: "sendMessage", chat_id: chat_id};
     res.setHeader("Content-Type","application/json");
