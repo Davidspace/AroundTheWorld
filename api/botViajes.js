@@ -58,17 +58,17 @@ module.exports = async (req, res) => {
     if (text.startsWith('Username:')){
       username = text.split(" ").pop();
 
-      var usuario_existe = False;
+      var usuario_existe = -1;
         
-      for (i = 0; i < usuarios.length && !usuario_existe; i++){
+      for (i = 0; i < usuarios.length && usuario_existe == -1; i++){
         if (usuarios[i]['username'] === username){
-          usuario_existe = True;
+          usuario_existe = 1;
 
           usuario_index = i;
         }
       }
 
-      if (usuario_existe){
+      if (usuario_existe == 1){
         mensaje = 'Ahora, introduce tu contraseña de la siguiente manera: Password: <password>';
       }
 
@@ -81,11 +81,11 @@ module.exports = async (req, res) => {
     if (text.startsWith("Password:")){
       password = text.split(" ").pop();
 
-      var password_correcta = False;
+      var password_correcta = -1;
 
       if (usuario_index != -1){
         if (usuarios[usuario_index]['password'] === password){
-          password_correcta = True;
+          password_correcta = 1;
         }
       }
 
@@ -95,7 +95,7 @@ module.exports = async (req, res) => {
       }
 
       if (usuario_index != -1){
-        if (password_correcta){
+        if (password_correcta == 1){
           mensaje = 'Te has identificado correctamente. Usa el comando /viajes para listar tus viajes.';
         }
 
