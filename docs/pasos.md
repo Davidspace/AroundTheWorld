@@ -92,5 +92,21 @@ En este documento se encuentran los pasos que he dado, agrupados en los hitos qu
 
 - Actualización del [README](https://github.com/Davidspace/AroundTheWorld/blob/master/README.md) con los nuevos avances.
 
+## Hito 5: Uso de sistemas serverless
+
+- Elección de sistemas serverless a utilizar en mi proyecto: [Vercel](https://vercel.com) y [Netlify](https://www.netlify.com/)
+
+- [Justificación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) de la elección de ambos sistemas serverless.
+
+- Conexión entre Vercel y mi repositorio del proyecto y [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Vercel.md#conexi%C3%B3n-entre-github-y-vercel-y-despliegue-de-mi-repo) del proceso.
+
+- Conexión entre Netlify y mi repositorio del proyecto y [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Netlify.md#conexi%C3%B3n-entre-github-y-netlify-y-despliegue-de-mi-repo) del proceso
+
+- Desarrollo de la función serverless que será desplegada en Vercel y [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Vercel.md#creaci%C3%B3n-de-una-funci%C3%B3n-serverless) del proceso.
+
+- Desarrollo del bot de Telegram que servirá como interfaz de la anteriormente citada función serverless y [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Vercel.md#creaci%C3%B3n-de-un-bot-de-telegram) del proceso.
+
+- Desarrollo de la función serverless que será desplegada en Netlify y [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Netlify.md#creaci%C3%B3n-de-una-funci%C3%B3n-serverless) del proceso.
+
 
 
