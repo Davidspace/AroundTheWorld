@@ -23,7 +23,8 @@
     "gulp": "^4.0.2",
     "gulp-mocha": "^7.0.2",
     "gulp-run": "^1.7.1",
-    "mocha": "^8.2.0"
+    "mocha": "^8.2.0",
+    "node-fetch": "^2.6.1"
   },
   "dependencies": {}
 }

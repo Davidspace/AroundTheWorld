@@ -1,54 +1,5 @@
 const usuarios = require('./usuarios.json')
-const viajes = require('./viajes.json')
-
-function viajesUsuario(username){
-  var mensaje = "";
-
-  mensaje += "Tus viajes son: ";
-
-  var i, j = 0;
-            
-  for (i = 0; i < viajes.length; i++){
-    if (viajes[i]['usuario'] === username){
-      mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
-        "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n\n" +
-        "Alojamientos:\n" + 
-        " Nombre: " + viajes[i]['alojamientos']['nombre'] + "\n" + 
-        " Descripción: " + viajes[i]['alojamientos']['descripcion'] + "\n" + 
-        " Tipo: " + viajes[i]['alojamientos']['tipo'] + "\n" + 
-        " Localización: " + viajes[i]['alojamientos']['localizacion'] + "\n" + 
-        " Coordenadas: " + viajes[i]['alojamientos']['coordenadas'] + "\n" + 
-        " Valoración: " + viajes[i]['alojamientos']['valoracion'] + "\n" + 
-        " Precio: " + viajes[i]['alojamientos']['precio'] + "\n";
-
-      mensaje += "Puntos de interés:\n"
-        " Nombre: " + viajes[i]['puntos_interes']['nombre'] + "\n" + 
-        " Descripción: " + viajes[i]['puntos_interes']['descripcion'] + "\n" + 
-        " Localización: " + viajes[i]['puntos_interes']['localizacion'] + "\n" + 
-        " Coordenadas: " + viajes[i]['puntos_interes']['coordenadas'] + "\n" + 
-        " Valoración: " + viajes[i]['puntos_interes']['valoracion'] + "\n" + 
-        " Precio: " + viajes[i]['puntos_interes']['precio'] + "\n";
-      
-      mensaje += "Transportes:\n"
-        " Nombre: " + viajes[i]['transportes']['nombre'] + "\n" + 
-        " Descripción: " + viajes[i]['transportes']['descripcion'] + "\n" +
-        " Tipo: " + viajes[i]['transportes']['tipo'] + "\n" +  
-        " Localización: " + viajes[i]['transportes']['localizacion'] + "\n" +
-        " Valoración: " + viajes[i]['transportes']['valoracion'] + "\n" + 
-        " Hora de inicio: " + viajes[i]['transportes']['hora_inicio'] + "\n" +
-        " Hora de fin: " + viajes[i]['transportes']['hora_fin'] + "\n" +
-        " Precio: " + viajes[i]['transportes']['precio'] + "\n";
-
-      mensaje += "Precio: " + viajes[i]['precio'];
-    }
-  }
-
-  if (mensaje.endsWith('son:')){
-    mensaje += "¡ninguno! ¿No has pensado en darte un capricho?";
-  }
-
-  return mensaje;
-}
+var fetch = require('node-fetch');
 
 module.exports = async (req, res) => {
   if (req.body.message != undefined){
@@ -57,6 +8,8 @@ module.exports = async (req, res) => {
 
     // Obtenemos el contenido del mensaje
     var text = req.body.message.text;
+
+    var viajesUsuario_URL = "https://around-the-world.davidspace.vercel.app/api/viajesUsuario";
 
     var username = "";
 
@@ -96,7 +49,14 @@ module.exports = async (req, res) => {
               mensaje = 'Te has identificado correctamente. A continuación se van a listar tus viajes ' +
                 'en el caso de que cuentes con alguno.\n\n';
 
-              mensaje += viajesUsuario(username);
+              var URL_query = '?username=' + username;
+              var viajesUsuario_URL = viajesUsuario_URL + URL_query;
+
+              var viajes_usuario = await fetch(viajesUsuario_URL)
+                                    .then(res => res.text())
+                                    .then(mensaje => {return mensaje});
+
+              mensaje += viajes_usuario;
             }
 
             else{
