@@ -2,11 +2,13 @@ const usuarios = require('./usuarios.json');
 
 exports.handler = async function(event, context){
   if (usuarios.length > 0){
-    var num_mensajes = 0;
+    var num_usuarios = 0;
+
+    var mensaje = "[";
 
     for (var i = 0; i < usuarios.length; i++){
-      var mensaje = "usuario" + i + ":{" +
-        "destino: " + usuarios[i]['nombre'] + ", " +
+      mensaje += "usuario" + i + ":{" +
+        "nombre: " + usuarios[i]['nombre'] + ", " +
         "apellidos: " + usuarios[i]['apellidos'] + ", " +
         "email: " + usuarios[i]['email'] + ", " +
         "username: " + usuarios[i]['username'] + ", " +
@@ -14,10 +16,10 @@ exports.handler = async function(event, context){
         "direccion: " + usuarios[i]['direccion'] + ", " +
         "telefono: " + usuarios[i]['telefono'] + "}";
 
-      if (num_mensajes != usuarios.length - 1){
+      if (num_usuarios != usuarios.length - 1){
         mensaje += ", ";
 
-        num_mensajes += 1;
+        num_usuarios += 1;
       }
     }
 
