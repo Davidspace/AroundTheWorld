@@ -41,16 +41,16 @@ module.exports = async (req, res) => {
     var mensaje = "";
 
     if (text == "/start"){
-      mensaje = '¡Hola! Este bot ha sido desarrollado con el propósito de mostrar a cada usuario\
-        de la aplicación la lista de viajes con los que cuentan. Comienza identificándote mediante\
-        tu nombre de usuario de la siguiente manera: Username: <username>. \n\nUsa el comando /help\
-        para conocer todos los comandos disponibles.';
+      mensaje = '¡Hola! Este bot ha sido desarrollado con el propósito de mostrar a cada usuario ' +
+        'de la aplicación la lista de viajes con los que cuentan. Comienza identificándote mediante ' +
+        'tu nombre de usuario de la siguiente manera: Username: <username>. \n\nUsa el comando /help ' +
+        'para conocer todos los comandos disponibles.';
     }
 
     if (text == "/help"){
-      mensaje = 'Debe iniciar sesión indicando sus credenciales primero mediante Username: <username> y\
-        y después con Password: <password>. Si ya lo ha hecho, puede listar sus viajes mediante el\
-        comando /viajes.';
+      mensaje = 'Debe iniciar sesión indicando sus credenciales primero mediante Username: <username> y ' +
+        'y después con Password: <password>. Si ya lo ha hecho, puede listar sus viajes mediante el ' +
+        'comando /viajes.';
     }
 
     var usuario_index = -1;

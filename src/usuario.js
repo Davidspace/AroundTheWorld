@@ -6,6 +6,7 @@ class Usuario{
    * @param {String} apellidos - Apellidos del usuario
    * @param {String} email - E-mail del usuario
    * @param {String} username - Nombre de usuario dentro de la aplicación del usuario
+   * @param {String} password - Contraseña del usuario
    * @param {String} direccion - Dirección del usuario
    * @param {String} telefono - Número de teléfono del usuario
    */
@@ -15,6 +16,7 @@ class Usuario{
     this.apellidos = apellidos;
     this.email = email;
     this.username = username;
+    this.password = password;
     this.direccion = direccion;
     this.telefono = telefono;
   }
@@ -39,6 +41,10 @@ class Usuario{
     return this.username;
   }
 
+  get _password(){
+    return this.password;
+  }
+
   get _direccion(){
     return this.telefono;
   }
@@ -61,6 +67,10 @@ class Usuario{
 
   set _username(nuevo_username){
     this.username = nuevo_username;
+  }
+
+  set _password(nueva_password){
+    this.password = nueva_password;
   }
 
   set _direccion(nueva_direccion){
