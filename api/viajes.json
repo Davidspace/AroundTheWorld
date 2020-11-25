@@ -2,7 +2,7 @@
   {
     "usuario": "Davidspace",
     "nombre_destino": "Baza",
-    "alojamientos": {
+    "alojamientos": [{
       "nombre": "Hostal David",
       "descripcion": "Increible alojamiento",
       "tipo": "Hostal",
@@ -10,18 +10,18 @@
       "coordenadas": "37.4888637, -2.7709805",
       "valoracion": "9.7",
       "precio": "40"
-    },
+    }],
 
-    "puntos_interes": {
+    "puntos_interes": [{
       "nombre": "Plaza mayor",
       "descripcion": "La más grande",
       "localizacion": "Baza",
       "coordenadas": "37.3023453 ,-3.0232736",
       "valoracion": "9.3",
       "precio": "0"
-    },
+    }],
 
-    "transportes": {
+    "transportes": [{
       "nombre": "Alsama",
       "descripcion": "Buses mega rápidos",
       "tipo": "Autobus",
@@ -30,7 +30,7 @@
       "hora_inicio": "07:00",
       "hora_fin": "23:00",
       "precio": "10"
-    },
+    }],
 
     "precio": "50"
   },
@@ -38,7 +38,7 @@
   {
     "usuario": "Berzoth",
     "nombre_destino": "Guadix",
-    "alojamientos": {
+    "alojamientos": [{
       "nombre": "Hotel Hoja",
       "descripcion": "Somos los mejores",
       "tipo": "Hotel",
@@ -46,18 +46,18 @@
       "coordenadas": "37.4222637, -2.7711805",
       "valoracion": "9.3",
       "precio": "30"
-    },
+    }],
 
-    "puntos_interes": {
+    "puntos_interes": [{
       "nombre": "Plaza menor",
       "descripcion": "No tan grande",
       "localizacion": "Guadix",
       "coordenadas": "37.3023113 ,-3.1132736",
       "valoracion": "8.5",
       "precio": "0"
-    },
+    }],
 
-    "transportes": {
+    "transportes": [{
       "nombre": "Guataxi",
       "descripcion": "Taxis para todos",
       "tipo": "Taxi",
@@ -66,7 +66,7 @@
       "hora_inicio": "07:00",
       "hora_fin": "23:00",
       "precio": "10"
-    },
+    }],
 
     "precio": "40"
   }
