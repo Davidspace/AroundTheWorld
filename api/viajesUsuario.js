@@ -46,6 +46,7 @@ module.exports = (req, res) => {
             "   Hora de inicio: " + viajes[i]['transportes'][j]['hora_inicio'] + "\n" +
             "   Hora de fin: " + viajes[i]['transportes'][j]['hora_fin'] + "\n" +
             "   Precio: " + viajes[i]['transportes'][j]['precio'] + "\n";
+        }
 
         mensaje += "Precio: " + viajes[i]['precio'];
       }
