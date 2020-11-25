@@ -4,9 +4,7 @@ module.exports = (req, res) => {
   if (req.query.username != undefined){
     username = req.query.username;
 
-    var mensaje = "";
-
-    mensaje += "Tus viajes son: ";
+    var mensaje = "Tus viajes son: ";
 
     var i, j = 0;
               
@@ -14,33 +12,40 @@ module.exports = (req, res) => {
       if (viajes[i]['usuario'] === username){
         mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
           "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n" +
+          "Alojamientos:";
 
-          "Alojamientos:" + 
-          "   \nNombre: " + viajes[i]['alojamientos']['nombre'] + "\n" + 
-          "   Descripción: " + viajes[i]['alojamientos']['descripcion'] + "\n" + 
-          "   Tipo: " + viajes[i]['alojamientos']['tipo'] + "\n" + 
-          "   Localización: " + viajes[i]['alojamientos']['localizacion'] + "\n" + 
-          "   Coordenadas: " + viajes[i]['alojamientos']['coordenadas'] + "\n" + 
-          "   Valoración: " + viajes[i]['alojamientos']['valoracion'] + "\n" + 
-          "   Precio: " + viajes[i]['alojamientos']['precio'] + "\n";
+        for (j = 0; j < viajes[i]['alojamientos'].length; j++){
+          mensaje += "   \nNombre: " + viajes[i]['alojamientos'][j]['nombre'] + "\n" + 
+            "   Descripción: " + viajes[i]['alojamientos'][j]['descripcion'] + "\n" + 
+            "   Tipo: " + viajes[i]['alojamientos'][j]['tipo'] + "\n" + 
+            "   Localización: " + viajes[i]['alojamientos'][j]['localizacion'] + "\n" + 
+            "   Coordenadas: " + viajes[i]['alojamientos'][j]['coordenadas'] + "\n" + 
+            "   Valoración: " + viajes[i]['alojamientos'][j]['valoracion'] + "\n" + 
+            "   Precio: " + viajes[i]['alojamientos'][j]['precio'] + "\n";
+        }
 
-        mensaje += "Puntos de interés:\n" +
-          "   Nombre: " + viajes[i]['puntos_interes']['nombre'] + "\n" + 
-          "   Descripción: " + viajes[i]['puntos_interes']['descripcion'] + "\n" + 
-          "   Localización: " + viajes[i]['puntos_interes']['localizacion'] + "\n" + 
-          "   Coordenadas: " + viajes[i]['puntos_interes']['coordenadas'] + "\n" + 
-          "   Valoración: " + viajes[i]['puntos_interes']['valoracion'] + "\n" + 
-          "   Precio: " + viajes[i]['puntos_interes']['precio'] + "\n";
+        mensaje += "Puntos de interés:";
+
+        for (j = 0; j < viajes[i]['puntos_interes'].length; j++){
+          mensaje += "   \nNombre: " + viajes[i]['puntos_interes'][j]['nombre'] + "\n" + 
+            "   Descripción: " + viajes[i]['puntos_interes'][j]['descripcion'] + "\n" + 
+            "   Localización: " + viajes[i]['puntos_interes'][j]['localizacion'] + "\n" + 
+            "   Coordenadas: " + viajes[i]['puntos_interes'][j]['coordenadas'] + "\n" + 
+            "   Valoración: " + viajes[i]['puntos_interes'][j]['valoracion'] + "\n" + 
+            "   Precio: " + viajes[i]['puntos_interes'][j]['precio'] + "\n";
+        }
         
-        mensaje += "Transportes:\n" +
-          "   Nombre: " + viajes[i]['transportes']['nombre'] + "\n" + 
-          "   Descripción: " + viajes[i]['transportes']['descripcion'] + "\n" +
-          "   Tipo: " + viajes[i]['transportes']['tipo'] + "\n" +  
-          "   Localización: " + viajes[i]['transportes']['localizacion'] + "\n" +
-          "   Valoración: " + viajes[i]['transportes']['valoracion'] + "\n" + 
-          "   Hora de inicio: " + viajes[i]['transportes']['hora_inicio'] + "\n" +
-          "   Hora de fin: " + viajes[i]['transportes']['hora_fin'] + "\n" +
-          "   Precio: " + viajes[i]['transportes']['precio'] + "\n";
+        mensaje += "Transportes:";
+
+        for (j = 0; j < viajes[i]['transportes'].length; j++){
+          mensaje += "   \nNombre: " + viajes[i]['transportes'][j]['nombre'] + "\n" + 
+            "   Descripción: " + viajes[i]['transportes'][j]['descripcion'] + "\n" +
+            "   Tipo: " + viajes[i]['transportes'][j]['tipo'] + "\n" +  
+            "   Localización: " + viajes[i]['transportes'][j]['localizacion'] + "\n" +
+            "   Valoración: " + viajes[i]['transportes'][j]['valoracion'] + "\n" + 
+            "   Hora de inicio: " + viajes[i]['transportes'][j]['hora_inicio'] + "\n" +
+            "   Hora de fin: " + viajes[i]['transportes'][j]['hora_fin'] + "\n" +
+            "   Precio: " + viajes[i]['transportes'][j]['precio'] + "\n";
 
         mensaje += "Precio: " + viajes[i]['precio'];
       }
