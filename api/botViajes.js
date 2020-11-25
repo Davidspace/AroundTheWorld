@@ -44,7 +44,7 @@ function viajesUsuario(username){
 module.exports = async (req, res) => {
   if (req.body != undefined){
     // Obtenemos el ID del chat de Telegram desde el que proviene el mensaje
-    var chatID = req.body.message.chat.id;
+    var chat_id = req.body.message.chat_id;
 
     // Obtenemos el contenido del mensaje
     var text = req.body.message.text;
@@ -99,7 +99,7 @@ module.exports = async (req, res) => {
       }
     }
 
-    var res_json = {text: mensaje, method: "sendMessage", chat_id: chatID};
+    var res_json = {text: mensaje, method: "sendMessage", chat_id: chat_id};
     res.setHeader("Content-Type","application/json");
     res.status(200).json(res_json);
   }
