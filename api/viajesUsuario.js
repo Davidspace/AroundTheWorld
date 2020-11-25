@@ -55,7 +55,7 @@ module.exports = (req, res) => {
     }
 
     else{
-      mensaje += "¡ninguno! ¿No has pensado en darte un capricho?";
+      mensaje += "¡ninguno! ¿No has pensado en darte un caprichito?";
     }
 
     res.status(200).send(mensaje);
