@@ -60,39 +60,31 @@ module.exports = async (req, res) => {
 
     if (text.startsWith('Username:')){
       username = text.split(" ")[1];
-
-      var usuario_existe = -1;
         
-      for (i = 0; i < usuarios.length && usuario_existe == -1; i++){
+      for (i = 0; i < usuarios.length && usuario_index == -1; i++){
         if (usuarios[i]['username'] === username){
-          usuario_existe = 1;
-
           usuario_index = i;
         }
       }
 
-      if (usuario_existe == 1){
+      if (usuario_index != -1){
         password = text.split(" ").pop();
 
         var password_correcta = -1;
 
-        if (usuario_index != -1){
-          if (usuarios[usuario_index]['password'] === password){
-            password_correcta = 1;
-          }
+        if (usuarios[usuario_index]['password'] === password){
+          password_correcta = 1;
         }
-
-        if (usuario_index != -1){
-          if (password_correcta == 1){
-            mensaje = 'Te has identificado correctamente. Tus viajes, en el caso de que existan, van a ser ' + 
+          
+        if (password_correcta == 1){
+          mensaje = 'Te has identificado correctamente. Tus viajes, en el caso de que existan, van a ser ' + 
             'listados a continuación.\n\n';
 
-            mensaje += viajesUsuario(username, password);
-          }
+          mensaje += viajesUsuario(username, password);
+        }
 
-          else{
-            mensaje = 'La contraseña es incorrecta. Inténtalo de nuevo.';
-          }
+        else{
+          mensaje = 'La contraseña es incorrecta. Inténtalo de nuevo.';
         }
       }
 
