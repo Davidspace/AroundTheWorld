@@ -11,24 +11,33 @@ function viajesUsuario(username){
   for (i = 0; i < viajes.length; i++){
     if (viajes[i]['usuario'] === username){
       mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
-        "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n" +
-        "Alojamientos:\n";
-
-      viajes[i]['alojamientos'].forEach(function(obj){
-        mensaje += obj + "\n";
-      });
+        "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n\n" +
+        "Alojamientos:\n" + 
+        " Nombre: " + viajes[i]['alojamientos']['nombre'] + "\n" + 
+        " Descripción: " + viajes[i]['alojamientos']['descripcion'] + "\n" + 
+        " Tipo: " + viajes[i]['alojamientos']['tipo'] + "\n" + 
+        " Localización: " + viajes[i]['alojamientos']['localizacion'] + "\n" + 
+        " Coordenadas: " + viajes[i]['alojamientos']['coordenadas'] + "\n" + 
+        " Valoración: " + viajes[i]['alojamientos']['valoracion'] + "\n" + 
+        " Precio: " + viajes[i]['alojamientos']['precio'] + "\n";
 
       mensaje += "Puntos de interés:\n";
-
-      for (j = 0; j < viajes[i]['puntos_interes'].length; j++){
-        mensaje += viajes[i]['puntos_interes'][j] + "\n";
-      }
-
+        " Nombre: " + viajes[i]['puntos_interes']['nombre'] + "\n" + 
+        " Descripción: " + viajes[i]['puntos_interes']['descripcion'] + "\n" + 
+        " Localización: " + viajes[i]['puntos_interes']['localizacion'] + "\n" + 
+        " Coordenadas: " + viajes[i]['puntos_interes']['coordenadas'] + "\n" + 
+        " Valoración: " + viajes[i]['puntos_interes']['valoracion'] + "\n" + 
+        " Precio: " + viajes[i]['puntos_interes']['precio'] + "\n";
+      
       mensaje += "Transportes:\n";
-
-      for (j = 0; j < viajes[i]['transportes'].length; j++){
-        mensaje += viajes[i]['transportes'][j] + "\n";
-      }
+        " Nombre: " + viajes[i]['transportes']['nombre'] + "\n" + 
+        " Descripción: " + viajes[i]['transportes']['descripcion'] + "\n" +
+        " Tipo: " + viajes[i]['transportes']['tipo'] + "\n" +  
+        " Localización: " + viajes[i]['transportes']['localizacion'] + "\n" +
+        " Valoración: " + viajes[i]['transportes']['valoracion'] + "\n" + 
+        " Hora de inicio: " + viajes[i]['transportes']['hora_inicio'] + "\n" +
+        " Hora de fin: " + viajes[i]['transportes']['hora_fin'] + "\n" +
+        " Precio: " + viajes[i]['transportes']['precio'] + "\n";
 
       mensaje += "Precio: " + viajes[i]['precio'];
     }
@@ -76,7 +85,6 @@ module.exports = async (req, res) => {
             
           for (i = 0; i < usuarios.length && usuario_index == -1; i++){
             if (usuarios[i]['username'] === username){
-
               usuario_index = i;
             }
           }
