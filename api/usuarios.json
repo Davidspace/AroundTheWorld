@@ -4,6 +4,7 @@
     "apellidos": "García Martínez",
     "email": "dgarmar@gmail.com",
     "username": "Davidspace",
+    "password": "password1",
     "direccion": "Calle Antequera, 38",
     "telefono": "616087213"
   },
@@ -13,6 +14,7 @@
     "apellidos": "García Martínez",
     "email": "luciagarmar@gmail.com",
     "username": "Lucia99",
+    "password": "password2",
     "direccion": "Calle Antequera, 38",
     "telefono": "616032333"
   },
@@ -22,6 +24,7 @@
     "apellidos": "Carricondo Carriboi",
     "email": "carriloco@gmail.com",
     "username": "Carriloco",
+    "password": "password3",
     "direccion": "Calle Troll, 23",
     "telefono": "691540909"
   },
@@ -31,6 +34,7 @@
     "apellidos": "Méndez MuySeguro",
     "email": "berzoth@gmail.com",
     "username": "Berzoth",
+    "password": "password4",
     "direccion": "Calle Lore, 11",
     "telefono": "665432187"
   },
@@ -40,6 +44,7 @@
     "apellidos": "Paloma Mensajera",
     "email": "tryhard@gmail.com",
     "username": "Tryhard",
+    "password": "password5",
     "direccion": "Calle Tryhard, 007",
     "telefono": "669221350"
   }

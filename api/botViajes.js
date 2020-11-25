@@ -6,6 +6,8 @@ function viajesUsuario(username, password){
 
   if (username !== "" && password !== ""){
     mensaje += "Tus viajes son: ";
+
+    var existen_viajes = -1;
             
     for (i = 0; i < viajes.length; i++){
       if (viajes[i]['usuario'] === username){
@@ -15,7 +17,13 @@ function viajesUsuario(username, password){
           "Puntos de interés: " + viajes[i]['puntos_interes'] + "\n" +
           "Transportes: " + viajes[i]['transportes'] + "\n" + 
           "Precio: " + viajes[i]['precio'];
+
+        existen_viajes = 1;
       }
+    }
+
+    if (existen_viajes == -1){
+      mensaje += "¡ninguno! ¿No has pensado en darte un capricho?";
     }
   }
 

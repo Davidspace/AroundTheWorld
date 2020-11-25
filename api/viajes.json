@@ -1,46 +1,73 @@
 [
   {
-    "nombre": "David",
-    "apellidos": "García Martínez",
-    "email": "dgarmar@gmail.com",
-    "username": "Davidspace",
-    "direccion": "Calle Antequera, 38",
-    "telefono": "616087213"
+    "usuario": "Davidspace",
+    "nombre_destino": "Baza",
+    "alojamientos": {
+      "nombre": "Hostal David",
+      "descripcion": "Increible alojamiento",
+      "tipo": "Hostal",
+      "localizacion": "Baza",
+      "coordenadas": "37.4888637, -2.7709805",
+      "valoracion": "9.7",
+      "precio": "40"
+    },
+
+    "puntos_interes": {
+      "nombre": "Plaza mayor",
+      "descripcion": "La más grande",
+      "localizacion": "Baza",
+      "coordenadas": "37.3023453 ,-3.0232736",
+      "valoracion": "9.3",
+      "precio": "0"
+    },
+
+    "transportes": {
+      "nombre": "Alsama",
+      "descripcion": "Buses mega rápidos",
+      "tipo": "Autobus",
+      "localizacion": "Baza",
+      "valoracion": "9.9",
+      "hora_inicio": "07:00",
+      "hora_fin": "23:00",
+      "precio": "10"
+    },
+
+    "precio": "50"
   },
 
   {
-    "nombre": "Lucia",
-    "apellidos": "García Martínez",
-    "email": "luciagarmar@gmail.com",
-    "username": "Lucia99",
-    "direccion": "Calle Antequera, 38",
-    "telefono": "616032333"
-  },
+    "usuario": "Berzoth",
+    "nombre_destino": "Guadix",
+    "alojamientos": {
+      "nombre": "Hotel Hoja",
+      "descripcion": "Somos los mejores",
+      "tipo": "Hotel",
+      "localizacion": "Guadix",
+      "coordenadas": "37.4222637, -2.7711805",
+      "valoracion": "9.3",
+      "precio": "30"
+    },
 
-  {
-    "nombre": "Javier",
-    "apellidos": "Carricondo Carriboi",
-    "email": "carriloco@gmail.com",
-    "username": "Carriloco",
-    "direccion": "Calle Troll, 23",
-    "telefono": "691540909"
-  },
+    "puntos_interes": {
+      "nombre": "Plaza menor",
+      "descripcion": "No tan grande",
+      "localizacion": "Guadix",
+      "coordenadas": "37.3023113 ,-3.1132736",
+      "valoracion": "8.5",
+      "precio": "0"
+    },
 
-  {
-    "nombre": "Roberto",
-    "apellidos": "Méndez MuySeguro",
-    "email": "berzoth@gmail.com",
-    "username": "Berzoth",
-    "direccion": "Calle Lore, 11",
-    "telefono": "665432187"
-  },
+    "transportes": {
+      "nombre": "Guataxi",
+      "descripcion": "Taxis para todos",
+      "tipo": "Taxi",
+      "localizacion": "Guadix",
+      "valoracion": "9.2",
+      "hora_inicio": "07:00",
+      "hora_fin": "23:00",
+      "precio": "10"
+    },
 
-  {
-    "nombre": "Alex",
-    "apellidos": "Paloma Mensajera",
-    "email": "tryhard@gmail.com",
-    "username": "Tryhard",
-    "direccion": "Calle Tryhard, 007",
-    "telefono": "669221350"
+    "precio": "40"
   }
 ]
