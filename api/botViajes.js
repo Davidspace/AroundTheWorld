@@ -56,9 +56,7 @@ module.exports = async (req, res) => {
     var usuario_index = -1;
 
     if (text.startsWith('Username:')){
-      username = text.split(" ", 2);
-
-      username = username.split(",").pop();
+      username = text.split(" ").pop();
 
       var usuario_existe = False;
         
@@ -81,9 +79,7 @@ module.exports = async (req, res) => {
     }
 
     if (text.startsWith("Password:")){
-      password = text.split(" ", 2);
-
-      password = password.split(",").pop();
+      password = text.split(" ").pop();
 
       var password_correcta = False;
 
