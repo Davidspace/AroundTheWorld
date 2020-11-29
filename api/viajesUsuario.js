@@ -1,20 +1,28 @@
 var viajes = require('./viajes.json');
 
 module.exports = (req, res) => {
+  /* Solamente llevaremos a cabo el listado de los viajes del usuario si se nos pasa
+    mediante una variable GET el username de dicho usuario */
   if (req.query.username != undefined){
     var mensaje = "Tus viajes son: ";
 
+    /* Comprobamos que haya viajes almacenados en el fichero JSON dedicado a ello para
+      buscar en ellos los relacionados con el usuario */
     if (viajes.length > 0){
       username = req.query.username;  
       
       var i, j = 0;
 
+      /* Recorremos todos los viajes en busca de los relacionados con el usuario */
       for (i = 0; i < viajes.length; i++){
+        /* Si el campo usuario coincide con el username pasado por GET añadimos al listado 
+          dicho viaje */
         if (viajes[i]['usuario'] === username){
           mensaje += "\n\nUsuario: " + viajes[i]['usuario'] + "\n" +
             "Nombre del destino: " + viajes[i]['nombre_destino'] + "\n" +
             "Alojamientos:";
 
+          /* Añadimos todos los alojamientos del viaje al listado */
           for (j = 0; j < viajes[i]['alojamientos'].length; j++){
             mensaje += "   \nNombre: " + viajes[i]['alojamientos'][j]['nombre'] + "\n" + 
               "   Descripción: " + viajes[i]['alojamientos'][j]['descripcion'] + "\n" + 
@@ -27,6 +35,7 @@ module.exports = (req, res) => {
 
           mensaje += "Puntos de interés:";
 
+          /* Añadimos todos los puntos de interés del viaje al listado */
           for (j = 0; j < viajes[i]['puntos_interes'].length; j++){
             mensaje += "   \nNombre: " + viajes[i]['puntos_interes'][j]['nombre'] + "\n" + 
               "   Descripción: " + viajes[i]['puntos_interes'][j]['descripcion'] + "\n" + 
@@ -38,6 +47,7 @@ module.exports = (req, res) => {
           
           mensaje += "Transportes:";
 
+          /* Añadimos todos los transportes del viaje al listado */
           for (j = 0; j < viajes[i]['transportes'].length; j++){
             mensaje += "   \nNombre: " + viajes[i]['transportes'][j]['nombre'] + "\n" + 
               "   Descripción: " + viajes[i]['transportes'][j]['descripcion'] + "\n" +
@@ -54,10 +64,13 @@ module.exports = (req, res) => {
       }
     }
 
+    /* Si no existen viajes relacionados con ese usuario */
     else{
       mensaje += "¡ninguno! ¿No has pensado en darte un caprichito?";
     }
 
+    /* Devuelvo el string construido con todos los viajes del usuario junto al código de estado 200, 
+      el cual indica que la petición recibido ha sido satisfactoriamente resuelta */
     res.status(200).send(mensaje);
   }
 }
