@@ -44,11 +44,15 @@ Para la creación y despliegue de una función serverless en Vercel he seguido e
 
 2. He creado la [historia de usuario](https://github.com/Davidspace/AroundTheWorld/issues/127) y los issues correspondientes a la creación de una función que estará integrada dentro del proyecto general (no se trata de un ejemplo genérico).
 
-3. Como se puede observar en la propia historia de usuario, la función serverless a implementar llevará a cabo el listado de todos los viajes correspondientes a un usuario determinado registrado en el sistema. Todos estos viajes, al igual que todos los usuarios registrados en el sistema, estarán alamcenados en ficheros JSON llamados, respectivamente, [viajes.json](https://github.com/Davidspace/AroundTheWorld/blob/master/api/viajes.json) y [usuarios.json](https://github.com/Davidspace/AroundTheWorld/blob/master/api/usuarios.json).
+3. Como se puede observar en la propia historia de usuario, la función serverless a implementar llevará a cabo el listado de todos los viajes correspondientes a un usuario determinado registrado en el sistema. Todos los viajes, al igual que todos los usuarios registrados en el sistema, estarán almacenados en ficheros JSON llamados [viajes.json](https://github.com/Davidspace/AroundTheWorld/blob/master/api/viajes.json) y [usuarios.json](https://github.com/Davidspace/AroundTheWorld/blob/master/api/usuarios.json), respectivamente.
 
-4. La función lee del archivo JSON [viajes.json](https://github.com/Davidspace/AroundTheWorld/blob/master/api/viajes.json) los viajes asociados a un usuario determinado, el cual le es proporcionado mediante una variable GET que será asignada por el bot de Telegram, lo cual veremos más adelante.
+4. En primer lugar, la función comprueba si el username del usuario cuyos viajes, si hay alguno, se van a listar, se encuentra en una variable GET que es establecida por el bot de Telegram cuando el usuario aporta sus credenciales. Si no es asi, la función termina al no existir usuario sobre el que mostrar sus viajes. 
 
-5. Una vez obtenidos todos los viajes de dicho usuario, los introduce dentro de una cadena y la devuelve junto al código de estado **200**, el cual indica que la petición que hemos recibido ha sido procesada correctamente.
+5. En caso contrario, el siguiente paso será comprobar si existe algún viaje contenido en el fichero JSON [viajes.json](https://github.com/Davidspace/AroundTheWorld/blob/master/api/viajes.json). Tras leer el contenido del fichero se procederá a recorrerlos todos en búsqueda de viajes cuyo usuario relacionado coincida con el que hemos obtenido anteriormente mediante la variable GET. Cada viaje que encontremos que cumpla dicha condición será añadido al string que almacena el listado de todos ellos. 
+
+6. Tras recorrerlos todos, en el caso de que no exista ninguno relacionado con el usuario se añadirá al string mencionado anteriormente un mensaje indicando este hecho.
+
+7. Por último, devuelvo el string construido con todos los viajes del usuario o el mensaje indicando que no existe ninguno junto al código de estado 200, el cual indica que la petición recibido ha sido satisfactoriamente resuelta.
 
 Clickando en este [enlace](https://around-the-world.davidspace.vercel.app/api/viajesUsuario?username=Davidspace) puede observar el correcto funcionamiento de la función. En este caso he introducido manualmente en la URL la variable GET correspondiente al usuario **Davidspace**, el cual cuenta con un solo viaje registrado en la aplicación.
 
