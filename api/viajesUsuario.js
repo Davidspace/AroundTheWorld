@@ -6,7 +6,7 @@ module.exports = (req, res) => {
   if (req.query.username != undefined){
     var mensaje = "Tus viajes son: ";
 
-    var existen_viajes_usuario = False;
+    var existen_viajes_usuario = -1;
 
     /* Comprobamos que haya viajes almacenados en el fichero JSON dedicado a ello para
       buscar en ellos los relacionados con el usuario */
@@ -63,15 +63,15 @@ module.exports = (req, res) => {
 
           mensaje += "Precio: " + viajes[i]['precio'];
 
-          if (existen_viajes_usuario == False){
-            existen_viajes_usuario == True;
+          if (existen_viajes_usuario == -1){
+            existen_viajes_usuario == 1;
           }
         }
       }
     }
 
     /* Si no existen viajes relacionados con ese usuario */
-    if (existen_viajes_usuario == False){
+    if (existen_viajes_usuario == -1){
       mensaje += "¡ninguno! ¿No has pensado en darte un caprichito?";
     }
     
