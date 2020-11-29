@@ -75,7 +75,7 @@ module.exports = (req, res) => {
       mensaje += "¡ninguno! ¿No has pensado en darte un caprichito?";
     }
     
-    /* Devuelvo el string construido con todos los viajes  usuario junto al código de estado 200, 
+    /* Devuelvo el string construido con todos los viajes del usuario junto al código de estado 200, 
       el cual indica que la petición recibido ha sido satisfactoriamente resuelta */
     res.status(200).send(mensaje);
   }
