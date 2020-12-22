@@ -1,8 +1,8 @@
 var express = require('express');
-var controller = require('controller.js')
+var model = require('./model')
 const Usuario = require('../src/usuario.js')
 
-var usuarios = new Array(Usuario);
+let usuarios = new Array(Usuario);
 
 usuarios[0] = new Usuario('David', 'Garcia Martinez', 'dgarmar@gmail.com', 'Davidspace', 'password1', 
   'Calle Antequera 38', '616087213');
@@ -18,7 +18,8 @@ usuarios[3] = new Usuario('Pogfi', 'Magtines Zola', 'pogggfirio@gmail.com', 'Pog
 
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
+const direccion_ip = '0.0.0.0'; 
+app.set('puerto', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 
@@ -30,12 +31,13 @@ app.get('/usuarios',
 
 app.get('/usuarios/:username',
   function(req, res){
-    if (controller.username_valido(req.params.username)){
+    if (model.username_valido(req.params.username)){
       var usuario = get_usuario(req.params.username)
 
       if (usuario != false){
         res.status(200).json(JSON.stringify(usuario));
       }
+    }
 
     else{
       res.status(404).json(JSON.stringify({"error": "El username dado, " + req.params.username +
@@ -51,7 +53,7 @@ app.post('/usuarios',
       var nuevo_usuario = new User(req.body.nombre, req.body.apellidos, req.body.email, req.body.username,
         req.body.password, req.body.direccion, req.body.telefono);
 
-      controller.registrar_usuario(nuevo_usuario);
+      model.registrar_usuario(nuevo_usuario);
 
       res.status(201).json(JSON.stringify({"mensaje": "El registro del nuevo usuario ha finalizado correctamente"}));
     }
@@ -65,8 +67,8 @@ app.post('/usuarios',
 
 app.put('/usuarios/:username',
   function(req, res){
-    if (controller.username_valido(req.params.username)){
-      var nombre = "",
+    if (model.username_valido(req.params.username)){
+      let nombre = "",
           apellidos = "",
           email = "",
           username = "",
@@ -102,7 +104,7 @@ app.put('/usuarios/:username',
         telefono = req.body.telefono;
       }
 
-      var usuario_modificado = controller.modificar_usuario(req.params.username, nombre, apellidos, email, username, password, direccion, telefono);
+      var usuario_modificado = model.modificar_usuario(req.params.username, nombre, apellidos, email, username, password, direccion, telefono);
 
       res.status(200).json(JSON.stringify(usuario_modificado));
     }
@@ -112,9 +114,10 @@ app.put('/usuarios/:username',
 app.delete('/usuarios/:username',
   function(req, res){
     if (username_valido(req.params.username)){
-      controller.borrar_usuario(req.params.username);
+      model.borrar_usuario(req.params.username);
 
-      res.status(200).json(JSON.stringify({"mensaje: Borrado con exito el usuario con username " + req.params.username}));
+      res.status(200).json(JSON.stringify({"mensaje": "Borrado con exito el usuario con username " + 
+        req.params.username}));
     }
 
     else{
@@ -123,5 +126,9 @@ app.delete('/usuarios/:username',
     }
   }
 );
+
+app.listen(app.get('port'), direccion_ip, function(){
+  console.log("La API está disponible en el puerto " + direccion_ip + ":" + app.get('port'));
+})
 
 module.exports = app;

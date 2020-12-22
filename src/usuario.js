@@ -11,7 +11,7 @@ class Usuario{
    * @param {String} telefono - Número de teléfono del usuario
    */
 
-  constructor(nombre, apellidos, email, username, direccion, telefono){
+  constructor(nombre, apellidos, email, username, password, direccion, telefono){
     this.nombre = nombre;
     this.apellidos = apellidos;
     this.email = email;

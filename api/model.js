@@ -1,6 +1,6 @@
 const { api } = require("./api.js");
 
-class Controller{
+class Model{
   constructor(usuarios){
     this._usuarios = usuarios;
   }
@@ -86,4 +86,4 @@ class Controller{
   }
 }
 
-module.exports = {Controller}
+module.exports = {Model}
