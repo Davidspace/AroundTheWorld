@@ -4,10 +4,17 @@ const Usuario = require('../src/usuario.js')
 
 var usuarios = new Array(Usuario);
 
-usuarios[0] = new Usuario('');
-usuarios[1] = new Usuario('');
-usuarios[2] = new Usuario('');
-usuarios[3] = new Usuario('');
+usuarios[0] = new Usuario('David', 'Garcia Martinez', 'dgarmar@gmail.com', 'Davidspace', 'password1', 
+  'Calle Antequera 38', '616087213');
+
+usuarios[1] = new Usuario('Lucia', 'Garcia Martinez', 'luciagm@gmail.com', 'Luciagm', 'password2', 
+  'Calle Antequera 38', '616087444');
+
+usuarios[2] = new Usuario('Alba', 'Logenso Magtines', 'albalm@gmail.com', 'Albamay', 'password3', 
+  'Calle Caniles, 12', '616123124');
+
+usuarios[3] = new Usuario('Pogfi', 'Magtines Zola', 'pogggfirio@gmail.com', 'Pogfirio', 'password4', 
+  'Calle Meme, 80', '615095634');
 
 var app = express();
 
@@ -17,16 +24,22 @@ app.use(express.json());
 
 app.get('/usuarios',
   function(req, res){
-    res.json(usuarios);
+    res.status(200).json(usuarios);
   }
 );
 
 app.get('/usuarios/:username',
-  function(request, res){
-    var usuario = get_usuario(req.params.username)
+  function(req, res){
+    if (controller.username_valido(req.params.username)){
+      var usuario = get_usuario(req.params.username)
 
-    if (usuario != false){
-      res.json(usuario);
+      if (usuario != false){
+        res.status(200).json(JSON.stringify(usuario));
+      }
+
+    else{
+      res.status(404).json(JSON.stringify({"error": "El username dado, " + req.params.username +
+        ", no coincide con ninguno de los registrados en la base de datos"}));
     }
   }
 );
@@ -45,14 +58,14 @@ app.post('/usuarios',
 
     else{
       res.status(400).json(JSON.stringify({"error": "Debe incluir en la petición todos los datos " +
-      "necesarios para registrar un nuevo usuario"}));
+        "necesarios para registrar un nuevo usuario"}));
     }
   }
 );
 
 app.put('/usuarios/:username',
   function(req, res){
-    if (username_valido(req.params.username)){
+    if (controller.username_valido(req.params.username)){
       var nombre = "",
           apellidos = "",
           email = "",
@@ -89,7 +102,9 @@ app.put('/usuarios/:username',
         telefono = req.body.telefono;
       }
 
-      controller.modificar_usuario(nombre, apellidos, email, username, password, direccion, telefono);
+      var usuario_modificado = controller.modificar_usuario(req.params.username, nombre, apellidos, email, username, password, direccion, telefono);
+
+      res.status(200).json(JSON.stringify(usuario_modificado));
     }
   }
 );
@@ -97,7 +112,7 @@ app.put('/usuarios/:username',
 app.delete('/usuarios/:username',
   function(req, res){
     if (username_valido(req.params.username)){
-      borrar_usuario(req.params.username);
+      controller.borrar_usuario(req.params.username);
 
       res.status(200).json(JSON.stringify({"mensaje: Borrado con exito el usuario con username " + req.params.username}));
     }
