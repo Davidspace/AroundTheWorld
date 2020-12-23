@@ -30,7 +30,7 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
   });
 
   describe("3. Testeando el registro de un nuevo usuario dados sus datos " + 
-    "(PUT /usuarios/nuevoUsuario/)", function() {
+    "(PUT /usuarios/Pepe/Lopez Peres/pepe@gmail.com/pepote99/password1/Calle Peponcio/615098888)", function() {
     it("Comprobando que se obtienen los datos de salida correctos", function(done){
       request(app)
       .put('/usuarios/Pepe/Lopez Peres/pepe@gmail.com/pepote99/password1/Calle Peponcio/615098888')
@@ -48,19 +48,21 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
   });
 
   describe("4. Testeando la modificación de los datos de un usuario determinado " + 
-    "(POST /usuarios/pepote99)", function() {
+    "(POST /usuarios/Davidspace)", function() {
     it("Comprobando que se obtienen los datos de salida correctos", function(done){
       request(app)
-      .post('/usuarios/pepote99')
+      .post('/usuarios/Davidspace')
+      .set('Content-Type', 'application/json')
       .send({nombre: 'MODIFICADO'})
       .expect('Content-Type', /json/)
       .expect(200, done);
     });
 
     it("Comprobando que se lanza un error avisando de que el username indicado no está " +
-      "registrado (POST /usuarios/pepote9)", function(done){
+      "registrado (POST /usuarios/Davidspac)", function(done){
       request(app)
-      .put('/usuarios/pepote9')
+      .post('/usuarios/Davidspac')
+      .set('Content-Type', 'application/json')
       .send({nombre: 'MODIFICADO'})
       .expect('Content-Type', /json/)
       .expect(404, done)
