@@ -89,7 +89,7 @@ app.post('/usuarios/:username',
       }
 
       if ('username' in req.body){
-        username = req.body.username;
+        username = req.body.username
       }
 
       if ('password' in req.body){
@@ -111,7 +111,7 @@ app.post('/usuarios/:username',
     }
 
     else{
-      res.status(404).json({"error": "El username dado, " + req.params.username +
+      res.status(404).json({error: "El username dado, " + req.params.username +
         ", no coincide con ninguno de los registrados en la base de datos"});
     }
   }
@@ -127,7 +127,7 @@ app.delete('/usuarios/:username',
     }
 
     else{
-      res.status(404).json({"error": "El username dado, " + req.params.username +
+      res.status(404).json({error: "El username dado, " + req.params.username +
         ", no coincide con ninguno de los registrados en la base de datos"});
     }
   }
