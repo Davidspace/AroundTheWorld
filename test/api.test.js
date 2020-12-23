@@ -28,4 +28,22 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
       .expect(404, done)
     });
   });
+
+  describe("3. Testeando el registro de un nuevo usuario dados sus datos " + 
+    "(PUT /usuarios/nuevoUsuario/)", function() {
+    it("Comprobando que se obtienen los datos correctamente", function(done){
+      request(app)
+      .put('/usuarios/Pepe/Lopez Peres/pepe@gmail.com/pepote99/password1/Calle Peponcio/615098888')
+      .expect('Content-Type', /json/)
+      .expect(201, done);
+    });
+
+    it("Comprobando que se lanza un error avisando de que falta algún dato por especificar, en este caso " +
+      "el teléfono (PUT /usuarios/Pepe/Lopez Peres/pepe@gmail.com/pepote99/password1/Calle Peponcio)", function(done){
+      request(app)
+      .put('/usuarios/Pepe/Lopez Peres/pepe@gmail.com/pepote99/password1/Calle Peponcio')
+      .expect('Content-Type', /json/)
+      .expect(400, done)
+    });
+  });
 });
