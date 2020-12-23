@@ -6,7 +6,7 @@ var app = express();
 var model = new Model();
 
 const direccion_ip = '0.0.0.0'; 
-app.set('puerto', (process.env.PORT || 5000));
+app.set('puerto', (process.env.PORT || 9000));
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 
@@ -56,7 +56,7 @@ app.put('/usuarios/:nombre/:apellidos/:email/:username/:password/:direccion/:tel
 
       model.registrar_usuario(nuevo_usuario);
 
-      res.status(201).json({"mensaje": "El registro del nuevo usuario ha finalizado correctamente"});
+      res.status(201).json(nuevo_usuario);
     }
 
     else{
@@ -109,6 +109,11 @@ app.post('/usuarios/:username',
 
       res.status(200).json(usuario_modificado);
     }
+
+    else{
+      res.status(404).json({"error": "El username dado, " + req.params.username +
+        ", no coincide con ninguno de los registrados en la base de datos"});
+    }
   }
 );
 
@@ -123,7 +128,7 @@ app.delete('/usuarios/:username',
 
     else{
       res.status(404).json({"error": "El username dado, " + req.params.username +
-      ", no coincide con ninguno de los registrados en la base de datos"});
+        ", no coincide con ninguno de los registrados en la base de datos"});
     }
   }
 );
