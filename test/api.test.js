@@ -54,7 +54,7 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
       .post('/usuarios/pepote99')
       .send({nombre: 'MODIFICADO'})
       .expect('Content-Type', /json/)
-      .expect(201, done);
+      .expect(200, done);
     });
 
     it("Comprobando que se lanza un error avisando de que el username indicado no está " +
@@ -63,7 +63,25 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
       .put('/usuarios/pepote9')
       .send({nombre: 'MODIFICADO'})
       .expect('Content-Type', /json/)
-      .expect(400, done)
+      .expect(404, done)
+    });
+  });
+
+  describe("5. Testeando la eliminación de los datos de un usuario registrado " + 
+    "(DELETE /usuarios/pepote99)", function() {
+    it("Comprobando que se obtienen los datos de salida correctos", function(done){
+      request(app)
+      .delete('/usuarios/pepote99')
+      .expect('Content-Type', /json/)
+      .expect(200, done);
+    });
+
+    it("Comprobando que se lanza un error avisando de que el username indicado no está " +
+      "registrado (DELETE /usuarios/pepote9)", function(done){
+      request(app)
+      .delete('/usuarios/pepote9')
+      .expect('Content-Type', /json/)
+      .expect(404, done)
     });
   });
 });
