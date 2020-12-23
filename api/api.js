@@ -1,30 +1,30 @@
 var express = require('express');
-var model = require('./model')
-const Usuario = require('../src/usuario.js')
-
-let usuarios = new Array(Usuario);
-
-usuarios[0] = new Usuario('David', 'Garcia Martinez', 'dgarmar@gmail.com', 'Davidspace', 'password1', 
-  'Calle Antequera 38', '616087213');
-
-usuarios[1] = new Usuario('Lucia', 'Garcia Martinez', 'luciagm@gmail.com', 'Luciagm', 'password2', 
-  'Calle Antequera 38', '616087444');
-
-usuarios[2] = new Usuario('Alba', 'Logenso Magtines', 'albalm@gmail.com', 'Albamay', 'password3', 
-  'Calle Caniles, 12', '616123124');
-
-usuarios[3] = new Usuario('Pogfi', 'Magtines Zola', 'pogggfirio@gmail.com', 'Pogfirio', 'password4', 
-  'Calle Meme, 80', '615095634');
+const Model = require('./model.js');
+const Usuario = require('../src/usuario.js');
 
 var app = express();
+var model = new Model();
 
 const direccion_ip = '0.0.0.0'; 
 app.set('puerto', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 
+app.get('/',
+  function(req, res){
+    res.status(200).json({mensaje: "Bienvenido a la API de la aplicación AroundTheWorld. " + 
+    "Entra en /usuarios mediante GET para obtener un listado de los usuarios registrados. " +
+    "Entra en /usuarios/:username mediante GET para obtener los datos del usuario con el username indicado. " +
+    "Entra en /usuarios mediante POST para crear un nuevo usuario indicando sus datos en el cuerpo de la petición. " +
+    "Entra en /usuarios/:username mediante PUT para modificar el usuario cuyo username ha sido indicado " +
+    "indicando los datos a modificar en el cuerpo de la petición. " + 
+    "Entra en /usuarios/:username mediante DELETE para eliminar los datos del usuario con el username indicado."});
+  }
+);
+
 app.get('/usuarios',
   function(req, res){
+    var usuarios = model.get_usuarios();
     res.status(200).json(usuarios);
   }
 );
@@ -32,40 +32,40 @@ app.get('/usuarios',
 app.get('/usuarios/:username',
   function(req, res){
     if (model.username_valido(req.params.username)){
-      var usuario = get_usuario(req.params.username)
+      var usuario = model.get_usuario(req.params.username)
 
       if (usuario != false){
-        res.status(200).json(JSON.stringify(usuario));
+        res.status(200).json(usuario);
       }
     }
 
     else{
-      res.status(404).json(JSON.stringify({"error": "El username dado, " + req.params.username +
-        ", no coincide con ninguno de los registrados en la base de datos"}));
+      res.status(404).json({error: "El username dado, " + req.params.username +
+        ", no coincide con ninguno de los registrados en la base de datos"});
     }
   }
 );
 
-app.post('/usuarios',
+app.put('/usuarios/:nombre/:apellidos/:email/:username/:password/:direccion/:telefono',
   function(req, res){
-    if ('nombre' in req.body && 'apellidos' in req.body && 'email' in req.body && 'username' in req.body && 
-      'password' in req.body && 'direccion' in req.body && 'telefono' in req.body){
-      var nuevo_usuario = new User(req.body.nombre, req.body.apellidos, req.body.email, req.body.username,
-        req.body.password, req.body.direccion, req.body.telefono);
+    if ('nombre' in req.params && 'apellidos' in req.params && 'email' in req.params && 'username' in req.params && 
+      'password' in req.params && 'direccion' in req.params && 'telefono' in req.params){
+      
+      var nuevo_usuario = new Usuario(req.params.nombre, req.params.apellidos, req.params.email, req.params.username,
+        req.params.password, req.params.direccion, req.params.telefono);
 
       model.registrar_usuario(nuevo_usuario);
 
-      res.status(201).json(JSON.stringify({"mensaje": "El registro del nuevo usuario ha finalizado correctamente"}));
+      res.status(201).json({"mensaje": "El registro del nuevo usuario ha finalizado correctamente"});
     }
 
     else{
-      res.status(400).json(JSON.stringify({"error": "Debe incluir en la petición todos los datos " +
-        "necesarios para registrar un nuevo usuario"}));
+      res.status(400).json({error: "Debe indicar todos los datos necesarios para crear un nuevo usuario"});
     }
   }
 );
 
-app.put('/usuarios/:username',
+app.post('/usuarios/:username',
   function(req, res){
     if (model.username_valido(req.params.username)){
       let nombre = "",
@@ -104,31 +104,32 @@ app.put('/usuarios/:username',
         telefono = req.body.telefono;
       }
 
-      var usuario_modificado = model.modificar_usuario(req.params.username, nombre, apellidos, email, username, password, direccion, telefono);
+      var usuario_modificado = model.modificar_usuario(req.params.username, nombre, apellidos, email, 
+        username, password, direccion, telefono);
 
-      res.status(200).json(JSON.stringify(usuario_modificado));
+      res.status(200).json(usuario_modificado);
     }
   }
 );
 
 app.delete('/usuarios/:username',
   function(req, res){
-    if (username_valido(req.params.username)){
+    if (model.username_valido(req.params.username)){
       model.borrar_usuario(req.params.username);
 
-      res.status(200).json(JSON.stringify({"mensaje": "Borrado con exito el usuario con username " + 
-        req.params.username}));
+      res.status(200).json({mensaje: "Borrado con exito el usuario con username " + 
+        req.params.username});
     }
 
     else{
-      res.status(404).json(JSON.stringify({"error": "El username dado, " + req.params.username +
-      ", no coincide con ninguno de los registrados en la base de datos"}));
+      res.status(404).json({"error": "El username dado, " + req.params.username +
+      ", no coincide con ninguno de los registrados en la base de datos"});
     }
   }
 );
 
-app.listen(app.get('port'), direccion_ip, function(){
-  console.log("La API está disponible en el puerto " + direccion_ip + ":" + app.get('port'));
+app.listen(app.get('puerto'), direccion_ip, function(){
+  console.log("La API está disponible en el puerto " + direccion_ip + ":" + app.get('puerto'));
 })
 
 module.exports = app;
