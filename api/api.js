@@ -46,13 +46,13 @@ app.get('/usuarios/:username',
   }
 );
 
-app.put('/usuarios/:nombre/:apellidos/:email/:username/:password/:direccion/:telefono',
+app.put('/usuarios',
   function(req, res){
-    if ('nombre' in req.params && 'apellidos' in req.params && 'email' in req.params && 'username' in req.params && 
-      'password' in req.params && 'direccion' in req.params && 'telefono' in req.params){
+    if ('nombre' in req.body && 'apellidos' in req.body && 'email' in req.body && 'username' in req.body && 
+      'password' in req.body && 'direccion' in req.body && 'telefono' in req.body){
       
-      var nuevo_usuario = new Usuario(req.params.nombre, req.params.apellidos, req.params.email, req.params.username,
-        req.params.password, req.params.direccion, req.params.telefono);
+      var nuevo_usuario = new Usuario(req.body.nombre, req.body.apellidos, req.body.email, req.body.username,
+        req.body.password, req.body.direccion, req.body.telefono);
 
       model.registrar_usuario(nuevo_usuario);
 
