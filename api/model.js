@@ -1,31 +1,47 @@
-const { api } = require("./api.js");
+const Usuario = require('../src/usuario.js')
 
 class Model{
-  constructor(usuarios){
-    this._usuarios = usuarios;
+  constructor(){
+    this.usuarios = new Array(Usuario);
+
+    this.usuarios[0] = new Usuario('David', 'Garcia Martinez', 'dgarmar@gmail.com', 'Davidspace', 'password1', 
+      'Calle Antequera 38', '616087213');
+
+    this.usuarios[1] = new Usuario('Lucia', 'Garcia Martinez', 'luciagm@gmail.com', 'Luciagm', 'password2', 
+      'Calle Antequera 38', '616087444');
+
+    this.usuarios[2] = new Usuario('Alba', 'Logenso Magtines', 'albalm@gmail.com', 'Albamay', 'password3', 
+      'Calle Caniles, 12', '616123124');
+
+    this.usuarios[3] = new Usuario('Pogfi', 'Magtines Zola', 'pogggfirio@gmail.com', 'Pogfirio', 'password4', 
+      'Calle Meme, 80', '615095634');
   }
 
   get_usuario(username){
-    var index = -1;
+    let index = -1;
 
-    for (var i = 0; i < this._usuarios.length && index == -1; i++){
-      if (username == usuario[i].username){
+    for (let i = 0; i < this.usuarios.length && index == -1; i++){
+      if (username == this.usuarios[i].username){
         index = i;
       }
     }
 
-    return _usuarios[index];
+    return this.usuarios[index];
+  }
+  
+  get_usuarios(){
+    return this.usuarios;
   }
 
   registrar_usuario(nuevo_usuario){
-    this._usuarios.push(nuevo_usuario);
+    this.usuarios.push(nuevo_usuario);
   }
 
   username_valido(username){
-    var encontrado = false;
+    let encontrado = false;
 
-    for (var i = 0; i < this._usuarios.length && !encontrado; i++){
-      if (username == usuario[i].username){
+    for (let i = 0; i < this.usuarios.length && !encontrado; i++){
+      if (username == this.usuarios[i].username){
         encontrado = true;
       }
     }
@@ -34,51 +50,51 @@ class Model{
   }
 
   modificar_usuario(username_actual, nombre, apellidos, email, username, password, direccion, telefono){
-    var index = -1;
+    let index = -1;
 
-    for (var i = 0; i < this._usuarios.length && index == -1; i++){
-      if (username == usuario[i].username){
+    for (let i = 0; i < this.usuarios.length && index == -1; i++){
+      if (username_actual == this.usuarios[i].username){
         index = i;
       }
     }
 
     if (nombre != ""){
-      usuarios[index].nombre = nombre;
+      this.usuarios[index].nombre = nombre;
     }
 
     if (apellidos != ""){
-      usuarios[index].apellidos = apellidos;
+      this.usuarios[index].apellidos = apellidos;
     }
 
     if (email != ""){
-      usuarios[index].email = email;
+      this.usuarios[index].email = email;
     }
 
     if (username != ""){
-      usuarios[index].username = username;
+      this.usuarios[index].username = username;
     }
 
     if (password != ""){
-      usuarios[index].password = password;
+      this.usuarios[index].password = password;
     }
 
     if (direccion != ""){
-      usuarios[index].direccion = direccion;
+      this.usuarios[index].direccion = direccion;
     }
 
     if (telefono != ""){
-      usuarios[index].telefono = telefono;
+      this.usuarios[index].telefono = telefono;
     }
 
-    return usuarios[index];
+    return this.usuarios[index];
   }
 
   borrar_usuario(username){
-    var borrado = false;
+    let borrado = false;
 
-    for (var i = 0; i < this._usuarios.length && !borrado; i++){
-      if (username == usuario[i].username){
-        this._usuarios.splice(i, 1);
+    for (let i = 0; i < this.usuarios.length && !borrado; i++){
+      if (username == this.usuarios[i].username){
+        this.usuarios.splice(i, 1);
 
         borrado = true;
       }
@@ -86,4 +102,4 @@ class Model{
   }
 }
 
-module.exports = {Model}
+module.exports = Model;
