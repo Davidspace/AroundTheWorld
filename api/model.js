@@ -17,7 +17,7 @@ class Model{
       'Calle Meme, 80', '615095634');
   }
 
-  get_usuario(username){
+  get_usuario(username, password){
     let index = -1;
 
     for (let i = 0; i < this.usuarios.length && index == -1; i++){
@@ -26,11 +26,13 @@ class Model{
       }
     }
 
-    return this.usuarios[index];
-  }
-  
-  get_usuarios(){
-    return this.usuarios;
+    if (password == this.usuarios[index].password){
+      return this.usuarios[index];
+    }
+
+    else{
+      return false;
+    }
   }
 
   registrar_usuario(nuevo_usuario){
