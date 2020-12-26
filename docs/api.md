@@ -18,6 +18,10 @@ Un framework o marco software web es un conjunto de herramientas, estilos y libr
 
 ### Logger
 
+Los logs son ficheros en los que se almacenan cada uno de los eventos que suceden en un sistema operativo o en cualquier software. Estos eventos suelen ser llamadas a funciones, recibir una petición HTTP, dar una respuesta a estas... Este seguimiento que llevamos a cabo de las acciones que suceden en nuestra aplicación en orden cronológico hacen más sencilla la traza de errores y la compresión de como trabaja nuestro software.
+
+Es por estas importantes necesidades que este servicio satisface que he decidido hacer uso en mi aplicación de una herramienta que genere logs sobre eventos que sucedan en ella, como por ejemplo el contenido de las peticiones que mi API recibe. Disponer de esta información en tiempo real agiliza el proceso de entendimiento de qué está sucediendo en mi aplicación y porqué. Esta herramienta de la que hablo es [morgan](https://github.com/expressjs/morgan), un logger para peticiones HTTP para Node. He seleccionado este logger debido a la simplicidad y eficiencia de este, ya que este no me provee de muchas funcionalidades ni opciones de configuración que no voy a necesitar, sino que hace una cosa y la hace muy bien, la cual es mostrar por consola el contenido de las peticiones que recibiré en mi API, para lo que cuenta con varios formatos de salida que muestran la información de las peticiones con más o menos detalle que pueden ser utilizados dependiendo de las necesidades que tenga en un momento dado.
+
 
 ## Microservicio
 
