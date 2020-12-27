@@ -13,7 +13,7 @@ class Model{
     this.usuarios[2] = new Usuario('Alba', 'Logenso Magtines', 'albalm@gmail.com', 'Albamay', 'password3', 
       'Calle Caniles, 12', '616123124');
 
-    this.usuarios[3] = new Usuario('Pogfi', 'Magtines Zola', 'pogggfirio@gmail.com', 'Pogfirio', 'password4', 
+    this.usuarios[3] = new Usuario('Porfi', 'Magtines Zola', 'pogggfirio@gmail.com', 'Pogfirio', 'password4', 
       'Calle Meme, 80', '615095634');
   }
 
