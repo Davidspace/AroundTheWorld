@@ -1,95 +1,143 @@
 var app = require('../api/api.js');
 var request = require('supertest');
 
-describe("Testeando las rutas incluidas en la API de la aplicación", function() {
-  describe("1. Testeando la obtención del listado de los usuarios registrados (GET /usuarios)", function() {
-    it("Comprobando que se obtiene el listado correctamente", function(done){
-      request(app)
-      .get('/usuarios')
-      .expect('Content-Type', /json/)
-      .expect(200, done);
-    });
-  });
+var server = app.listen(8080);
 
-  describe("2. Testeando la obtención de los datos de un usuario concreto dado su username " + 
-    "(GET /usuarios/Davidspace)", function() {
-    it("Comprobando que se obtienen los datos correctamente", function(done){
+describe("Testeando las rutas incluidas en la API de la aplicación", function(){
+  describe("1. Testeando la obtención de los datos de un usuario concreto dado su username", function(){
+    it("Comprobando que se obtienen los datos correctamente " + 
+      "(GET /usuarios/Davidspace)", function(done){
       request(app)
-      .get('/usuarios/Davidspace')
-      .expect('Content-Type', /json/)
-      .expect(200, done);
+        .get('/usuarios/Davidspace')
+        .set('Content-Type', 'application/json')
+        .send({password: 'password1'})
+        .expect('Content-Type', /json/)
+        .expect(200, {
+          nombre: "David",
+          apellidos: 'Garcia Martinez', 
+          email: 'dgarmar@gmail.com', 
+          username: 'Davidspace',
+          password: 'password1', 
+          direccion: 'Calle Antequera 38', 
+          telefono: '616087213'
+        }, done);
     });
 
     it("Comprobando que se lanza un error avisando de que el username dado no está registrado " +
       "(GET /usuarios/Davidspac)", function(done){
       request(app)
-      .get('/usuarios/Davidspac')
-      .expect('Content-Type', /json/)
-      .expect(404, done);
+        .get('/usuarios/Davidspac')
+        .set('Content-Type', 'application/json')
+        .send({password: 'password1'})
+        .expect('Content-Type', /json/)
+        .expect(404, {
+          error: "El username dado, Davidspac, " +
+            "no coincide con ninguno de los registrados en la base de datos"
+        }, done);
+    });
+
+    it("Comprobando que se lanza un error avisando de que la contraseña indicada es incorrecta " +
+      "(GET /usuarios/Davidspace)", function(done){
+      request(app)
+        .get('/usuarios/Davidspace')
+        .set('Content-Type', 'application/json')
+        .send({password: 'password1000'})
+        .expect('Content-Type', /json/)
+        .expect(404, {
+          error: "La contraseña indicada no es correcta"
+        }, done);
     });
   });
 
-  describe("3. Testeando el registro de un nuevo usuario dados sus datos en el body de la request " + 
-    "(PUT /usuarios)", function() {
-    it("Comprobando que se obtienen los datos de salida correctos", function(done){
+  describe("2. Testeando el registro de un nuevo usuario dados sus datos en el body de la request", function(){
+    it("Comprobando que se obtienen los datos de salida correctos (POST /usuarios)", function(done){
       request(app)
-      .put('/usuarios')
-      .set('Content-Type', 'application/json')
-      .send({nombre: 'Pepito', apellidos: 'Ape Llidos', email: 'pepito@gmail.com', username: 'pepito99',
-        password: 'password1', direccion: 'Calle direshao', telefono: '655678901'})
-      .expect('Content-Type', /json/)
-      .expect(201, done);
+        .post('/usuarios')
+        .set('Content-Type', 'application/json')
+        .send({nombre: 'Pepito', apellidos: 'Ape Llidos', email: 'pepito@gmail.com', username: 'pepito99',
+          password: 'password1', direccion: 'Calle direshao', telefono: '655678901'})
+        .expect('Content-Type', /json/)
+        .expect(201, {
+          nombre: "Pepito",
+          apellidos: 'Ape Llidos', 
+          email: 'pepito@gmail.com', 
+          username: 'pepito99',
+          password: 'password1', 
+          direccion: 'Calle direshao', 
+          telefono: '655678901'
+        }, done);
     });
 
     it("Comprobando que se lanza un error avisando de que falta algún dato por especificar, en este caso " +
-      "el teléfono (PUT /usuarios)", function(done){
+      "el teléfono (POST /usuarios)", function(done){
       request(app)
-      .put('/usuarios')
-      .set('Content-Type', 'application/json')
-      .send({nombre: 'Pepito', apellidos: 'Ape Llidos', email: 'pepito@gmail.com', username: 'pepito99',
-        password: 'password1', direccion: 'Calle direshao'})
-      .expect('Content-Type', /json/)
-      .expect(400, done);
+        .post('/usuarios')
+        .set('Content-Type', 'application/json')
+        .send({nombre: 'Pepito', apellidos: 'Ape Llidos', email: 'pepito@gmail.com', username: 'pepito99',
+          password: 'password1', direccion: 'Calle direshao'})
+        .expect('Content-Type', /json/)
+        .expect(400, {
+          error: "Debe indicar todos los datos necesarios para crear un nuevo usuario"
+        }, done);
     });
   });
 
-  describe("4. Testeando la modificación de los datos de un usuario determinado, indicando dichas modificaciones" + 
-    "en el body de la request (POST /usuarios/Davidspace)", function() {
-    it("Comprobando que se obtienen los datos de salida correctos", function(done){
+  describe("3. Testeando la modificación de los datos de un usuario determinado, indicando dichas modificaciones" + 
+    "en el body de la request", function(){
+    it("Comprobando que se obtienen los datos de salida correctos " +
+      "(PUT /usuarios/Davidspace)", function(done){
       request(app)
-      .post('/usuarios/Davidspace')
-      .set('Content-Type', 'application/json')
-      .send({nombre: 'MODIFICADO'})
-      .expect('Content-Type', /json/)
-      .expect(200, done);
+        .put('/usuarios/Davidspace')
+        .set('Content-Type', 'application/json')
+        .send({nombre: 'MODIFICADO'})
+        .expect('Content-Type', /json/)
+        .expect(200, {
+          nombre: "MODIFICADO",
+          apellidos: 'Garcia Martinez', 
+          email: 'dgarmar@gmail.com', 
+          username: 'Davidspace',
+          password: 'password1', 
+          direccion: 'Calle Antequera 38', 
+          telefono: '616087213'
+        }, done);
     });
 
     it("Comprobando que se lanza un error avisando de que el username indicado no está " +
-      "registrado (POST /usuarios/Davidspac)", function(done){
+      "registrado (PUT /usuarios/Davidspac)", function(done){
       request(app)
-      .post('/usuarios/Davidspac')
-      .set('Content-Type', 'application/json')
-      .send({nombre: 'MODIFICADO'})
-      .expect('Content-Type', /json/)
-      .expect(404, done);
+        .put('/usuarios/Davidspac')
+        .set('Content-Type', 'application/json')
+        .send({nombre: 'MODIFICADO'})
+        .expect('Content-Type', /json/)
+        .expect(404, {
+          error: "El username dado, Davidspac, " +
+            "no coincide con ninguno de los registrados en la base de datos"
+        }, done);
     });
   });
 
-  describe("5. Testeando la eliminación de los datos de un usuario registrado " + 
-    "(DELETE /usuarios/Davidspace)", function() {
-    it("Comprobando que se obtienen los datos de salida correctos", function(done){
+  describe("4. Testeando la eliminación de los datos de un usuario registrado ", function(){
+    it("Comprobando que se obtienen los datos de salida correctos " +
+      "(DELETE /usuarios/Davidspace)", function(done){
       request(app)
-      .delete('/usuarios/Davidspace')
-      .expect('Content-Type', /json/)
-      .expect(200, done);
+        .delete('/usuarios/Davidspace')
+        .expect('Content-Type', /json/)
+        .expect(200, {
+          mensaje: "Borrado con exito el usuario con username Davidspace"
+        }, done);
     });
 
     it("Comprobando que se lanza un error avisando de que el username indicado no está " +
-      "registrado (DELETE /usuarios/pepote9)", function(done){
+      "registrado (DELETE /usuarios/Davidspac)", function(done){
       request(app)
-      .delete('/usuarios/pepote9')
-      .expect('Content-Type', /json/)
-      .expect(404, done);
+        .delete('/usuarios/Davidspac')
+        .expect('Content-Type', /json/)
+        .expect(404, {
+          error: "El username dado, Davidspac, " +
+            "no coincide con ninguno de los registrados en la base de datos"
+        }, done);
     });
   });
+
+  server.close();
 });
