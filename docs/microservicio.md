@@ -6,7 +6,7 @@ En este hito llevaré a cabo el diseño de un pequeño microservicio con el obje
 
 ### Framework web
 
-Un framework o marco software web es un conjunto de herramientas, estilos y librerías dispuestas a través de una estructura o esqueleto base cuyo objetivo es facilitar al usuario el desarrollo de aplicaciones web más escalables y sencillas de mantener. El uso de esta herramienta me facilitará en gran medida el desarrollo de mi API, por lo que he analizado todos los disponibles para el lenguaje de mi proyecto, Node.js, y he elegido aquel que se adecua en mayor medida a mis necesidades: **Express**. He basado mi decisión en varios motivos:
+Un framework o marco software web es un conjunto de herramientas, estilos y librerías dispuestas a través de una estructura o esqueleto base cuyo objetivo es facilitar al usuario el desarrollo de aplicaciones web más escalables y sencillas de mantener. El uso de esta herramienta me facilitará en gran medida el desarrollo de mi API, por lo que he analizado todos los disponibles para el lenguaje de mi proyecto, Node.js, y he elegido aquel que se adecua en mayor medida a mis necesidades: [Express](https://expressjs.com/es/). He basado mi decisión en varios motivos:
 
 - En primer lugar, Express es el framework web más popular actualmente para el lenguaje Node.js. Tiene la mayor comunidad de entre todos los framework tomados en cuenta en la comparación, como por ejemplo Sails.js o Hapi.js, lo que facilitará en gran medida mi aprendizaje ya que todas las dudas que se me presenten tendrán rápida respuesta en uno de los muchos foros enfocados a esta herramienta.
 
