@@ -4,7 +4,7 @@ var request = require('supertest');
 var server = app.listen(8080);
 
 describe("Testeando las rutas incluidas en la API de la aplicación", function(){
-  describe("1. Testeando la obtención de los datos de un usuario concreto dado su username", function(){
+  describe("1. Testeando la obtención de los datos de un usuario concreto dado su username [HU017]", function(){
     it("Comprobando que se obtienen los datos correctamente " + 
       "(GET /usuarios/Davidspace)", function(done){
       request(app)
@@ -49,7 +49,7 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
     });
   });
 
-  describe("2. Testeando el registro de un nuevo usuario dados sus datos en el body de la request", function(){
+  describe("2. Testeando el registro de un nuevo usuario dados sus datos en el body de la request [HU014]", function(){
     it("Comprobando que se obtienen los datos de salida correctos (POST /usuarios)", function(done){
       request(app)
         .post('/usuarios')
@@ -83,7 +83,7 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
   });
 
   describe("3. Testeando la modificación de los datos de un usuario determinado, indicando dichas modificaciones" + 
-    "en el body de la request", function(){
+    "en el body de la request [HU015]", function(){
     it("Comprobando que se obtienen los datos de salida correctos " +
       "(PUT /usuarios/Davidspace)", function(done){
       request(app)
@@ -116,7 +116,7 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
     });
   });
 
-  describe("4. Testeando la eliminación de los datos de un usuario registrado ", function(){
+  describe("4. Testeando la eliminación de los datos de un usuario registrado [HU016]", function(){
     it("Comprobando que se obtienen los datos de salida correctos " +
       "(DELETE /usuarios/Davidspace)", function(done){
       request(app)
