@@ -1,14 +1,16 @@
-var express = require('express');
+const express = require('express');
+const morgan = require('morgan');
 const Model = require('./model.js');
 const Usuario = require('../src/usuario.js');
 
 var app = express();
 var model = new Model();
 
-const direccion_ip = '0.0.0.0'; 
-app.set('puerto', (process.env.PORT || 9000));
+// const direccion_ip = '0.0.0.0'; 
+// app.set('puerto', (process.env.PORT || 8080));
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
+app.use(morgan('dev'));
 
 app.get('/',
   function(req, res){
@@ -129,8 +131,12 @@ app.delete('/usuarios/:username',
   }
 );
 
+/*
+
 app.listen(app.get('puerto'), direccion_ip, function(){
   console.log("La API está disponible en el puerto " + direccion_ip + ":" + app.get('puerto'));
 })
+
+*/
 
 module.exports = app;
