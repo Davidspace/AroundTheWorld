@@ -7,7 +7,17 @@
 
 - En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) puede observar el listado de herramientas con las que el proyecto cuenta hasta el momento.
 
-## Rúbricas cubiertas
+## Desarrollo de las rúbricas
+
+- [Documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/microservicio.md) del microservicio
+
+- [Código fuente](https://github.com/Davidspace/AroundTheWorld/blob/master/api/api.js) de la API
+
+- [Código fuente](https://github.com/Davidspace/AroundTheWorld/blob/master/api/model.js) de la clase manejadora de datos
+
+- [Código fuente](https://github.com/Davidspace/AroundTheWorld/blob/master/test/api.test.js) de los tests a la API
+
+## Serverless
 
 - [Despliegue](https://around-the-world-seven.vercel.app/) correcto y funcionando, con [documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/Vercel.md#conexi%C3%B3n-entre-github-y-vercel-y-despliegue-de-mi-repo) de la conexión entre el repo en GitHub y Vercel para despliegue continuo.
 
