@@ -14,6 +14,10 @@ gulp.task('test', async function(){
   .pipe(mocha());
 });
 
+gulp.task('build', async function(){
+  
+});
+
 /** Tarea que se ejecutará por defecto */
 gulp.task('default', async function(){
   console.log("Use gulp <tarea> para ejecutar una tarea. Las tareas disponibles son: \n\n"
