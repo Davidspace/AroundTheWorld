@@ -1,8 +1,6 @@
 var app = require('../api/api.js');
 var request = require('supertest');
 
-var server = app.listen(8080);
-
 describe("Testeando las rutas incluidas en la API de la aplicación", function(){
   describe("1. Testeando la obtención de los datos de un usuario concreto dado su username [HU017]", function(){
     it("Comprobando que se obtienen los datos correctamente " + 
@@ -138,6 +136,4 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
         }, done);
     });
   });
-
-  server.close();
 });
