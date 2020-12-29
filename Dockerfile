@@ -4,11 +4,6 @@ FROM node:14.15.0-alpine3.12
 # Documento el creador de la imagen
 LABEL version = "1.0" maintainer = "David García Martínez <dgarmar@gmail.com>"
 
-# Si instalamos paquetes con npm, este intenta instalarlos por defecto en
-# usr/local/lib/node_modules. Jest y Gulp se encuentran en bin 
-# por lo que voy a darle permisos al usuario por defecto node
-RUN chown -R node /node_modules && chown -R node /usr/local/lib/node_modules && chown -R node /usr/local/bin
-
 # Copio los ficheros que almacenan las dependencias del proyecto
 COPY package*.json ./
 
