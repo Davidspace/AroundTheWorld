@@ -12,12 +12,7 @@ app.use(morgan('dev'));
 
 app.get('/',
   function(req, res){
-    res.status(200).json({mensaje: "Bienvenido a la API de la aplicación AroundTheWorld. " + 
-    "Entra en /usuarios/:username mediante GET para obtener los datos del usuario con el username indicado. " +
-    "Entra en /usuarios mediante POST para crear un nuevo usuario indicando sus datos en el cuerpo de la petición. " +
-    "Entra en /usuarios/:username mediante PUT para modificar el usuario cuyo username ha sido indicado " +
-    "indicando los datos a modificar en el cuerpo de la petición. " + 
-    "Entra en /usuarios/:username mediante DELETE para eliminar los datos del usuario con el username indicado."});
+    res.status(200).json({mensaje: "Bienvenido a la API de la aplicación AroundTheWorld."});
   }
 );
 
@@ -127,6 +122,38 @@ app.delete('/usuarios/:username',
       res.status(404).json({error: "El username dado, " + req.params.username +
         ", no coincide con ninguno de los registrados en la base de datos"});
     }
+  }
+);
+
+app.get('/alojamientos',
+  function(req, res){
+    var alojamientos = model.get_alojamientos();
+
+    res.status(200).json(alojamientos);
+  }
+);
+
+app.get('/puntos_interes',
+  function(req, res){
+    var puntos_interes = model.get_puntos_interes();
+
+    res.status(200).json(puntos_interes);
+  }
+);
+
+app.get('/transportes',
+  function(req, res){
+    var transportes = model.get_transportes();
+
+    res.status(200).json(transportes);
+  }
+);
+
+app.get('/destinos',
+  function(req, res){
+    var destinos = model.get_destinos();
+
+    res.status(200).json(destinos);
   }
 );
 
