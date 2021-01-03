@@ -9,13 +9,15 @@
 
 ## Desarrollo de las rúbricas
 
-- [Documentación](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/microservicio.md) del microservicio
+- Rúbrica 1: Justificación técnica del framework elegido para el microservicio con documentación sobre cómo se usa en la práctica. Puede consultar la documentación sobre el framework elegido [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/microservicio.md#framework-web).
 
-- [Código fuente](https://github.com/Davidspace/AroundTheWorld/blob/master/api/api.js) de la API
+- Rúbrica 2: Diseño en general del API, las rutas (o tareas), tipos devueltos por las peticiones y estados devueltos por las mismas, tests y documentación de todo, justificando como se ajustan a las historias de usuario, de forma que reflejen correctamente un diseño por capas que desacopla la lógica de negocio del API. Puede acceder al fichero que contiene la API [en este enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/api/api.js) y al fichero manejador de datos [desde aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/api/model.js). La documentación sobre ambos se encuentra [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/microservicio.md#elementos-del-microservicio)
 
-- [Código fuente](https://github.com/Davidspace/AroundTheWorld/blob/master/api/model.js) de la clase manejadora de datos
+- Rúbrica 3: Uso de buenas prácticas: configuración distribuida, logs, uso de middleware. Puede consultar la documentación sobre su uso [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/microservicio.md#uso-de-buenas-pr%C3%A1cticas).
 
-- [Código fuente](https://github.com/Davidspace/AroundTheWorld/blob/master/test/api.test.js) de los tests a la API
+- Rúbrica 4: Tests correctos y de acuerdo con las historias de usuario. Puede consultar los tests [en este enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/test/api.test.js). La documentación sobre ellos se encuentra [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/microservicio.md#tests).
+
+- Rúbrica 5: 2 puntos: concedidos por originalidad de la aplicación, grado de terminación, utilidad para la asignatura, cantidad de trabajo invertido, el hecho que se haya avanzado el proyecto, creación de una imagen Docker para desplegarlo, configuración correcta del gestor de tareas. Puede consultar todos las herramientas añadidas, las funcionalidades implementadas y los tests desarollados en la [documentación del microservicio](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/microservicio.md).
 
 ## Serverless
 
