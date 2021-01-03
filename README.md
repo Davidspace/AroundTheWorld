@@ -1,12 +1,6 @@
 # AroundTheWorld
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-## Desarrollo y herramientas del proyecto
-
-- En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/pasos.md) puede observar los pasos dados para la realización del proyecto
-
-- En este [enlace](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/herramientas.md) puede observar el listado de herramientas con las que el proyecto cuenta hasta el momento.
-
 ## Desarrollo de las rúbricas
 
 - Rúbrica 1: Justificación técnica del framework elegido para el microservicio con documentación sobre cómo se usa en la práctica. Puede consultar la documentación sobre el framework elegido [aquí](https://github.com/Davidspace/AroundTheWorld/blob/master/docs/microservicio.md#framework-web).
