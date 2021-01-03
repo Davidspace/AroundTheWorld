@@ -3,11 +3,9 @@ const morgan = require('morgan');
 const Model = require('./model.js');
 const Usuario = require('../src/usuario.js');
 
-var app = express();
+const app = express();
 var model = new Model();
 
-// const direccion_ip = '0.0.0.0'; 
-// app.set('puerto', (process.env.PORT || 8080));
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(morgan('dev'));
@@ -26,7 +24,7 @@ app.get('/',
 app.get('/usuarios/:username',
   function(req, res){
     if (model.username_valido(req.params.username)){
-      var usuario = model.get_usuario(req.params.username, req.body.password)
+      var usuario = model.get_usuario(req.params.username)
 
       if (usuario != false){
         res.status(200).json(usuario);
@@ -58,7 +56,8 @@ app.post('/usuarios',
     }
 
     else{
-      res.status(400).json({error: "Debe indicar todos los datos necesarios para crear un nuevo usuario"});
+      res.status(400).json({error: "No se han proporcionado todos los datos necesarios para la creación " +
+        "de un nuevo usuario"});
     }
   }
 );
@@ -130,13 +129,5 @@ app.delete('/usuarios/:username',
     }
   }
 );
-
-/*
-
-app.listen(app.get('puerto'), direccion_ip, function(){
-  console.log("La API está disponible en el puerto " + direccion_ip + ":" + app.get('puerto'));
-})
-
-*/
 
 module.exports = app;
