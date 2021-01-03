@@ -75,7 +75,8 @@ describe("Testeando las rutas incluidas en la API de la aplicación", function()
           password: 'password1', direccion: 'Calle direshao'})
         .expect('Content-Type', /json/)
         .expect(400, {
-          error: "Debe indicar todos los datos necesarios para crear un nuevo usuario"
+          error: "No se han proporcionado todos los datos necesarios para la creación " + 
+            "de un nuevo usuario"
         }, done);
     });
   });
