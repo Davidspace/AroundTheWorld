@@ -26,8 +26,8 @@
     "gulp-run": "^1.7.1",
     "mocha": "^8.2.0",
     "morgan": "^1.10.0",
+    "node-etcd": "^7.0.0",
     "node-fetch": "^2.6.1",
-    "supertest": "^6.0.1"
+    "supertest": "^6.0.1",
   },
-  "dependencies": {}
 }
