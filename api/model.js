@@ -17,7 +17,7 @@ class Model{
       'Calle Meme, 80', '615095634');
   }
 
-  get_usuario(username, password){
+  get_usuario(username){
     let index = -1;
 
     for (let i = 0; i < this.usuarios.length && index == -1; i++){
@@ -26,7 +26,7 @@ class Model{
       }
     }
 
-    if (password == this.usuarios[index].password){
+    if (index != -1){
       return this.usuarios[index];
     }
 
